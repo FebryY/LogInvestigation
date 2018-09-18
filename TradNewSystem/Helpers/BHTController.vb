@@ -142,10 +142,10 @@ Namespace Helpers
             Optional ByVal color As DNWA.BHTCL.LED.EN_COLOR = Nothing _
             )
             If activate Then
-                MyLED(LED.EN_DEVICE.BAR, color) = LED.EN_CTRL.ON
+                'MyLED(LED.EN_DEVICE.BAR, color) = LED.EN_CTRL.ON
                 activeLEDColor = color
             Else
-                MyLED(LED.EN_DEVICE.BAR, activeLEDColor) = LED.EN_CTRL.OFF
+                'MyLED(LED.EN_DEVICE.BAR, activeLEDColor) = LED.EN_CTRL.OFF
             End If
         End Sub
 #End Region
@@ -169,7 +169,7 @@ Namespace Helpers
             )
             MyBeep.Frequency = frequency
             MyBeep.OnTime = onTime
-            MyBeep.Item(Beep.Settings.EN_DEVICE.BUZZER) = Beep.EN_CTRL.ON
+            'MyBeep.Item(Beep.Settings.EN_DEVICE.BUZZER) = Beep.EN_CTRL.ON
         End Sub
 #End Region
 

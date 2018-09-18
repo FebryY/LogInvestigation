@@ -8,6 +8,7 @@ Imports TradNewSystem.Model
 Imports TradNewSystem.PocoClass
 Imports MySql.Data.MySqlClient
 Imports System.Net
+Imports log4net
 
 Public Class LoginMenu
     Protected Friend nowLoadingWindow As NowLoading
@@ -21,6 +22,15 @@ Public Class LoginMenu
         ByVal e As EventArgs _
         ) Handles MyBase.Load
         ToggleTaskbar.Show(False)
+        ' Sample implement log4net
+        log4net.Config.XmlConfigurator.Configure()
+        Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+        If log.IsInfoEnabled Then
+            log.Info("Application [ConsoleApp] Start")
+        End If
+
+        log.Error("TRAD")
         'Dim a As Integer
         'MsgBox(SysInfo.Settings.MachineNumber)
         Dim strEntry As String = ""
@@ -32,7 +42,7 @@ Public Class LoginMenu
         'End If
         'MsgBox(Dns.GetHostEntry(Dns.GetHostName()).AddressList(0).ToString())
 
-
+        LogManager.Shutdown()
     End Sub
 
     Private Sub LoginMenu_Closed( _

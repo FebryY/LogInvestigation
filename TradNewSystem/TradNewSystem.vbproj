@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{FED4A4D9-E4BC-4557-80C1-8AE2569FCAAD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -70,6 +70,10 @@
     <Reference Include="DNWA.BHT1400CL, Version=3.5.0.0, Culture=neutral, PublicKeyToken=c72c1c62f24aba62, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\DNWA.BHT1400CL.dll</HintPath>
+    </Reference>
+    <Reference Include="Log4NetCF, Version=2.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Log4NetCF.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data.CF, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -367,6 +371,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Content Include="TradNewSystem.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
