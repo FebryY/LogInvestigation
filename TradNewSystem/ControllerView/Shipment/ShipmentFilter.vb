@@ -7,7 +7,7 @@ Imports TradNewSystem.Helpers
 Imports TradNewSystem.Model
 Imports TradNewSystem.PocoClass
 Imports DNWA.BHTCL
-
+Imports log4net
 
 Public Class ShipmentFilter
     Protected Friend nowLoadingWindow As NowLoading
@@ -196,15 +196,26 @@ Public Class ShipmentFilter
     End Sub
 
     Private Function WifiConectionCheck() As Boolean
+        log4net.Config.XmlConfigurator.Configure()
+        Dim log As ILog = LogManager.GetLogger("TRADLogger")
         Try
             If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
+                log.Info("Start Info WifiConectionCheck Signal Distance Shipment Filter")
+                log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                log.Info("End Info WifiConectionCheck Signal Distance Shipment Filter")
+
                 DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                     "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                 Return False
                 Exit Function
             End If
         Catch ex As Exception
+            log.Error("Start Error WifiConectionCheck Shipment Filter")
             If Err.Number = 5 Then
+                log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                    "Tunggu beberapa detik dan ulangi lagi.")
+
                 DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                     "Tunggu beberapa detik dan ulangi lagi.", "Error")
                 Dim MyRf As RF
@@ -214,7 +225,10 @@ Public Class ShipmentFilter
                 Return False
                 Exit Function
             End If
+            log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+            log.Error("End Error WifiConectionCheck Shipment Filter")
         End Try
+        LogManager.Shutdown()
         Return True
     End Function
 End Class
