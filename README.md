@@ -1,0 +1,2 @@
+# LogInvestigation
+Create Log
