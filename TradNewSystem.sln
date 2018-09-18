@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TradNewSystem", "TradNewSystem\TradNewSystem.vbproj", "{FED4A4D9-E4BC-4557-80C1-8AE2569FCAAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridCustomColumns", "DataGridCustomColumns\DataGridCustomColumns.csproj", "{29B25A8C-143A-44E1-AD19-F9DBD5BA6307}"
+EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "TradNewSystemEXE", "TradNewSystemEXE\TradNewSystemEXE.vddproj", "{E4912EB1-3DEC-480B-BC47-8E2303D1D9A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FED4A4D9-E4BC-4557-80C1-8AE2569FCAAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED4A4D9-E4BC-4557-80C1-8AE2569FCAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED4A4D9-E4BC-4557-80C1-8AE2569FCAAD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FED4A4D9-E4BC-4557-80C1-8AE2569FCAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED4A4D9-E4BC-4557-80C1-8AE2569FCAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED4A4D9-E4BC-4557-80C1-8AE2569FCAAD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{29B25A8C-143A-44E1-AD19-F9DBD5BA6307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29B25A8C-143A-44E1-AD19-F9DBD5BA6307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29B25A8C-143A-44E1-AD19-F9DBD5BA6307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29B25A8C-143A-44E1-AD19-F9DBD5BA6307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4912EB1-3DEC-480B-BC47-8E2303D1D9A0}.Debug|Any CPU.ActiveCfg = Debug
+		{E4912EB1-3DEC-480B-BC47-8E2303D1D9A0}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

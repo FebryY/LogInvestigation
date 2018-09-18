@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FED4A4D9-E4BC-4557-80C1-8AE2569FCAAD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>TradNewSystem.LoginMenu</StartupObject>
+    <RootNamespace>TradNewSystem</RootNamespace>
+    <AssemblyName>TradNewSystem</AssemblyName>
+    <ProjectTypeGuids>{68B1623D-7FB9-47D8-8664-7ECEA3297D4F};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <MyType>WindowsForms</MyType>
+    <DeployDirSuffix>TradNewSystem</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>$(PlatformFamilyName)=TRUE</DefineConstants>
+    <DocumentationFile>TradNewSystem.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>$(PlatformFamilyName)=TRUE</DefineConstants>
+    <DocumentationFile>TradNewSystem.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DapperLite.NETCF35, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\DapperLite.NETCF35.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridCustomColumns, Version=1.0.6122.40333, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataGridCustomColumns\bin\Debug\DataGridCustomColumns.dll</HintPath>
+    </Reference>
+    <Reference Include="DNWA.BHT1400CL, Version=3.5.0.0, Culture=neutral, PublicKeyToken=c72c1c62f24aba62, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\DNWA.BHT1400CL.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.CF, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\MySql.Data.CF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.96.0, Culture=neutral, PublicKeyToken=1fdb50b1b62b4c84, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Sushi Tei\Sushi-Tei_WMS\Sushi-Tei_WMS\bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControllerView\IdTagClassification\IdTagClassification.Designer.vb">
+      <DependentUpon>IdTagClassification.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\IdTagClassification\IdTagClassification.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\IdTagIntegration\IdTagIntegration.Designer.vb">
+      <DependentUpon>IdTagIntegration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\IdTagIntegration\IdTagIntegration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\MessageBox\MessageBoxConfirmation.Designer.vb">
+      <DependentUpon>MessageBoxConfirmation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\MessageBox\MessageBoxConfirmation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\MessageBox\MessageBoxError.Designer.vb">
+      <DependentUpon>MessageBoxError.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\MessageBox\MessageBoxError.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\MessageBox\MessageBoxInfo.Designer.vb">
+      <DependentUpon>MessageBoxInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\MessageBox\MessageBoxInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\OfflineStocktake\OfflineStocktake.Designer.vb">
+      <DependentUpon>OfflineStocktake.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\OfflineStocktake\OfflineStocktake.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\OfflineStocktake\OfflineStocktakeDuplicateBarcodes.Designer.vb">
+      <DependentUpon>OfflineStocktakeDuplicateBarcodes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\OfflineStocktake\OfflineStocktakeDuplicateBarcodes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\ProductModification\ProductModScan.Designer.vb">
+      <DependentUpon>ProductModScan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\ProductModification\ProductModScan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\Shipment\ShipmentDuplicateBarcodes.Designer.vb">
+      <DependentUpon>ShipmentDuplicateBarcodes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\Shipment\ShipmentDuplicateBarcodes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\Shipment\ShipmentFilter.Designer.vb">
+      <DependentUpon>ShipmentFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\Shipment\ShipmentFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\Shipment\ShipmentList.Designer.vb">
+      <DependentUpon>ShipmentList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\Shipment\ShipmentList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\Shipment\ShipmentScan.Designer.vb">
+      <DependentUpon>ShipmentScan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\Shipment\ShipmentScan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\Stocktake\StocktakeDuplicateBarcodes.Designer.vb">
+      <DependentUpon>StocktakeDuplicateBarcodes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\Stocktake\StocktakeDuplicateBarcodes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\Stocktake\StocktakeFilter.Designer.vb">
+      <DependentUpon>StocktakeFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\Stocktake\StocktakeFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\Stocktake\StocktakeList.Designer.vb">
+      <DependentUpon>StocktakeList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\Stocktake\StocktakeList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllerView\Stocktake\StocktakeScan.Designer.vb">
+      <DependentUpon>StocktakeScan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControllerView\Stocktake\StocktakeScan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\ScanValidator.vb" />
+    <Compile Include="Helpers\FinalQrCodeValues.vb" />
+    <Compile Include="Helpers\Sha1Generator.vb" />
+    <Compile Include="Model\SqliteControllerDB.vb" />
+    <Compile Include="Helpers\TemporaryData.vb" />
+    <Compile Include="Model\BusinessDayDB.vb" />
+    <Compile Include="Model\ProductionActClassificationDB.vb" />
+    <Compile Include="Model\ProductionActIntegrationDB.vb" />
+    <Compile Include="Model\StockCardSummaryDB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\StocktakeDB.vb" />
+    <Compile Include="Model\StocktakeSummaryDB.vb" />
+    <Compile Include="Model\DeptMasterDB.vb" />
+    <Compile Include="Model\LineMasterDB.vb" />
+    <Compile Include="Model\ModPartMasterDB.vb" />
+    <Compile Include="Model\PartMasterDB.vb" />
+    <Compile Include="Model\ProductionPlanModDB.vb" />
+    <Compile Include="Model\QueryRetValue.vb" />
+    <Compile Include="Model\CustomerMasterDB.vb" />
+    <Compile Include="Model\StockCardDB.vb" />
+    <Compile Include="Model\ShipmentActDB.vb" />
+    <Compile Include="Model\ProductionActDB.vb" />
+    <Compile Include="Model\UserMasterDB.vb" />
+    <Compile Include="Helpers\ConfigMgr.vb" />
+    <Compile Include="AppConfig.Designer.vb">
+      <DependentUpon>AppConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helpers\BHTController.vb" />
+    <Compile Include="Helpers\CommonLib.vb" />
+    <Compile Include="Helpers\DisplayMessage.vb" />
+    <Compile Include="Helpers\ToggleTaskbar.vb" />
+    <Compile Include="Model\ShipmentPlanDB.vb" />
+    <Compile Include="Model\ShipmentSummaryDB.vb" />
+    <Compile Include="NowLoading.Designer.vb">
+      <DependentUpon>NowLoading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NowLoading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PocoClass\ProductionActClassification.vb" />
+    <Compile Include="PocoClass\ProductionActIntegration.vb" />
+    <Compile Include="PocoClass\SqliteController.vb" />
+    <Compile Include="PocoClass\StockCardSummary.vb" />
+    <Compile Include="PocoClass\StocktakeSummary.vb" />
+    <Compile Include="PocoClass\Stocktake.vb" />
+    <Compile Include="PocoClass\CustomerMaster.vb" />
+    <Compile Include="PocoClass\DeptMaster.vb" />
+    <Compile Include="PocoClass\LineMaster.vb" />
+    <Compile Include="PocoClass\ModPartMaster.vb" />
+    <Compile Include="PocoClass\ProductionAct.vb" />
+    <Compile Include="PocoClass\ProductionPlanMod.vb" />
+    <Compile Include="PocoClass\StockCard.vb" />
+    <Compile Include="PocoClass\PartMaster.vb" />
+    <Compile Include="PocoClass\ShipmentAct.vb" />
+    <Compile Include="PocoClass\UserMaster.vb" />
+    <Compile Include="LoginMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginMenu.Designer.vb">
+      <DependentUpon>LoginMenu.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.Designer.vb">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PocoClass\ShipmentPlan.vb" />
+    <Compile Include="PocoClass\ShipmentSummary.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ControllerView\IdTagClassification\IdTagClassification.resx">
+      <DependentUpon>IdTagClassification.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\IdTagIntegration\IdTagIntegration.resx">
+      <DependentUpon>IdTagIntegration.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\MessageBox\MessageBoxConfirmation.resx">
+      <DependentUpon>MessageBoxConfirmation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\MessageBox\MessageBoxError.resx">
+      <DependentUpon>MessageBoxError.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\MessageBox\MessageBoxInfo.resx">
+      <DependentUpon>MessageBoxInfo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\OfflineStocktake\OfflineStocktake.resx">
+      <DependentUpon>OfflineStocktake.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\OfflineStocktake\OfflineStocktakeDuplicateBarcodes.resx">
+      <DependentUpon>OfflineStocktakeDuplicateBarcodes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\ProductModification\ProductModScan.resx">
+      <DependentUpon>ProductModScan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\Shipment\ShipmentDuplicateBarcodes.resx">
+      <DependentUpon>ShipmentDuplicateBarcodes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\Shipment\ShipmentFilter.resx">
+      <DependentUpon>ShipmentFilter.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\Shipment\ShipmentList.resx">
+      <DependentUpon>ShipmentList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\Shipment\ShipmentScan.resx">
+      <DependentUpon>ShipmentScan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\Stocktake\StocktakeDuplicateBarcodes.resx">
+      <DependentUpon>StocktakeDuplicateBarcodes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\Stocktake\StocktakeFilter.resx">
+      <DependentUpon>StocktakeFilter.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\Stocktake\StocktakeList.resx">
+      <DependentUpon>StocktakeList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllerView\Stocktake\StocktakeScan.resx">
+      <DependentUpon>StocktakeScan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppConfig.resx">
+      <DependentUpon>AppConfig.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginMenu.resx">
+      <DependentUpon>LoginMenu.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NowLoading.resx">
+      <DependentUpon>NowLoading.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{F184B08F-C81C-45F6-A57F-5ABD9991F28F}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

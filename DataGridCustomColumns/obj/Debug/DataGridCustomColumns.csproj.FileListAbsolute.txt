@@ -1,0 +1,5 @@
+D:\TRAD\New Repo\DataGridCustomColumns\bin\Debug\DataGridCustomColumns.dll
+D:\TRAD\New Repo\DataGridCustomColumns\bin\Debug\DataGridCustomColumns.pdb
+D:\TRAD\New Repo\DataGridCustomColumns\obj\Debug\ResolveAssemblyReference.cache
+D:\TRAD\New Repo\DataGridCustomColumns\obj\Debug\DataGridCustomColumns.dll
+D:\TRAD\New Repo\DataGridCustomColumns\obj\Debug\DataGridCustomColumns.pdb

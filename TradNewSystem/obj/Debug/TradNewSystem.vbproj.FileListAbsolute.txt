@@ -1,0 +1,587 @@
+D:\TRAD\adri\TRAD new system\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\TRAD\adri\TRAD new system\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\TRAD\adri\TRAD new system\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\TRAD\adri\TRAD new system\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\TRAD\adri\TRAD new system\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\TRAD\adri\TRAD new system\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\TRAD\adri\TRAD new system\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\TRAD\adri\TRAD new system\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\TRAD\adri\TRAD new system\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\TRAD\adri\TRAD new system\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\TRAD\adri\TRAD new system\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\TRAD\New Repo\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\TRAD\New Repo\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\TRAD\New Repo\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\TRAD\New Repo\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\TRAD\New Repo\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\TRAD\New Repo\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\TRAD\New Repo\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\TRAD\New Repo\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\TRAD\New Repo\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\TRAD\New Repo\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\TRAD\New Repo\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\New Repo\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\TRAD Test [20170331]\Ver 9.d - Trial\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.d\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.e\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.f\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.g\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.h\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.i\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.j\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.k\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 2\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 3\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.k - 4\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\System.Data.SQLite.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\Office\Project\TRAD\Source\HT\Ver 9.l\TradNewSystem\obj\Debug\TradNewSystem.pdb
