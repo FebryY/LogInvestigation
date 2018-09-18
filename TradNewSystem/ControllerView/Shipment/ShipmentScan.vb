@@ -14,6 +14,7 @@ Imports TradNewSystem.Model
 Imports TradNewSystem.PocoClass
 Imports MySql.Data.MySqlClient
 Imports System.Net
+Imports log4net
 
 
 Public Class ShipmentScan
@@ -605,6 +606,8 @@ Public Class ShipmentScan
 #End Region
 
     Private Sub SaveScannedData()
+        log4net.Config.XmlConfigurator.Configure()
+        Dim log As ILog = LogManager.GetLogger("TRADLogger")
         If _scannedBarcodes.Count > 0 Then
             Dim confirm As Boolean = ResetScannerAndShowConfirmationMessage( _
                 "Save Data Yang Telah Di Scan ke Database?", _
@@ -614,12 +617,23 @@ Public Class ShipmentScan
             If confirm = True Then
                 Try
                     If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
+                        log.Info("Start Info WifiConectionCheck Signal Distance Shipment Scan method SaveScannedData")
+                        log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                            "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                        log.Info("End Info WifiConectionCheck Signal Distance Shipment Scan method SaveScannedData")
+
                         ResetScannerAndShowErrorMessage("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                             "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                         Exit Sub
                     End If
                 Catch ex As Exception
+                    log.Error("Start Error WifiConectionCheck Shipment Scan method SaveScannedData")
                     If Err.Number = 5 Then
+                        log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                    "Tunggu beberapa detik dan ulangi lagi.")
+                        log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                        log.Error("End Error WifiConectionCheck Shipment Filter")
+
                         ResetScannerAndShowErrorMessage("Koneksi Wifi di HT tertutup." & vbCrLf & _
                             "Tunggu beberapa detik dan ulangi lagi.", "Error")
                         Dim MyRf As RF
@@ -628,7 +642,10 @@ Public Class ShipmentScan
                         MyRf.Open = True
                         Exit Sub
                     End If
+                    log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                    log.Error("End Error WifiConectionCheck Shipment Scan method SaveScannedData")
                 End Try
+                LogManager.Shutdown()
 
                 'Add 9j
                 Dim ErrMsg As String = ""
@@ -946,14 +963,27 @@ Public Class ShipmentScan
         ByVal e As EventArgs _
         ) Handles myScanner.OnDone
         textBoxScannedTag.Focus()
+        log4net.Config.XmlConfigurator.Configure()
+        Dim log As ILog = LogManager.GetLogger("TRADLogger")
         Try
             If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
+                log.Info("Start Info WifiConectionCheck Signal Distance Shipment Scan method myScanner_OnDone")
+                log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                log.Info("End Info WifiConectionCheck Signal Distance Shipment Scan method myScanner_OnDone")
+
                 DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                     "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                 Exit Sub
             End If
         Catch ex As Exception
+            log.Error("Start Error WifiConectionCheck Shipment Scan method myScanner_OnDone")
             If Err.Number = 5 Then
+                log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                    "Tunggu beberapa detik dan ulangi lagi.")
+                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                log.Error("End Error WifiConectionCheck Shipment Filter")
+
                 DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                     "Tunggu beberapa detik dan ulangi lagi.", "Error")
                 Dim MyRf As RF
@@ -962,7 +992,10 @@ Public Class ShipmentScan
                 MyRf.Open = True
                 Exit Sub
             End If
+            log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+            log.Error("End Error WifiConectionCheck Shipment Scan method myScanner_OnDone")
         End Try
+        LogManager.Shutdown()
 
         'Dim obj_TempScanDate As Date = Date.Now
 
