@@ -645,7 +645,6 @@ Public Class ShipmentScan
                     log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
                     log.Error("End Error WifiConectionCheck Shipment Scan method SaveScannedData")
                 End Try
-                LogManager.Shutdown()
 
                 'Add 9j
                 Dim ErrMsg As String = ""
@@ -694,6 +693,7 @@ Public Class ShipmentScan
                 "Error" _
                 )
         End If
+        LogManager.Shutdown()
     End Sub
 
     Private Sub CloseWindow()

@@ -23,14 +23,14 @@ Public Class LoginMenu
         ) Handles MyBase.Load
         ToggleTaskbar.Show(False)
         ' Sample implement log4net
-        log4net.Config.XmlConfigurator.Configure()
-        Dim log As ILog = LogManager.GetLogger("TRADLogger")
+        'log4net.Config.XmlConfigurator.Configure()
+        'Dim log As ILog = LogManager.GetLogger("TRLogger")
 
-        If log.IsInfoEnabled Then
-            log.Info("Application [ConsoleApp] Start")
-        End If
+        'If log.IsInfoEnabled Then
+        '    log.Info("Application [ConsoleApp] Start")
+        'End If
 
-        log.Error("TRAD")
+        'log.Error("TRAD")
         'Dim a As Integer
         'MsgBox(SysInfo.Settings.MachineNumber)
         Dim strEntry As String = ""
@@ -207,15 +207,34 @@ Public Class LoginMenu
     End Sub
 
     Private Sub ValidateUserLogin()
+
+        log4net.Config.XmlConfigurator.Configure()
+        Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
         If isInputtedUserValid() And isInputtedPasswordValid() Then
             Try
                 If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
+
+                    log.Info("Start Info WifiConectionCheck Signal Distance Login Menu method ValidateUserLogin")
+                    log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                        "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                    log.Info("End Info WifiConectionCheck Signal Distance Login Menu method ValidateUserLogin")
+
                     DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                         "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                     Exit Sub
                 End If
             Catch ex As Exception
+
+                log.Error("Start Error WifiConectionCheck Login Menu method ValidateUserLogin")
+
                 If Err.Number = 5 Then
+
+                    log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                    "Tunggu beberapa detik dan ulangi lagi.")
+                    log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                    log.Error("End Error WifiConectionCheck Login Menu ")
+
                     DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                         "Tunggu beberapa detik dan ulangi lagi.", "Error")
                     Dim MyRf As RF
@@ -225,7 +244,13 @@ Public Class LoginMenu
                     MyRf.Open = True
                     Exit Sub
                 End If
+
+                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                log.Error("End Error WifiConectionCheck Login Menu method ValidateUserLogin")
+
             End Try
+
+            LogManager.Shutdown()
 
             HideAllErrorMessages()
 
