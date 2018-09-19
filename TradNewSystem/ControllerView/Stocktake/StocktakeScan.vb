@@ -14,6 +14,7 @@ Imports TradNewSystem.PocoClass
 Imports log4net
 
 
+
 Public Class StocktakeScan
     Protected Friend nowLoadingWindow As NowLoading
 
@@ -422,6 +423,7 @@ Public Class StocktakeScan
                 'Check Connection Wifi
                 Try
                     If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
+
                         log.Info("Start Info WifiConectionCheck Signal Distance Stocktake Scan method SaveScannedData")
                         log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                             "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
@@ -432,12 +434,14 @@ Public Class StocktakeScan
                         Exit Sub
                     End If
                 Catch ex As Exception
+
                     log.Error("Start Error WifiConectionCheck Stocktake Scan method SaveScannedData")
 
                     If Err.Number = 5 Then
                         log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
                     "Tunggu beberapa detik dan ulangi lagi.")
                         log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+
                         log.Error("End Error WifiConectionCheck Stocktake Scan")
 
                         ResetScannerAndShowErrorMessage("Koneksi Wifi di HT tertutup." & vbCrLf & _
@@ -448,6 +452,7 @@ Public Class StocktakeScan
                         MyRf.Open = True
                         Exit Sub
                     End If
+
 
                     log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
                     log.Error("End Error WifiConectionCheck Stocktake Scan method SaveScannedData")
@@ -475,6 +480,7 @@ Public Class StocktakeScan
                 "Error" _
                 )
         End If
+        LogManager.Shutdown()
     End Sub
 
     Private Sub CloseWindow()
@@ -609,6 +615,7 @@ Public Class StocktakeScan
         ) Handles myScanner.OnDone
         textBoxScanTag.Focus()
 
+
         log4net.Config.XmlConfigurator.Configure()
         Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
@@ -628,6 +635,7 @@ Public Class StocktakeScan
             End If
         Catch ex As Exception
 
+
             log.Error("Start Error WifiConectionCheck Stocktake Scan method myScanner_OnDone")
 
             If Err.Number = 5 Then
@@ -636,6 +644,7 @@ Public Class StocktakeScan
                 log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
                     "Tunggu beberapa detik dan ulangi lagi.")
                 log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+
                 log.Error("End Error WifiConectionCheck Stocktake Scan")
 
 
@@ -647,6 +656,7 @@ Public Class StocktakeScan
                 MyRf.Open = True
                 Exit Sub
             End If
+
 
             log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
             log.Error("End Error WifiConectionCheck Stocktake Scan method myScanner_OnDone")

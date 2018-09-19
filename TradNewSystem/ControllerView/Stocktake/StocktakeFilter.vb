@@ -5,6 +5,7 @@ Imports TradNewSystem.Helpers
 Imports TradNewSystem.Model
 Imports TradNewSystem.PocoClass
 Imports DNWA.BHTCL
+Imports log4net
 
 Public Class StocktakeFilter
     Protected Friend nowLoadingWindow As NowLoading
@@ -38,7 +39,16 @@ Public Class StocktakeFilter
         DateTimePicker1.CustomFormat = "dd/MM/yyyy"
 
         DateTimePicker1.Value = Today
+
+        log4net.Config.XmlConfigurator.Configure()
+        Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
         If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
+            log.Info("Start Info WifiConectionCheck Signal Distance Stock Take method StocktakeFilter_Load")
+            log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+            log.Info("End Info WifiConectionCheck Signal Distance Stock Take method StocktakeFilter_Load")
+
             DisplayMessage.ErrorMsg( _
             "Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
             "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", _
@@ -46,6 +56,8 @@ Public Class StocktakeFilter
             )
             Exit Sub
         End If
+        LogManager.Shutdown()
+
         LoadDivisionDataToComboBox()
     End Sub
 
