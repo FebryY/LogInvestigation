@@ -10,6 +10,8 @@ Imports TradNewSystem.Helpers
 Imports TradNewSystem.PocoClass
 Imports System.Net
 
+Imports log4net
+
 
 Namespace Model
     Public Enum ShipmentActValues
@@ -35,6 +37,17 @@ Namespace Model
             ) As Integer
             Dim shipAct As ShipmentAct = Nothing
             Dim actId As Integer = -1
+
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+            If log.IsInfoEnabled Then
+                log.Info("Application [ConsoleApp] Start")
+            End If
+
+            log.Error("TRADGetActIdOfDeletedData")
+
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
@@ -71,6 +84,15 @@ Namespace Model
             ) As Boolean
             Dim shipAct As ShipmentAct = Nothing
 
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+            If log.IsInfoEnabled Then
+                log.Info("Application [ConsoleApp] Start")
+            End If
+
+            log.Error("TRADIsBarcodeTagExist")
+
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
@@ -101,6 +123,15 @@ Namespace Model
             ByVal barcodeTags As List(Of String) _
             ) As List(Of ShipmentAct)
             Dim shipActs As List(Of ShipmentAct) = Nothing
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+            If log.IsInfoEnabled Then
+                log.Info("Application [ConsoleApp] Start")
+            End If
+
+            log.Error("TRADGetBarcodeTagsAndActQty")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
@@ -137,6 +168,15 @@ Namespace Model
             ByVal SID As String _
             ) As Integer
             Dim QtyActy As Integer = 0
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+            If log.IsInfoEnabled Then
+                log.Info("Application [ConsoleApp] Start")
+            End If
+
+            log.Error("TRADGetSummarySIDAndActQty")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
@@ -175,6 +215,16 @@ Namespace Model
             'Using connection As IDbConnection = New MySqlConnection( _
             '    CommonLib.GenerateConnectionString _
             '    )
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+            If log.IsInfoEnabled Then
+                log.Info("Application [ConsoleApp] Start")
+            End If
+
+            log.Error("TRADInsertData")
+
             Try
                 transaction = connection.BeginTransaction()
 
@@ -302,6 +352,15 @@ Namespace Model
             '    )
             '    Dim transaction As IDbTransaction = Nothing
 
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+            If log.IsInfoEnabled Then
+                log.Info("Application [ConsoleApp] Start")
+            End If
+
+            log.Error("TRADUpdateData")
+
             Try
                 connection.Open()
                 transaction = connection.BeginTransaction
@@ -372,6 +431,15 @@ Namespace Model
                 actIds.[Select](Function(x) x.ToString()).ToArray() _
                 )
 
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+            If log.IsInfoEnabled Then
+                log.Info("Application [ConsoleApp] Start")
+            End If
+
+            log.Error("TRADDeleteData")
+
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
@@ -410,6 +478,15 @@ Namespace Model
             Dim shipAct As ShipmentAct = Nothing
             Dim bool_Res As Boolean = False
 
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+            If log.IsInfoEnabled Then
+                log.Info("Application [ConsoleApp] Start")
+            End If
+
+            log.Error("TRADfncCheckSID")
+
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
@@ -440,6 +517,15 @@ Namespace Model
             ByVal shipActDataCollection As List(Of String()), _
             ByRef exceptionMsg As String _
             ) As Boolean
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+            If log.IsInfoEnabled Then
+                log.Info("Application [ConsoleApp] Start")
+            End If
+
+            log.Error("TRADfncInsertStockTakeTemp")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _

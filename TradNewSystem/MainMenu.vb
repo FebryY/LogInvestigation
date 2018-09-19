@@ -5,6 +5,7 @@ Imports TradNewSystem.Helpers
 Imports TradNewSystem.Model
 Imports DNWA.BHTCL
 
+Imports log4net
 Public Class MainMenu
     Protected Friend nowLoadingWindow As NowLoading
 
@@ -185,6 +186,20 @@ Public Class MainMenu
         nowLoadingWindow = New NowLoading
         nowLoadingWindow.Show()
 
+        ' Sample implement log4net
+        'log4net.Config.XmlConfigurator.Configure()
+        'Dim log As ILog = LogManager.GetLogger("TRLogger")
+
+        'If log.IsInfoEnabled Then
+        '    log.Info("Application [ConsoleApp] Start")
+        'End If
+
+        'log.Error("TRADshipment")
+        'Dim a As Integer
+        'MsgBox(SysInfo.Settings.MachineNumber)
+        Dim strEntry As String = ""
+        Dim strMultiSzValue As String() = {}
+
         Dim shipmentFilterWindow As New ShipmentFilter(Me)
 
         shipmentFilterWindow.ShowDialog()
@@ -309,14 +324,34 @@ Public Class MainMenu
     End Sub
 
     Function WifiConectionCheck() As Boolean
+
+        log4net.Config.XmlConfigurator.Configure()
+        Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
         Try
             If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
+
+                log.Info("Start Info WifiConectionCheck Signal Distance Main Menu method WifiConectionCheck")
+                log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                log.Info("End Info WifiConectionCheck Signal Distance Main Menu method WifiConectionCheck")
+
+
                 DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                     "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                 Return False
             End If
         Catch ex As Exception
+
+            log.Error("Start Error WifiConectionCheck Main Menu method WifiConectionCheck")
+
             If Err.Number = 5 Then
+
+                log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                   "Tunggu beberapa detik dan ulangi lagi.")
+                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                log.Error("End Error WifiConectionCheck Main Menu")
+
                 DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                     "Tunggu beberapa detik dan ulangi lagi.", "Error")
                 Dim MyRf As RF
@@ -325,7 +360,14 @@ Public Class MainMenu
                 MyRf.Open = True
                 Return False
             End If
+
+            log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+            log.Error("End Error WifiConectionCheck Main Menu method WifiConectionCheck")
+
         End Try
+
+        LogManager.Shutdown()
+
         Return True
     End Function
 End Class
