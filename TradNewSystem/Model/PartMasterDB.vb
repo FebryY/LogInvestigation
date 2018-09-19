@@ -4,6 +4,8 @@ Imports MySql.Data.MySqlClient
 
 Imports TradNewSystem.Helpers
 Imports TradNewSystem.PocoClass
+Imports log4net
+
 
 Namespace Model
     Module PartMasterDB
@@ -12,24 +14,40 @@ Namespace Model
 
             Dim ret_TRIN As QueryRetValue = QueryRetValue.ValueFalse
 
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Try
                 Using connection As IDbConnection = New MySqlConnection(CommonLib.GenerateConnectionString)
+                    log.Info("fncCheckTRIMPartNoMaster, Open connection")
+
                     connection.Open()
+
+                    log.Info("fncCheckTRIMPartNoMaster, Open connection success")
 
                     Dim sqlString As String = "SELECT TRINPARTNO FROM PARTMASTER WHERE TRINPARTNO=@TRINPARTNO"
 
+                    log.Info("fncCheckTRIMPartNoMaster SQL string: " & sqlString)
+
                     partMaster = connection.Query(Of PartMaster)(sqlString, New With {Key .TRINPARTNO = str_TRIN}).FirstOrDefault
+
                 End Using
             Catch ex As Exception
                 ret_TRIN = QueryRetValue.ValueError
+                log.Error("fncCheckTRIMPartNoMaster DB Error", ex)
+
                 DisplayMessage.ErrorMsg(ex.Message, "DB Error")
             End Try
+
 
             If Not partMaster Is Nothing Then
                 ret_TRIN = QueryRetValue.ValueTrue
             Else
                 ret_TRIN = QueryRetValue.ValueFalse
             End If
+
+            log.Info("fncCheckTRIMPartNoMaster result " & ret_TRIN.ToString())
+            LogManager.Shutdown()
 
             Return ret_TRIN
         End Function
