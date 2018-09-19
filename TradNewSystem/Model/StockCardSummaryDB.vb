@@ -9,6 +9,8 @@ Imports MySql.Data.MySqlClient
 Imports TradNewSystem.Helpers
 Imports TradNewSystem.PocoClass
 
+Imports log4net
+
 
 Namespace Model
     Module StockCardSummaryDB
@@ -16,13 +18,22 @@ Namespace Model
             ByVal barcodeTag As String, _
             ByRef exceptionMsg As String _
             ) As Integer
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim stockCardSummary As StockCardSummary = Nothing
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
+                    log.Info("GetStockBalanceQty, Open Connection")
+
                     connection.Open()
+
+                    log.Info("GetStockBalanceQty, Open Connection success")
+
 
                     Dim sqlString As String = _
                         "SELECT BARCODETAG, " & _
@@ -33,13 +44,21 @@ Namespace Model
                             "AND DELFLAG = 0 " & _
                         "GROUP BY BARCODETAG"
 
+                    log.Info("GetStockBalanceQty SQL string: " & sqlString)
+
                     Dim parameter As Object = New With { _
                         Key .BARCODETAG = barcodeTag _
                         }
 
                     stockCardSummary = connection.Query(Of StockCardSummary) _
                             (sqlString, parameter).FirstOrDefault
+
+                    log.Info("GetStockBalanceQty result " & stockCardSummary.ToString())
+
                 Catch ex As Exception
+
+                    log.Error("GetStockBalanceQty DB Error ", ex)
+
                     exceptionMsg = ex.Message
                     Return -99999
                 End Try
@@ -60,13 +79,21 @@ Namespace Model
             ByRef exceptionMsg As String _
             ) As Integer
             'Dim stockCardSummary As StockCardSummary = Nothing
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim CountOfData As Integer = 0
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
+                    log.Info("CheckDeletedData, Open Connection")
+
                     connection.Open()
+
+                    log.Info("CheckDeletedData, Open Connection success")
 
                     Dim sqlString As String = _
                     "Select CAST(Count(*) AS UNSIGNED INTEGER) TotalQty  from( " & _
@@ -81,13 +108,21 @@ Namespace Model
                 "on a.Barcodetag=b.Barcodetag1 " & _
                 ")Where Barcodetag= '" & barcodeTag & "' "
 
+                    log.Info("CheckDeletedData SQL string: " & sqlString)
+
                     'Dim parameter As Object = New With { _
                     '    Key .BARCODETAG = barcodeTag _
                     '    }
 
                     CountOfData = CInt(connection.Query(Of ULong) _
                             (sqlString).FirstOrDefault)
+
+                    log.Info("CheckDeletedData result " & CountOfData.ToString())
+
                 Catch ex As Exception
+
+                    log.Error("CheckDeletedData DB Error ", ex)
+
                     exceptionMsg = ex.Message
                     Return -1
                 End Try

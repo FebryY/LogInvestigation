@@ -10,6 +10,8 @@ Imports System.Data.SQLite
 Imports TradNewSystem.Helpers
 Imports TradNewSystem.PocoClass
 
+Imports log4net
+
 Namespace Model
     Module SqliteControllerDB
         Private str_File As String = "ScannedBarcodeTag.db"
@@ -19,24 +21,40 @@ Namespace Model
 #Region "Function"
         Public Function fncGetDatatable(ByVal sql_Query As String) As DataTable
             Dim dt_TempData As DataTable = New DataTable
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Try
                 Dim sqlLite_Conn As New SQLiteConnection(str_DbConn)
 
+                log.Info("fncGetDatatable, Open Connection")
+
                 sqlLite_Conn.Open()
+
+                log.Info("fncGetDatatable, Open Connection success")
+
 
                 Dim sqlLite_Comm As New SQLiteCommand(sqlLite_Conn)
 
                 sqlLite_Comm.CommandText = sql_Query
 
+                log.Info("fncGetDatatable SQL string: " & sql_Query)
+
                 Dim sqlLite_DataReader As SQLiteDataReader = sqlLite_Comm.ExecuteReader
 
                 dt_TempData.Load(sqlLite_DataReader)
+
+                log.Info("fncGetDatatable result " & sqlLite_DataReader.ToString())
 
                 sqlLite_DataReader.Close()
 
                 sqlLite_Conn.Close()
 
             Catch ex As Exception
+
+                log.Error("fncGetDatatable DB Error ", ex)
+
                 DisplayMessage.ErrorMsg(ex.ToString, "Error")
             End Try
 
@@ -44,9 +62,17 @@ Namespace Model
         End Function
 
         Public Function fncExecuteNonQuery(ByVal sql_Query As String) As Integer
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim sqlLite_Conn As New SQLiteConnection(str_DbConn)
 
+            log.Info("fncExecuteNonQuery, Open Connection")
+
             sqlLite_Conn.Open()
+
+            log.Info("fncExecuteNonQuery, Open Connection success")
 
             Dim sqlLite_Comm As New SQLiteCommand(sqlLite_Conn)
 
@@ -54,22 +80,36 @@ Namespace Model
 
             Dim int_RowsAffected As Integer = sqlLite_Comm.ExecuteNonQuery
 
+            log.Info("fncExecuteNonQuery result " & int_RowsAffected.ToString())
+
             sqlLite_Conn.Close()
 
             Return int_RowsAffected
         End Function
 
         Public Function fncExecuteScalar(ByVal sql_Query As String) As String
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim str_Res As String = String.Empty
             Dim sqlLite_Conn As New SQLiteConnection(str_DbConn)
 
+            log.Info("fncExecuteScalar, Open Connection")
+
             sqlLite_Conn.Open()
+
+            log.Info("fncExecuteScalar, Open Connection success")
 
             Dim sqlLite_Comm As New SQLiteCommand(sqlLite_Conn)
 
             sqlLite_Comm.CommandText = sql_Query
 
+            log.Info("fncExecuteScalar SQL string: " & sql_Query)
+
             Dim obj_Value As Object = sqlLite_Comm.ExecuteScalar
+
+            log.Info("fncExecuteScalar result " & obj_Value.ToString())
 
             sqlLite_Conn.Close()
 
@@ -113,6 +153,8 @@ Namespace Model
         Public Function fncInsert(ByVal str_TableName As String, _
                                   ByVal obj_DictData As Dictionary(Of String, String) _
                                   ) As Boolean
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Dim bool_RetVal As Boolean = True
             Dim str_TblColumn As String = String.Empty
@@ -134,6 +176,9 @@ Namespace Model
                                                                   ) _
                                                     )
             Catch ex As Exception
+
+                log.Error("fncInsert sqlite Controller DB Error ", ex)
+
                 DisplayMessage.ErrorMsg(String.Concat("Temp Data failed to save, ", ex.ToString), "Error")
                 bool_RetVal = False
             End Try
@@ -145,6 +190,9 @@ Namespace Model
                                   ByVal str_Where As String _
                                   ) As Boolean
 
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim bool_RetVal As Boolean = True
 
             Try
@@ -153,6 +201,9 @@ Namespace Model
                                                                   str_Where) _
                                                     )
             Catch ex As Exception
+
+                log.Error("fncDelete sqlite Controller DB Error ", ex)
+
                 DisplayMessage.ErrorMsg(String.Concat("Failed to erase Temp Data, ", ex.ToString), "Error")
                 bool_RetVal = False
             End Try

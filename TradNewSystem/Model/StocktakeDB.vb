@@ -9,6 +9,7 @@ Imports MySql.Data.MySqlClient
 Imports TradNewSystem.Helpers
 Imports TradNewSystem.PocoClass
 
+Imports log4net
 
 Namespace Model
     Public Enum StocktakeValues
@@ -23,13 +24,22 @@ Namespace Model
         Public Function GetLatestStocktakePeriod( _
             ByRef exceptionMsg As String _
             ) As DateTime
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim stocktakePeriod As DateTime = Nothing
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
+                    log.Info("GetLatestStocktakePeriod, Open Connection")
+
                     connection.Open()
+
+                    log.Info("GetLatestStocktakePeriod, Open Connection success")
+
 
                     Dim sqlString As String = ( _
                         "SELECT DISTINCT MAX(STOCKTAKEPERIOD) " & _
@@ -38,9 +48,16 @@ Namespace Model
                             "AND DELFLAG = 0" _
                         )
 
+                    log.Info("GetLatestStocktakePeriod SQL string: " & sqlString)
+
                     stocktakePeriod = connection.Query(Of DateTime) _
                         (sqlString).DefaultIfEmpty(Nothing).FirstOrDefault
+
+                    log.Info("GetLatestStocktakePeriod result " & stocktakePeriod.ToString())
+
                 Catch ex As Exception
+                    log.Error("GetLatestStocktakePeriod DB Error ", ex)
+
                     exceptionMsg = ex.Message
                 End Try
             End Using
@@ -52,13 +69,21 @@ Namespace Model
             ByVal trinPartNo As String, _
             ByVal stocktakePeriod As Date _
             ) As Int64
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim barcodeCount As Int64 = 0
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
+                    log.Info("GetScannedBarcodeCount, Open Connection")
+
                     connection.Open()
+
+                    log.Info("GetScannedBarcodeCount, Open Connection success")
 
                     Dim sqlString As String = ( _
                         "SELECT COUNT(*) " & _
@@ -71,6 +96,8 @@ Namespace Model
                             "AND DELFLAG = 0" _
                         )
 
+                    log.Info("GetScannedBarcodeCount SQL string: " & sqlString)
+
                     Dim parameters As Object = New With { _
                         Key .TRINPARTNO = trinPartNo, _
                         .YEAR = stocktakePeriod.Year.ToString(), _
@@ -80,7 +107,12 @@ Namespace Model
                     barcodeCount = connection.Query(Of Int64) _
                         (sqlString, parameters).DefaultIfEmpty(0). _
                             FirstOrDefault
+
+                    log.Info("GetScannedBarcodeCount result " & barcodeCount.ToString())
+
                 Catch ex As Exception
+                    log.Error("GetScannedBarcodeCount DB Error ", ex)
+
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
@@ -93,14 +125,21 @@ Namespace Model
             ByVal stocktakePeriod As Date, _
             ByVal scannedBarcode As Boolean _
             ) As List(Of Stocktake)
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim stocktakes As List(Of Stocktake) = Nothing
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
+                    log.Info("GetBarcodesAndScannedQty, Open Connection")
 
                     connection.Open()
+
+                    log.Info("GetBarcodesAndScannedQty, Open Connection success")
 
                     Dim sqlString As String = ( _
                         "SELECT BARCODETAG, SCANNEDQTY " & _
@@ -114,8 +153,14 @@ Namespace Model
                     If scannedBarcode Then
                         sqlString &= "AND SCANNEDQTY > 0 "
                         sqlString &= "AND DELFLAG = 0"
+
+                        log.Info("GetBarcodesAndScannedQty SQL string: " & sqlString)
+
                     Else
                         sqlString &= "AND SCANNEDQTY = 0"
+
+                        log.Info("GetBarcodesAndScannedQty SQL string: " & sqlString)
+
                     End If
 
                     Dim mergedBarcodes As String = String.Join( _
@@ -133,7 +178,12 @@ Namespace Model
                             (sqlString, parameters),  _
                         List(Of Stocktake) _
                         )
+
+                    log.Info("GetBarcodesAndScannedQty result " & stocktakes.ToString())
+
                 Catch ex As Exception
+                    log.Error("GetBarcodesAndScannedQty DB Error ", ex)
+
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
@@ -145,6 +195,10 @@ Namespace Model
             ByVal barcodeTag As String, _
             ByVal stocktakePeriod As Date _
             ) As QueryRetValue
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim stocktake As Stocktake = Nothing
             Dim retValue As QueryRetValue = QueryRetValue.ValueNil
 
@@ -152,7 +206,11 @@ Namespace Model
                 CommonLib.GenerateConnectionString _
                 )
                 Try
+                    log.Info("IsRegistered, Open Connection")
+
                     connection.Open()
+
+                    log.Info("IsRegistered, Open Connection success")
 
                     Dim sqlString As String = ( _
                         "SELECT STOCKTAKEID " & _
@@ -163,6 +221,9 @@ Namespace Model
                             "AND FINISHTAKE = 0" _
                         )
 
+
+                    log.Info("IsRegistered SQL string: " & sqlString)
+
                     Dim parameters As Object = New With { _
                         Key .BARCODETAG = barcodeTag, _
                         .YEAR = stocktakePeriod.Year.ToString(), _
@@ -171,7 +232,13 @@ Namespace Model
 
                     stocktake = connection.Query(Of Stocktake) _
                         (sqlString, parameters).FirstOrDefault
+
+                    log.Info("IsRegistered result " & stocktake.ToString())
+
                 Catch ex As Exception
+
+                    log.Error("IsRegistered DB Error ", ex)
+
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                     retValue = QueryRetValue.ValueError
                 End Try
@@ -192,6 +259,10 @@ Namespace Model
             ByVal barcodeTag As String, _
             ByVal stocktakePeriod As Date _
             ) As Boolean
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim stocktake As Stocktake = Nothing
 
             Dim hasBeenSaved As Boolean = False
@@ -200,7 +271,11 @@ Namespace Model
                 CommonLib.GenerateConnectionString _
                 )
                 Try
+                    log.Info("HasBeenScannedAndSaved, Open Connection")
+
                     connection.Open()
+
+                    log.Info("HasBeenScannedAndSaved, Open Connection success")
 
                     Dim sqlString As String = ( _
                         "SELECT CURRENTSTOCK, SCANNEDQTY " & _
@@ -211,6 +286,9 @@ Namespace Model
                             "AND FINISHTAKE = 0 " & _
                             "AND DELFLAG = 0" _
                         )
+
+                    log.Info("HasBeenScannedAndSaved SQL string: " & sqlString)
+
                     Dim parameters As Object = New With { _
                         Key .BARCODETAG = barcodeTag, _
                         .YEAR = stocktakePeriod.Year.ToString(), _
@@ -219,7 +297,13 @@ Namespace Model
 
                     stocktake = connection.Query(Of Stocktake) _
                         (sqlString, parameters).FirstOrDefault
+
+                    log.Info("HasBeenScannedAndSaved result " & stocktake.ToString())
+
                 Catch ex As Exception
+
+                    log.Error("HasBeenScannedAndSaved DB Error ", ex)
+
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
@@ -339,6 +423,10 @@ Namespace Model
            ByRef exceptionMsg As String, _
            Optional ByRef alreadyDelQty As Double = 0 _
            ) As Boolean
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             'Dim alreadyDelcount As Integer = 0
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
@@ -346,7 +434,11 @@ Namespace Model
                 Dim transaction As IDbTransaction = Nothing
 
                 Try
+                    log.Info("InsertData Stock Take, Open Connection")
+
                     connection.Open()
+
+                    log.Info("InsertData Stock Take, Open Connection success")
                     'transaction = connection.BeginTransaction(IsolationLevel.Serializable)
 
                     ' Skip inserting data if duplicate found
@@ -373,6 +465,9 @@ Namespace Model
                                 "AND FINISHTAKE = 0" & _
                         ") " & _
                         "LIMIT 1"
+
+                    log.Info("InsertData Stock Take SQL string: " & sqlString)
+
 
                     For Each stocktakeData As String() In stocktakeCollection
                         Dim stocktakeDateTime As String = ( _
@@ -444,6 +539,9 @@ Namespace Model
                     End If
                     'transaction.Commit()
                 Catch ex As MySqlException
+
+                    log.Error("InsertData Stock Take DB Error ", ex)
+
                     If Not transaction Is Nothing Then
                         'transaction.Rollback()
                     End If
@@ -467,6 +565,10 @@ Namespace Model
            ByRef exceptionMsg As String, _
            Optional ByRef alreadyDelQty As Double = 0 _
             ) As Boolean
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Dim alreadyBarcodetagAll As String = ""
 
             Using connection As IDbConnection = New MySqlConnection( _
@@ -477,8 +579,13 @@ Namespace Model
 
 
                 Try
+                    log.Info("UpdateData Stock Take, Open Connection")
+
                     connection.Open()
                     transaction = connection.BeginTransaction()
+
+                    log.Info("UpdateData Stock Take, Open Connection success")
+                    
 
                     Dim sqlString As String = ( _
                         "UPDATE STOCKTAKE " & _
@@ -492,6 +599,10 @@ Namespace Model
                             "AND MONTH(STOCKTAKEPERIOD) = @MONTH " & _
                             "AND FINISHTAKE = 0" _
                         )
+
+                    log.Info("UpdateData Stock Take SQL string: " & sqlString)
+
+
                     'Dim x As String = ""
                     For Each stocktakeData As String() In stocktakeCollection
                         Dim stocktakeDateTime As String = ( _
@@ -571,6 +682,9 @@ Namespace Model
 
                     transaction.Commit()
                 Catch ex As MySqlException
+
+                    log.Error("UpdateData Stock Take DB Error ", ex)
+
                     If Not transaction Is Nothing Then
                         'transaction.Rollback()
                     End If
@@ -591,14 +705,22 @@ Namespace Model
                 ByVal stocktakeCollection As List(Of String()), _
                 ByRef exceptionMsg As String _
                 ) As Boolean
+
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Dim transaction As IDbTransaction = Nothing
 
                 Try
+                    log.Info("DeleteData Stock Take, Open Connection")
+
                     connection.Open()
                     transaction = connection.BeginTransaction
+
+                    log.Info("DeleteData Stock Take, Open Connection success")
 
                     Dim sqlString As String = _
                         "DELETE FROM STOCKTAKE " & _
@@ -608,6 +730,8 @@ Namespace Model
                             "AND STOCKTAKEPERIOD=@STOCKTAKEPERIOD " & _
                             "AND TAKEDATETIME=@TAKEDATETIME " & _
                             "AND ADDCOLFLG = 1"
+
+                    log.Info("DeleteData Stock Take SQL string: " & sqlString)
 
                     For Each stocktakeData As String() In stocktakeCollection
                         Dim stocktakeDateTime As String = ( _
@@ -647,6 +771,9 @@ Namespace Model
 
                     transaction.Commit()
                 Catch ex As MySqlException
+
+                    log.Error("DeleteData Stock Take DB Error ", ex)
+
                     If Not transaction Is Nothing Then
                         transaction.Rollback()
                     End If

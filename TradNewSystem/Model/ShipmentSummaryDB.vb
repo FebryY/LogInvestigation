@@ -8,6 +8,8 @@ Imports MySql.Data.MySqlClient
 Imports TradNewSystem.Helpers
 Imports TradNewSystem.PocoClass
 
+Imports log4net
+
 Namespace Model
     Module ShipmentSummaryDB
         Public Function GetShipmentSummaries( _
@@ -18,11 +20,19 @@ Namespace Model
             ) As List(Of ShipmentSummary)
             Dim shipmentSummaries As List(Of ShipmentSummary) = Nothing
 
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+
+
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
+                    log.Info("GetShipmentSummaries, Open Connection")
+
                     connection.Open()
+
+                    log.Info("GetShipmentSummaries, Open Connection success")
 
                     ' INFO - SUM Function Works On Dapper Lite
                     '        MySQL SUM INT/DECIMAL return DECIMAL
@@ -85,26 +95,38 @@ Namespace Model
                             sqlString, subString0, _
                             "spl.CUSTOMERCODE like '%'" _
                             )
+
+                        log.Info("GetShipmentSummaries SQL string: " & sqlString)
+
                         shipmentSummaries = CType( _
                             connection.Query(Of ShipmentSummary)(sqlString),  _
                             List(Of ShipmentSummary) _
                             )
+                        log.Info("GetShipmentSummaries result " & shipmentSummaries.ToString())
                     Else
                         sqlString = String.Format( _
                             sqlString, subString0, _
                             "spl.CUSTOMERCODE = @CUSTOMERCODE" _
                             )
+                        log.Info("GetShipmentSummaries SQL string: " & sqlString)
 
                         Dim parameter As Object = ( _
                             New With {Key .CUSTOMERCODE = customerCode} _
                             )
+
                         shipmentSummaries = CType( _
                             connection.Query(Of ShipmentSummary) _
                                 (sqlString, parameter),  _
                             List(Of ShipmentSummary) _
                             )
+
+                        log.Info("GetShipmentSummaries result " & shipmentSummaries.ToString())
+
                     End If
                 Catch ex As Exception
+
+                    log.Error("GetShipmentSummaries DB Error ", ex)
+
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
