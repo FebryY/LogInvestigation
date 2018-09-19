@@ -12,6 +12,7 @@ Imports System.Data
 Imports DNWA.BHTCL
 Imports DataGridCustomColumns
 Imports MySql.Data.MySqlClient
+Imports log4net
 
 Public Class frm_IdTagIntegration
 
@@ -297,17 +298,30 @@ Public Class frm_IdTagIntegration
 #Region "Scanner Process"
     Private Sub myScanner_OnDone(ByVal sender As Object, ByVal e As System.EventArgs) Handles myScanner.OnDone
         Try
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
             Try
                 If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
                     BHTController.DisposeScanner(myScanner)
+                    log.Info("Start Info WifiConectionCheck Signal Distance Id Tag Integration : Scanner Process")
+                    log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                        "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                    log.Info("End Info WifiConectionCheck Signal Distance Id Tag Integration : Scanner Process")
+
                     DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                         "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                     BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                     Exit Sub
                 End If
             Catch ex As Exception
+                log.Error("Start Error WifiConectionCheck Id Tag Integration : Scanner Process")
                 If Err.Number = 5 Then
                     BHTController.DisposeScanner(myScanner)
+                    log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                    "Tunggu beberapa detik dan ulangi lagi.")
+                    log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                    log.Error("End Error WifiConectionCheck Id Tag Integration : Scanner Process")
+
                     DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                         "Tunggu beberapa detik dan ulangi lagi.", "Error")
                     Dim MyRf As RF
@@ -317,7 +331,10 @@ Public Class frm_IdTagIntegration
                     BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                     Exit Sub
                 End If
+                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                log.Error("End Error WifiConectionCheck Id Tag Integration : Scanner Process")
             End Try
+            LogManager.Shutdown()
 
             Dim scn_ScanCode = myScanner.Input(Scanner.ALL_BUFFER)
 
@@ -469,9 +486,16 @@ Public Class frm_IdTagIntegration
     End Sub
 
     Private Sub btn_Merge_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Merge.Click
+        log4net.Config.XmlConfigurator.Configure()
+        Dim log As ILog = LogManager.GetLogger("TRADLogger")
         Try
             If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
                 BHTController.DisposeScanner(myScanner)
+                log.Info("Start Info WifiConectionCheck Signal Distance Id Tag Integration : btn_Merge_Click")
+                log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                log.Info("End Info WifiConectionCheck Signal Distance Tag Integration : btn_Merge_Click")
+
                 DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                     "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                 BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
@@ -479,8 +503,14 @@ Public Class frm_IdTagIntegration
             End If
 
         Catch ex As Exception
+            log.Error("Start Error WifiConectionCheck Id Tag Integration : btn_Merge_Click")
             If Err.Number = 5 Then
                 BHTController.DisposeScanner(myScanner)
+                log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                    "Tunggu beberapa detik dan ulangi lagi.")
+                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                log.Error("End Error WifiConectionCheck Id Tag Integration : btn_Merge_Click")
+
                 DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                     "Tunggu beberapa detik dan ulangi lagi.", "Error")
                 BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
@@ -491,8 +521,10 @@ Public Class frm_IdTagIntegration
                 BHTController.DisposeScanner(myScanner)
                 Exit Sub
             End If
+            log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+            log.Error("End Error WifiConectionCheck Id Tag Integration : btn_Merge_Click")
         End Try
-
+        LogManager.Shutdown()
 
         If Convert.ToInt32(lbl_TotalPackedQtyValue.Text) = 0 And marr_PackQtyList.Count = 0 Then
             BHTController.DisposeScanner(myScanner)
@@ -1158,7 +1190,7 @@ Public Class frm_IdTagIntegration
                     'Update New Barcodetag (Delflag=1=>0)
                     For int_RollBack = 0 To int_InsertActIdList.Count - 1
                         'modify 9i
-                       
+
                         If ProductionActIntegrationDB.fncProdactTagIntegrationNewtag _
                         (int_InsertActIdList(int_RollBack), connection, transaction) Then
 

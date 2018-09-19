@@ -12,6 +12,7 @@ Imports System.Linq
 Imports TradNewSystem.Helpers
 Imports TradNewSystem.Model
 Imports TradNewSystem.PocoClass
+Imports log4net
 
 
 Public Class OfflineStocktake
@@ -334,16 +335,30 @@ Public Class OfflineStocktake
                 )
             If confirm = True Then
                 'Check Connection Wifi
+                log4net.Config.XmlConfigurator.Configure()
+                Dim log As ILog = LogManager.GetLogger("TRADLogger")
                 Try
                     If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
                         CloseNowLoadingAndEnableControls()
+                        log.Info("Start Info WifiConectionCheck Signal Distance Offline Stocktake : InsertPartialScannedDataToDB")
+                        log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                            "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                        log.Info("End Info WifiConectionCheck Signal Distance Offline Stocktake : InsertPartialScannedDataToDB")
+
                         ResetScannerAndShowErrorMessage("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                             "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                         Exit Sub
                     End If
                 Catch ex As Exception
+                    log.Error("Start Error WifiConectionCheck Id Tag Integration : btn_Merge_Click")
                     If Err.Number = 5 Then
                         CloseNowLoadingAndEnableControls()
+                        log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                            "Tunggu beberapa detik dan ulangi lagi.")
+                        log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                        log.Error("End Error WifiConectionCheck Offline Stocktake : InsertPartialScannedDataToDB")
+
+
                         ResetScannerAndShowErrorMessage("Koneksi Wifi di HT tertutup." & vbCrLf & _
                             "Tunggu beberapa detik dan ulangi lagi.", "Error")
                         Dim MyRf As RF
@@ -352,7 +367,10 @@ Public Class OfflineStocktake
                         MyRf.Open = True
                         Exit Sub
                     End If
+                    log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                    log.Error("End Error WifiConectionCheck Offline Stocktake : InsertPartialScannedDataToDB")
                 End Try
+                LogManager.Shutdown()
                 ProcessSavingDataToDB()
             Else
                 If bool_TempDataLoad Then
@@ -468,14 +486,27 @@ Public Class OfflineStocktake
         ByVal e As EventArgs _
         ) Handles myScanner.OnDone
         TextBoxScanTag.Focus()
+        log4net.Config.XmlConfigurator.Configure()
+        Dim log As ILog = LogManager.GetLogger("TRADLogger")
         Try
             If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
+                log.Info("Start Info WifiConectionCheck Signal Distance Offline Stocktake : myScanner_OnDone")
+                log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                log.Info("End Info WifiConectionCheck Signal Distance Offline Stocktake : myScanner_OnDone")
+
                 ResetScannerAndShowErrorMessage("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                     "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                 Exit Sub
             End If
         Catch ex As Exception
+            log.Error("Start Error WifiConectionCheck Offline Stocktake : myScanner_OnDone")
             If Err.Number = 5 Then
+                log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                    "Tunggu beberapa detik dan ulangi lagi.")
+                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                log.Error("End Error WifiConectionCheck Offline Stocktake : myScanner_OnDone")
+
                 ResetScannerAndShowErrorMessage("Koneksi Wifi di HT tertutup." & vbCrLf & _
                     "Tunggu beberapa detik dan ulangi lagi.", "Error")
                 Dim MyRf As RF
@@ -484,7 +515,10 @@ Public Class OfflineStocktake
                 MyRf.Open = True
                 Exit Sub
             End If
+            log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+            log.Error("End Error WifiConectionCheck Offline Stocktake : myScanner_OnDone")
         End Try
+        LogManager.Shutdown()
 
         Dim scannedQRCode As String = String.Empty
 
@@ -658,7 +692,7 @@ Public Class OfflineStocktake
                 Return False
             End If
 
-     
+
         End If
 
         ' Update the barcodes in the stocktake table
@@ -786,7 +820,7 @@ Public Class OfflineStocktake
             _tmpStocktakeDataAll.Clear()
 
             _lastScannedBarcodeTag = String.Empty
-            textBoxScanTag.Text = String.Empty
+            TextBoxScanTag.Text = String.Empty
             LabelTrinPartNoValue.Text = "-"
             LabelCountedQtyValue.Text = "0"
         Else

@@ -10,6 +10,7 @@ Imports System.Globalization
 Imports System.Data
 
 Imports DNWA.BHTCL
+Imports log4net
 
 Public Class frm_ProductModScan
 
@@ -364,17 +365,30 @@ Public Class frm_ProductModScan
 
     Private Sub myScanner_OnDone(ByVal sender As Object, ByVal e As System.EventArgs) Handles myScanner.OnDone
         Try
+            log4net.Config.XmlConfigurator.Configure()
+            Dim log As ILog = LogManager.GetLogger("TRADLogger")
             Try
                 If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
                     BHTController.DisposeScanner(myScanner)
+                    log.Info("Start Info WifiConectionCheck Signal Distance Product Mod Scan : Scanner Process")
+                    log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                        "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                    log.Info("End Info WifiConectionCheck Signal Distance Product Mod Scan : Scanner Process")
+
                     DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                         "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                     BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                     Exit Sub
                 End If
             Catch ex As Exception
+                log.Error("Start Error WifiConectionCheck Distance Product Mod Scan : Scanner Process")
                 If Err.Number = 5 Then
                     BHTController.DisposeScanner(myScanner)
+                    log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                    "Tunggu beberapa detik dan ulangi lagi.")
+                    log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                    log.Error("End Error WifiConectionCheck Distance Product Mod Scan : Scanner Process")
+
                     DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                         "Tunggu beberapa detik dan ulangi lagi.", "Error")
                     Dim MyRf As RF
@@ -384,7 +398,10 @@ Public Class frm_ProductModScan
                     BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                     Exit Sub
                 End If
+                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                log.Error("End Error WifiConectionCheck Product Mod Scan : Scanner Process")
             End Try
+            LogManager.Shutdown()
 
             Dim scn_ScanCode = myScanner.Input(Scanner.ALL_BUFFER)
             Dim productionAct As ProductionAct = ProductionActDB.GetProdDateLineCode(scn_ScanCode, True)
@@ -628,17 +645,30 @@ Public Class frm_ProductModScan
     End Function
 
     Private Sub subInsertHandler()
-
+        log4net.Config.XmlConfigurator.Configure()
+        Dim log As ILog = LogManager.GetLogger("TRADLogger")
         Try
             BHTController.DisposeScanner(myScanner)
             If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
+                log.Info("Start Info WifiConectionCheck Signal Distance Product Mod Scan : subInsertHandler")
+                log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                log.Info("End Info WifiConectionCheck Signal Distance Product Mod Scan : subInsertHandler")
+
+
                 DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                     "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
                 Exit Sub
             End If
             BHTController.DisposeScanner(myScanner)
         Catch ex As Exception
+            log.Error("Start Error WifiConectionCheck Product Mod Scan : subInsertHandler")
             If Err.Number = 5 Then
+                log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                    "Tunggu beberapa detik dan ulangi lagi.")
+                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                log.Error("End Error WifiConectionCheck Product Mod Scan : subInsertHandler")
+
                 DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                     "Tunggu beberapa detik dan ulangi lagi.", "Error")
                 Dim MyRf As RF
@@ -648,7 +678,10 @@ Public Class frm_ProductModScan
                 BHTController.DisposeScanner(myScanner)
                 Exit Sub
             End If
+            log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+            log.Error("End Error WifiConectionCheck Product Mod Scan : subInsertHandler")
         End Try
+        LogManager.Shutdown()
 
         Dim obj_SelectedTRINNo As String = DirectCast(cmbNewTRINPartNo.SelectedItem, KeyValuePair(Of String, String)).Key
 
