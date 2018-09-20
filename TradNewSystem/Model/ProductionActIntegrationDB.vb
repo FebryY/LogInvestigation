@@ -96,7 +96,7 @@ Namespace Model
                     log.Info("fncGetLastBarcodeCountValue SQL string: " & sqlString)
 
                     productionActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .DATEPROD = str_DateVal, .BARCODELINE = str_BarcodeLine}).FirstOrDefault
-                    log.Info("fncGetLastBarcodeCountValue result " & productionActIntegration.ToString())
+                    log.Info("fncGetLastBarcodeCountValue can get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetLastBarcodeCountValue DB Error", ex)
@@ -144,7 +144,7 @@ Namespace Model
                                                                                                .USERID = str_TagIntegration(6), .QRCODE = str_TagIntegration(7), _
                                                                                                .IMGFILE = str_TagIntegration(8), .REMARKS = str_TagIntegration(9) _
                                                                                           }).DefaultIfEmpty(0).FirstOrDefault)
-                    log.Info("fncInsertTagIntegration result " & int_ActID.ToString())
+                    log.Info("fncInsertTagIntegration result " & int_ActID)
 
 
                 Catch ex As Exception
@@ -186,7 +186,7 @@ Namespace Model
                                                                                            .USERID = str_TagIntegration(6), .QRCODE = str_TagIntegration(7), _
                                                                                            .IMGFILE = str_TagIntegration(8), .REMARKS = str_TagIntegration(9) _
                                                                                       }).DefaultIfEmpty(0).FirstOrDefault)
-                log.Info("fncInsertTagIntegrationUseTransaction result " & int_ActID.ToString())
+                log.Info("fncInsertTagIntegrationUseTransaction result " & int_ActID)
 
             Catch ex As Exception
                 log.Error("fncInsertTagIntegrationUseTransaction DB Error", ex)
@@ -616,7 +616,7 @@ Namespace Model
 
 
                 int_UpdRowCheck = obj_DBConnection.Execute(str_UpdateSql, New With {Key .ACTID = ACTID}, obj_DBTransaction)
-                log.Info("fncProdactTagIntegrationNewtag result " & int_UpdRowCheck.ToString())
+                log.Info("fncProdactTagIntegrationNewtag result int_UpdRowCheck : " & int_UpdRowCheck)
 
                 If int_UpdRowCheck > 0 Then
                     bool_Upd = True
@@ -648,7 +648,7 @@ Namespace Model
                     log.Info("fncGetActID SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString).SingleOrDefault
-                    log.Info("fncGetActID result " & prodActIntegration.ToString())
+                    log.Info("fncGetActID can get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetActID DB Error", ex)
@@ -680,7 +680,7 @@ Namespace Model
                     log.Info("fncGetFinalID SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .QRCODE = str_QRCode}).FirstOrDefault
-                    log.Info("fncGetFinalID result " & prodActIntegration.ToString())
+                    log.Info("fncGetFinalID can get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetFinalID DB Error", ex)
@@ -712,7 +712,7 @@ Namespace Model
                     log.Info("fncGetUserID SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .QRCODE = str_QRCode}).FirstOrDefault
-                    log.Info("fncGetUserID result " & prodActIntegration.ToString())
+                    log.Info("fncGetUserID can get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetUserID DB Error", ex)
@@ -747,7 +747,7 @@ Namespace Model
                     obj_DBTransaction = connection.BeginTransaction
                     Dim rowsAffected As Integer = connection.Execute( _
                      sqlString, New With {Key .ACTIDS = str_ActId, .BARCODETAG = str_Barcode}, obj_DBTransaction)
-                    log.Info("DeleteData result " & rowsAffected.ToString())
+                    log.Info("DeleteData result rowsAffected delete" & rowsAffected)
 
                     If rowsAffected > 0 Then
                         success = True
@@ -790,7 +790,7 @@ Namespace Model
                     obj_DBTransaction = connection.BeginTransaction
                     Dim rowsAffected As Integer = connection.Execute( _
                      sqlString, New With {Key .ACTIDS = str_ActId}, obj_DBTransaction)
-                    log.Info("DeleteDataStockCard result " & rowsAffected.ToString())
+                    log.Info("DeleteDataStockCard result rowsAffected delete" & rowsAffected)
 
                     If rowsAffected > 0 Then
                         success = True
@@ -837,7 +837,7 @@ Namespace Model
                     log.Info("fncGetStdQty SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .TRINPARTNO = str_TrinPartNo}).SingleOrDefault
-                    log.Info("fncGetStdQty result " & prodActIntegration.ToString())
+                    log.Info("fncGetStdQty can get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetStdQty DB Error", ex)
@@ -869,7 +869,7 @@ Namespace Model
                     log.Info("fncGetLine SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .LINECODE = str_LineCode}).FirstOrDefault
-                    log.Info("fncGetLine result " & prodActIntegration.ToString())
+                    log.Info("fncGetLine can get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetLine DB Error", ex)
@@ -902,7 +902,7 @@ Namespace Model
                     log.Info("fncGetUser SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .BARCODETAG = str_BarcodeVal}).FirstOrDefault
-                    log.Info("fncGetUser result " & prodActIntegration.ToString())
+                    log.Info("fncGetUser can get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetUser DB Error", ex)
@@ -935,7 +935,7 @@ Namespace Model
                     log.Info("fncGetDateTime SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .BARCODETAG = str_BarcodeVal}).FirstOrDefault
-                    log.Info("fncGetDateTime result " & prodActIntegration.ToString())
+                    log.Info("fncGetDateTime can get result ")
                 Catch ex As Exception
                     log.Error("fncGetDateTime DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
@@ -966,7 +966,7 @@ Namespace Model
                     log.Info("fncGetSplitFlag SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .BARCODE = str_Barcodetag}).FirstOrDefault
-                    log.Info("fncGetSplitFlag result " & prodActIntegration.ToString())
+                    log.Info("fncGetSplitFlag can get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetSplitFlag DB Error", ex)

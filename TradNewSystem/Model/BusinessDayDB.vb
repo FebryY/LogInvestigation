@@ -38,7 +38,7 @@ Namespace Model
                         (sqlString).DefaultIfEmpty(New TimeSpan(0, 0, 0)). _
                         FirstOrDefault
 
-                    log.Info("GetBusinessHour result " & businessHour.ToString())
+                    log.Info("GetBusinessHour can get result")
 
                 Catch ex As Exception
                     log.Error("GetBusinessHour DB Error", ex)
