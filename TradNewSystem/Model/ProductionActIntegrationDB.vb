@@ -34,13 +34,14 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not productionActIntegration Is Nothing Then
                 For Each prodActItems As ProductionActIntegration In productionActIntegration
                     str_Date = prodActItems.BUSINESSDAY
                 Next
             End If
+            log.Info("ProductionActIntegrationDB result " & str_Date)
+            LogManager.Shutdown()
 
             Return str_Date
         End Function
@@ -96,18 +97,19 @@ Namespace Model
                     log.Info("fncGetLastBarcodeCountValue SQL string: " & sqlString)
 
                     productionActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .DATEPROD = str_DateVal, .BARCODELINE = str_BarcodeLine}).FirstOrDefault
-                    log.Info("fncGetLastBarcodeCountValue result " & productionActIntegration.ToString())
+                    log.Info("fncGetLastBarcodeCountValue not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetLastBarcodeCountValue DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not productionActIntegration Is Nothing Then
                 str_BarcodeCount = productionActIntegration.COUNTING
             End If
+            log.Info("fncGetLastBarcodeCountValue result " & str_BarcodeCount)
+            LogManager.Shutdown()
 
             Return str_BarcodeCount
         End Function
@@ -648,7 +650,7 @@ Namespace Model
                     log.Info("fncGetActID SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString).SingleOrDefault
-                    log.Info("fncGetActID result " & prodActIntegration.ToString())
+                    log.Info("fncGetActID not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetActID DB Error", ex)
@@ -659,6 +661,7 @@ Namespace Model
             If Not prodActIntegration Is Nothing Then
                 int_LastActID = prodActIntegration.ACTID
             End If
+            log.Info("fncGetActID result " & int_LastActID)
             LogManager.Shutdown()
 
             Return int_LastActID
@@ -680,7 +683,7 @@ Namespace Model
                     log.Info("fncGetFinalID SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .QRCODE = str_QRCode}).FirstOrDefault
-                    log.Info("fncGetFinalID result " & prodActIntegration.ToString())
+                    log.Info("fncGetFinalID not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetFinalID DB Error", ex)
@@ -691,6 +694,7 @@ Namespace Model
             If Not prodActIntegration Is Nothing Then
                 int_FinalID = prodActIntegration.FINALID
             End If
+            log.Info("fncGetFinalID result " & int_FinalID)
             LogManager.Shutdown()
 
             Return int_FinalID
@@ -712,18 +716,19 @@ Namespace Model
                     log.Info("fncGetUserID SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .QRCODE = str_QRCode}).FirstOrDefault
-                    log.Info("fncGetUserID result " & prodActIntegration.ToString())
+                    log.Info("fncGetUserID not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetUserID DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not prodActIntegration Is Nothing Then
                 str_UserID = prodActIntegration.USERID
             End If
+            log.Info("fncGetUserID result " & str_UserID)
+            LogManager.Shutdown()
 
             Return str_UserID
         End Function
@@ -837,7 +842,7 @@ Namespace Model
                     log.Info("fncGetStdQty SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .TRINPARTNO = str_TrinPartNo}).SingleOrDefault
-                    log.Info("fncGetStdQty result " & prodActIntegration.ToString())
+                    log.Info("fncGetStdQty not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetStdQty DB Error", ex)
@@ -848,6 +853,7 @@ Namespace Model
             If Not prodActIntegration Is Nothing Then
                 int_Qty2 = prodActIntegration.PACKAGESTANDARD
             End If
+            log.Info("fncGetStdQty result " & int_Qty2)
             LogManager.Shutdown()
 
             Return int_Qty2
@@ -869,18 +875,19 @@ Namespace Model
                     log.Info("fncGetLine SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .LINECODE = str_LineCode}).FirstOrDefault
-                    log.Info("fncGetLine result " & prodActIntegration.ToString())
+                    log.Info("fncGetLine not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetLine DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not prodActIntegration Is Nothing Then
                 str_Line = prodActIntegration.BARCODELINE
             End If
+            log.Info("fncGetLine result " & str_Line)
+            LogManager.Shutdown()
 
             Return str_Line
         End Function
@@ -902,18 +909,19 @@ Namespace Model
                     log.Info("fncGetUser SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .BARCODETAG = str_BarcodeVal}).FirstOrDefault
-                    log.Info("fncGetUser result " & prodActIntegration.ToString())
+                    log.Info("fncGetUser not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetUser DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not prodActIntegration Is Nothing Then
                 str_Line = prodActIntegration.USERID
             End If
+            log.Info("fncGetUser result " & str_Line)
+            LogManager.Shutdown()
 
             Return str_Line
         End Function
@@ -935,17 +943,18 @@ Namespace Model
                     log.Info("fncGetDateTime SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .BARCODETAG = str_BarcodeVal}).FirstOrDefault
-                    log.Info("fncGetDateTime result " & prodActIntegration.ToString())
+                    log.Info("fncGetDateTime not get result ")
                 Catch ex As Exception
                     log.Error("fncGetDateTime DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not prodActIntegration Is Nothing Then
                 str_Line = prodActIntegration.DATE_TIME.ToString("yyyy-MM-dd HH:mm:ss")
             End If
+            log.Info("fncGetDateTime result " & str_Line)
+            LogManager.Shutdown()
 
             Return str_Line
         End Function
@@ -966,18 +975,19 @@ Namespace Model
                     log.Info("fncGetSplitFlag SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .BARCODE = str_Barcodetag}).FirstOrDefault
-                    log.Info("fncGetSplitFlag result " & prodActIntegration.ToString())
+                    log.Info("fncGetSplitFlag not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetSplitFlag DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not prodActIntegration Is Nothing Then
                 int_SplitFlag = prodActIntegration.SPLITFLG
             End If
+            log.Info("fncGetSplitFlag result " & int_SplitFlag)
+            LogManager.Shutdown()
 
             Return int_SplitFlag
         End Function

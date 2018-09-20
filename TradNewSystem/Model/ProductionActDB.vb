@@ -43,18 +43,19 @@ Namespace Model
 
                     productionAct = connection.Query(Of ProductionAct) _
                         (sqlString, parameter).FirstOrDefault
-                    log.Info("ProductionActDB result " & productionAct.ToString())
+                    log.Info("ProductionActDB can get result ")
 
                 Catch ex As Exception
                     log.Error("ProductionActDB DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not productionAct Is Nothing Then
                 actId = productionAct.ACTID
             End If
+            log.Info("ProductionActDB result" & actId)
+            LogManager.Shutdown()
 
             Return actId
         End Function
@@ -92,7 +93,7 @@ Namespace Model
 
                     productionAct = connection.Query(Of ProductionAct) _
                         (sqlString, parameter).FirstOrDefault
-                    log.Info("GetProdDateLineCodeUserID result " & productionAct.ToString())
+                    log.Info("GetProdDateLineCodeUserID can get result")
 
                 Catch ex As Exception
                     log.Error("GetProdDateLineCodeUserID DB Error", ex)
@@ -137,7 +138,7 @@ Namespace Model
 
                     productionAct = connection.Query(Of ProductionAct) _
                         (sqlString, parameter).FirstOrDefault
-                    log.Info("GetProdDateLineCode result " & productionAct.ToString())
+                    log.Info("GetProdDateLineCode can get result ")
 
                 Catch ex As Exception
                     log.Error("GetProdDateLineCode DB Error", ex)
@@ -165,7 +166,7 @@ Namespace Model
                     log.Info("fncCheckQR SQL string: " & sqlString)
 
                     productionAct = connection.Query(Of ProductionAct)(sqlString, New With {Key .QRCODE = productQrCode}).FirstOrDefault
-                    log.Info("fncCheckQR result " & productionAct.ToString())
+                    log.Info("fncCheckQR can get result ")
 
                 Catch ex As Exception
                     ret_productQR = QueryRetValue.ValueError
@@ -173,13 +174,14 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not productionAct Is Nothing Then
                 ret_productQR = QueryRetValue.ValueTrue
             Else
                 ret_productQR = QueryRetValue.ValueFalse
             End If
+            log.Info("fncCheckQR result " & ret_productQR)
+            LogManager.Shutdown()
 
             Return ret_productQR
         End Function
@@ -200,20 +202,21 @@ Namespace Model
                     log.Info("fncCheckBarcodetag SQL string: " & sqlString)
 
                     productionAct = connection.Query(Of ProductionAct)(sqlString, New With {Key .QRCODE = productQrCode}).FirstOrDefault
-                    log.Info("fncCheckBarcodetag result " & productionAct.ToString())
+                    log.Info("fncCheckBarcodetag can get result ")
                 Catch ex As Exception
                     ret_productQR = QueryRetValue.ValueError
                     log.Error("fncCheckBarcodetag DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not productionAct Is Nothing Then
                 ret_productQR = QueryRetValue.ValueTrue
             Else
                 ret_productQR = QueryRetValue.ValueFalse
             End If
+            log.Info("fncCheckBarcodetag result " & ret_productQR)
+            LogManager.Shutdown()
 
             Return ret_productQR
         End Function
@@ -239,7 +242,7 @@ Namespace Model
                     'MyRf.Open = False
 
                     productionAct = connection.Query(Of ProductionAct)(sqlString, New With {Key .QRCODE = productQrCode}).FirstOrDefault
-                    log.Info("fncCheckDeletedBarcodetag result " & productionAct.ToString())
+                    log.Info("fncCheckDeletedBarcodetag can get result")
 
                 Catch ex As Exception
                     ret_productQR = QueryRetValue.ValueError
@@ -247,13 +250,14 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not productionAct Is Nothing Then
                 ret_productQR = QueryRetValue.ValueTrue
             Else
                 ret_productQR = QueryRetValue.ValueFalse
             End If
+            log.Info("fncCheckBarcodetag result " & ret_productQR)
+            LogManager.Shutdown()
 
             Return ret_productQR
         End Function

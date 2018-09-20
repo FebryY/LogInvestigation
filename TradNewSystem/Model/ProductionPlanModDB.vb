@@ -29,18 +29,19 @@ Namespace Model
                     log.Info("fncGetFinalID SQL string: " & sqlString)
 
                     prodPlanMod = connection.Query(Of ProductionPlanMod)(sqlString).SingleOrDefault
-                    log.Info("fncGetFinalID result " & prodPlanMod.ToString())
+                    log.Info("fncGetFinalID not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetFinalID DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
 
             If Not prodPlanMod Is Nothing Then
                 int_LastFinalID = prodPlanMod.FINALID
             End If
+            log.Info("fncGetFinalID result " & int_LastFinalID)
+            LogManager.Shutdown()
 
             Return int_LastFinalID
         End Function
@@ -157,7 +158,7 @@ Namespace Model
                     log.Info("fncGetEndDate SQL string: " & sqlString)
 
                     productionPlanMod = connection.Query(Of ProductionPlanMod)(sqlString, New With {Key .TRINPARTNO = str_TRINNo}).FirstOrDefault
-                    log.Info("fncGetEndDate result " & productionPlanMod.ToString())
+                    log.Info("fncGetEndDate not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetEndDate DB Error", ex)
@@ -235,7 +236,7 @@ Namespace Model
                     log.Info("fncGetBarcodeValLine SQL string: " & sqlString)
 
                     productionPlanMod = CType(connection.Query(Of ProductionPlanMod)(sqlString, New With {Key .QRCODE = str_QRVal}), List(Of ProductionPlanMod))
-                    log.Info("fncGetBarcodeValLine result " & productionPlanMod.ToString())
+                    log.Info("fncGetBarcodeValLine result " & productionPlanMod.Count())
 
                 Catch ex As Exception
                     log.Error("fncGetBarcodeValLine DB Error", ex)
@@ -303,7 +304,7 @@ Namespace Model
                     log.Info("fncGetUser SQL string: " & sqlString)
 
                     prodPlanMod = connection.Query(Of ProductionPlanMod)(sqlString, New With {Key .BARCODETAG = str_BarcodeVal}).FirstOrDefault
-                    log.Info("fncGetUser result " & prodPlanMod.ToString())
+                    log.Info("fncGetUser not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetUser DB Error", ex)
@@ -315,6 +316,8 @@ Namespace Model
             If Not prodPlanMod Is Nothing Then
                 str_Line = prodPlanMod.USERID
             End If
+            log.Info("fncGetUser result " & str_Line)
+            LogManager.Shutdown()
 
             Return str_Line
         End Function
@@ -336,7 +339,7 @@ Namespace Model
                     log.Info("fncGetDateTime SQL string: " & sqlString)
 
                     prodPlanMod = connection.Query(Of ProductionPlanMod)(sqlString, New With {Key .BARCODETAG = str_BarcodeVal}).FirstOrDefault
-                    log.Info("fncGetDateTime result " & prodPlanMod.ToString())
+                    log.Info("fncGetDateTime not get result ")
 
                 Catch ex As Exception
                     log.Error("fncGetDateTime DB Error", ex)
@@ -348,6 +351,8 @@ Namespace Model
             If Not prodPlanMod Is Nothing Then
                 str_Line = prodPlanMod.DATE_TIME.ToString("yyyy-MM-dd hh:MM:ss")
             End If
+            log.Info("fncGetDateTime result " & str_Line)
+            LogManager.Shutdown()
 
             Return str_Line
         End Function
