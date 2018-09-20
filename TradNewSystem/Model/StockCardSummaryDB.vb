@@ -53,7 +53,7 @@ Namespace Model
                     stockCardSummary = connection.Query(Of StockCardSummary) _
                             (sqlString, parameter).FirstOrDefault
 
-                    log.Info("GetStockBalanceQty result " & stockCardSummary.ToString())
+                    log.Info("GetStockBalanceQty can get result ")
 
                 Catch ex As Exception
 
@@ -72,6 +72,9 @@ Namespace Model
                     - stockCardSummary.TOTALSTOCKOUT _
                     )
             End If
+
+            LogManager.Shutdown()
+
         End Function
 
         Public Function CheckDeletedData( _
@@ -127,6 +130,10 @@ Namespace Model
                     Return -1
                 End Try
             End Using
+
+
+            LogManager.Shutdown()
+
 
             'If CountOfData = 0 Then
             Return CountOfData

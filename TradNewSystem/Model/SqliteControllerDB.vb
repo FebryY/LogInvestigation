@@ -45,7 +45,7 @@ Namespace Model
 
                 dt_TempData.Load(sqlLite_DataReader)
 
-                log.Info("fncGetDatatable result " & sqlLite_DataReader.ToString())
+                log.Info("fncGetDatatable can get result ")
 
                 sqlLite_DataReader.Close()
 
@@ -57,6 +57,8 @@ Namespace Model
 
                 DisplayMessage.ErrorMsg(ex.ToString, "Error")
             End Try
+
+            LogManager.Shutdown()
 
             Return dt_TempData
         End Function
@@ -80,9 +82,11 @@ Namespace Model
 
             Dim int_RowsAffected As Integer = sqlLite_Comm.ExecuteNonQuery
 
-            log.Info("fncExecuteNonQuery result " & int_RowsAffected.ToString())
+            log.Info("fncExecuteNonQuery can get result ")
 
             sqlLite_Conn.Close()
+
+            LogManager.Shutdown()
 
             Return int_RowsAffected
         End Function
@@ -109,13 +113,16 @@ Namespace Model
 
             Dim obj_Value As Object = sqlLite_Comm.ExecuteScalar
 
-            log.Info("fncExecuteScalar result " & obj_Value.ToString())
+
 
             sqlLite_Conn.Close()
 
             If obj_Value IsNot Nothing Then
                 str_Res = obj_Value.ToString
             End If
+
+            log.Info("fncExecuteScalar result " & str_Res)
+            LogManager.Shutdown()
 
             Return str_Res
         End Function
@@ -183,6 +190,8 @@ Namespace Model
                 bool_RetVal = False
             End Try
 
+            LogManager.Shutdown()
+
             Return bool_RetVal
         End Function
 
@@ -207,6 +216,8 @@ Namespace Model
                 DisplayMessage.ErrorMsg(String.Concat("Failed to erase Temp Data, ", ex.ToString), "Error")
                 bool_RetVal = False
             End Try
+
+            LogManager.Shutdown()
 
         End Function
 

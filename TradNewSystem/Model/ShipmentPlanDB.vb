@@ -41,7 +41,7 @@ Namespace Model
                         List(Of ShipmentPlan) _
                         )
 
-                    log.Info("GetShipmentPlans result " & shipments.ToString())
+                    log.Info("GetShipmentPlans result " & shipments.Count())
 
                 Catch ex As Exception
 
@@ -50,6 +50,8 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return shipments
         End Function
@@ -83,8 +85,6 @@ Namespace Model
 
                     shipPlan = connection.Query(Of ShipmentPlan)(sqlString, New With {Key .SID = str_SID}).FirstOrDefault
 
-                    log.Info("fncCheckStockTakeFlag result " & shipPlan.ToString())
-
                 Catch ex As Exception
 
                     log.Error("fncCheckStockTakeFlag DB Error ", ex)
@@ -96,6 +96,10 @@ Namespace Model
             If Not shipPlan Is Nothing Then
                 int_Flag = shipPlan.STOCKTAKEFLAG
             End If
+
+            log.Info("fncCheckStockTakeFlag result " & int_Flag)
+
+            LogManager.Shutdown()
 
             Return int_Flag
         End Function

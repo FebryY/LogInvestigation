@@ -102,7 +102,7 @@ Namespace Model
                             connection.Query(Of ShipmentSummary)(sqlString),  _
                             List(Of ShipmentSummary) _
                             )
-                        log.Info("GetShipmentSummaries result " & shipmentSummaries.ToString())
+                        log.Info("GetShipmentSummaries result " & shipmentSummaries.Count())
                     Else
                         sqlString = String.Format( _
                             sqlString, subString0, _
@@ -120,7 +120,7 @@ Namespace Model
                             List(Of ShipmentSummary) _
                             )
 
-                        log.Info("GetShipmentSummaries result " & shipmentSummaries.ToString())
+                        log.Info("GetShipmentSummaries result " & shipmentSummaries.Count())
 
                     End If
                 Catch ex As Exception
@@ -130,6 +130,8 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return shipmentSummaries
         End Function

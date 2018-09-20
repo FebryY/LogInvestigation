@@ -97,6 +97,8 @@ Namespace Model
                         connection.Execute(sqlString, parameters, transaction)
                     Next
 
+                    log.Info("Operation End")
+
                     transaction.Commit()
                 Catch ex As Exception
                     log.Error("InsertData DB Error ", ex)
@@ -108,6 +110,8 @@ Namespace Model
                     Return False
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return True
         End Function
@@ -181,6 +185,8 @@ Namespace Model
                     connection.Execute(sqlString, parameters, transaction)
                 Next
 
+                log.Info("Operation End")
+
                 transaction.Commit()
             Catch ex As Exception
 
@@ -194,6 +200,8 @@ Namespace Model
                 Return False
             End Try
             'End Using
+
+            LogManager.Shutdown()
 
             Return True
         End Function
@@ -257,7 +265,7 @@ Namespace Model
 
                         connection.Execute(sqlString, parameters, transaction)
                     Next
-
+                    log.Info("Operation End")
                     transaction.Commit()
                 Catch ex As Exception
 
@@ -271,6 +279,8 @@ Namespace Model
                     Return False
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return True
         End Function
@@ -334,7 +344,7 @@ Namespace Model
 
                     connection.Execute(sqlString, parameters, transaction)
                 Next
-
+                log.Info("Operation End")
                 transaction.Commit()
             Catch ex As Exception
 
@@ -348,6 +358,8 @@ Namespace Model
                 Return False
             End Try
             'End Using
+
+            LogManager.Shutdown()
 
             Return True
         End Function
@@ -391,7 +403,7 @@ Namespace Model
                     stockCard = connection.Query(Of StockCard) _
                         (sqlString, parameter).FirstOrDefault()
 
-                    log.Info("GetTotalStockInOut result " & stockCard.ToString())
+
 
                 Catch ex As Exception
 
@@ -405,6 +417,10 @@ Namespace Model
                 totalStock.StockIn = CInt(stockCard.SUM_STOCK_IN)
                 totalStock.StockOut = CInt(stockCard.SUM_STOCK_OUT)
             End If
+
+            log.Info("GetTotalStockIn result " & totalStock.StockIn)
+            log.Info("GetTotalStockOut result " & totalStock.StockOut)
+            LogManager.Shutdown()
 
             Return totalStock
         End Function
@@ -449,6 +465,8 @@ Namespace Model
                     connection.Execute( _
                         sqlString, param, transaction _
                         )
+
+                    log.Info("Operation End")
                     transaction.Commit()
                 Catch ex As Exception
 
@@ -462,6 +480,8 @@ Namespace Model
                     Return False
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return True
         End Function
@@ -510,7 +530,7 @@ Namespace Model
                     RemainQty = CInt( _
                        connection.Query(Of ULong)(sqlString).DefaultIfEmpty(0).FirstOrDefault)
 
-                    log.Info("GetRemainStockByTag result " & RemainQty.ToString())
+                    log.Info("GetRemainStockByTag can get result ")
 
                 Catch ex As Exception
 
@@ -524,6 +544,8 @@ Namespace Model
             '    totalStock.StockIn = CInt(stockCard.SUM_STOCK_IN)
             '    totalStock.StockOut = CInt(stockCard.SUM_STOCK_OUT)
             'End If
+
+            LogManager.Shutdown()
 
             Return RemainQty
         End Function

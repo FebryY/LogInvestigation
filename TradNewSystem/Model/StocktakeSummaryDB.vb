@@ -69,7 +69,7 @@ Namespace Model
                             List(Of StocktakeSummary) _
                             )
 
-                        log.Info("GetStocktakeSummaries result " & stocktakeSummaries.ToString())
+                        log.Info("GetStocktakeSummaries can get result ")
 
                     Else
                         sqlString = String.Format( _
@@ -91,7 +91,7 @@ Namespace Model
                             List(Of StocktakeSummary) _
                             )
 
-                        log.Info("GetStocktakeSummaries result " & stocktakeSummaries.ToString())
+                        log.Info("GetStocktakeSummaries can get result ")
 
                     End If
                 Catch ex As Exception
@@ -100,6 +100,8 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return stocktakeSummaries
         End Function

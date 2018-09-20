@@ -53,7 +53,7 @@ Namespace Model
                     stocktakePeriod = connection.Query(Of DateTime) _
                         (sqlString).DefaultIfEmpty(Nothing).FirstOrDefault
 
-                    log.Info("GetLatestStocktakePeriod result " & stocktakePeriod.ToString())
+                    log.Info("GetLatestStocktakePeriod can get result ")
 
                 Catch ex As Exception
                     log.Error("GetLatestStocktakePeriod DB Error ", ex)
@@ -61,6 +61,8 @@ Namespace Model
                     exceptionMsg = ex.Message
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return stocktakePeriod
         End Function
@@ -108,7 +110,7 @@ Namespace Model
                         (sqlString, parameters).DefaultIfEmpty(0). _
                             FirstOrDefault
 
-                    log.Info("GetScannedBarcodeCount result " & barcodeCount.ToString())
+                    log.Info("GetScannedBarcodeCount can get result ")
 
                 Catch ex As Exception
                     log.Error("GetScannedBarcodeCount DB Error ", ex)
@@ -116,6 +118,9 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
+
+            LogManager.Shutdown()
+
 
             Return barcodeCount
         End Function
@@ -179,7 +184,7 @@ Namespace Model
                         List(Of Stocktake) _
                         )
 
-                    log.Info("GetBarcodesAndScannedQty result " & stocktakes.ToString())
+                    log.Info("GetBarcodesAndScannedQty can get result ")
 
                 Catch ex As Exception
                     log.Error("GetBarcodesAndScannedQty DB Error ", ex)
@@ -187,6 +192,8 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return stocktakes
         End Function
@@ -233,7 +240,7 @@ Namespace Model
                     stocktake = connection.Query(Of Stocktake) _
                         (sqlString, parameters).FirstOrDefault
 
-                    log.Info("IsRegistered result " & stocktake.ToString())
+                    log.Info("IsRegistered can get result ")
 
                 Catch ex As Exception
 
@@ -251,6 +258,8 @@ Namespace Model
                     retValue = QueryRetValue.ValueFalse
                 End If
             End If
+
+            LogManager.Shutdown()
 
             Return retValue
         End Function
@@ -298,7 +307,7 @@ Namespace Model
                     stocktake = connection.Query(Of Stocktake) _
                         (sqlString, parameters).FirstOrDefault
 
-                    log.Info("HasBeenScannedAndSaved result " & stocktake.ToString())
+                    log.Info("HasBeenScannedAndSaved can get result ")
 
                 Catch ex As Exception
 
@@ -315,6 +324,8 @@ Namespace Model
                     hasBeenSaved = True
                 End If
             End If
+
+            LogManager.Shutdown()
 
             Return hasBeenSaved
         End Function
@@ -537,6 +548,8 @@ Namespace Model
                     If alreadyDelcount > 2 Then
                         AlreadyDeleteBarcodetag &= "ect"
                     End If
+
+                    log.Info("Operation End")
                     'transaction.Commit()
                 Catch ex As MySqlException
 
@@ -554,6 +567,8 @@ Namespace Model
                     Return False
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return True
         End Function
@@ -679,7 +694,7 @@ Namespace Model
                         AlreadyDeleteBarcodetag &= "ect"
                     End If
 
-
+                    log.Info("Operation End")
                     transaction.Commit()
                 Catch ex As MySqlException
 
@@ -697,6 +712,8 @@ Namespace Model
                     Return False
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return True
         End Function
@@ -768,7 +785,7 @@ Namespace Model
                             transaction _
                             )
                     Next
-
+                    log.Info("Operation End")
                     transaction.Commit()
                 Catch ex As MySqlException
 
@@ -786,6 +803,8 @@ Namespace Model
                     Return False
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return True
         End Function

@@ -67,7 +67,7 @@ Namespace Model
                     shipAct = connection.Query(Of ShipmentAct) _
                         (sqlString, parameter).FirstOrDefault
 
-                    log.Info("GetActIdOfDeletedData result " & shipAct.ToString())
+
                 Catch ex As Exception
 
                     log.Error("GetActIdOfDeletedData DB Error ", ex)
@@ -79,6 +79,9 @@ Namespace Model
             If Not shipAct Is Nothing Then
                 actId = shipAct.ACTID
             End If
+
+            log.Info("GetActIdOfDeletedData can get result " & actId)
+            LogManager.Shutdown()
 
             Return actId
         End Function
@@ -117,7 +120,7 @@ Namespace Model
                     shipAct = connection.Query(Of ShipmentAct) _
                         (sqlString, parameter).FirstOrDefault
 
-                    log.Info("IsBarcodeTagExist result " & shipAct.ToString())
+                    log.Info("IsBarcodeTagExist can get result ")
 
                 Catch ex As Exception
 
@@ -126,7 +129,7 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-
+            LogManager.Shutdown()
             Return Not shipAct Is Nothing
         End Function
 
@@ -170,7 +173,7 @@ Namespace Model
                         List(Of ShipmentAct) _
                         )
 
-                    log.Info("GetBarcodeTagsAndActQty result " & shipActs.ToString())
+                    log.Info("GetBarcodeTagsAndActQty result " & shipActs.Count())
 
                 Catch ex As Exception
 
@@ -178,7 +181,7 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-
+            LogManager.Shutdown()
             Return shipActs
         End Function
 
@@ -213,7 +216,7 @@ Namespace Model
                     QtyActy = CInt( _
                         connection.Query(Of ULong)(sqlString).DefaultIfEmpty(0).FirstOrDefault)
 
-                    log.Info("GetSummarySIDAndActQty result " & QtyActy.ToString())
+                    log.Info("GetSummarySIDAndActQty can get result ")
 
                 Catch ex As Exception
 
@@ -222,6 +225,8 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return QtyActy
         End Function
@@ -355,10 +360,15 @@ Namespace Model
                 While dr.Read()
                     newActIds.Add(CInt(dr(0)))
                 End While
+
+                log.Info("Operation End")
+
             Catch
             End Try
             dr.Close()
             myConnection.Close()
+
+            LogManager.Shutdown()
 
             Return newActIds
 
@@ -433,7 +443,7 @@ Namespace Model
                     connection.Execute(sqlString, params, transaction)
 
                 Next
-
+                log.Info("Operation End")
                 transaction.Commit()
             Catch ex As Exception
 
@@ -447,6 +457,7 @@ Namespace Model
                 Return False
             End Try
 
+            LogManager.Shutdown()
 
             Return True
         End Function
@@ -487,6 +498,9 @@ Namespace Model
                     connection.Execute( _
                         sqlString, param, transaction _
                         )
+
+                    log.Info("Operation End")
+
                     transaction.Commit()
                 Catch ex As Exception
 
@@ -500,6 +514,8 @@ Namespace Model
                     Return False
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return True
         End Function
@@ -533,7 +549,7 @@ Namespace Model
 
                     shipAct = connection.Query(Of ShipmentAct)(sqlString, New With {Key .SID = str_SID}).FirstOrDefault
 
-                    log.Info("fncCheckSID result " & shipAct.ToString())
+                    log.Info("fncCheckSID can get result ")
 
                 Catch ex As Exception
 
@@ -546,6 +562,8 @@ Namespace Model
             If Not shipAct Is Nothing Then
                 bool_Res = True
             End If
+
+            LogManager.Shutdown()
 
             Return bool_Res
         End Function
@@ -581,6 +599,8 @@ Namespace Model
                         ")" _
                         )
 
+                    log.Info("fncInsertStockTakeTemp SQL string: " & sqlString)
+
                     For Each shipActData As String() In shipActDataCollection
 
                         Dim parameters As Object = New With { _
@@ -597,6 +617,8 @@ Namespace Model
                         connection.Execute(sqlString, parameters, transaction)
                     Next
 
+                    log.Info("Operation End")
+
                     transaction.Commit()
                 Catch ex As Exception
                     If Not transaction Is Nothing Then
@@ -607,6 +629,8 @@ Namespace Model
                     Return False
                 End Try
             End Using
+
+            LogManager.Shutdown()
 
             Return True
         End Function

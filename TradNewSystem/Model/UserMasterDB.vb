@@ -50,8 +50,7 @@ Namespace Model
                     user = connection.Query(Of UserMaster) _
                         (sqlString, parameter).FirstOrDefault
 
-                    log.Info("IsUserExist result " & user.ToString())
-
+                   
                 Catch ex As Exception
                     retValue = QueryRetValue.ValueError
                     log.Error("IsUserExist DB Error ", ex)
@@ -64,6 +63,10 @@ Namespace Model
             If Not user Is Nothing Then
                 retValue = QueryRetValue.ValueTrue
             End If
+
+            log.Info("IsUserExist can get result " & retValue)
+
+            LogManager.Shutdown()
 
             Return retValue
         End Function
