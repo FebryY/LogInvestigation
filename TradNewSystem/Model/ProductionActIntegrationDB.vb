@@ -146,7 +146,7 @@ Namespace Model
                                                                                                .USERID = str_TagIntegration(6), .QRCODE = str_TagIntegration(7), _
                                                                                                .IMGFILE = str_TagIntegration(8), .REMARKS = str_TagIntegration(9) _
                                                                                           }).DefaultIfEmpty(0).FirstOrDefault)
-                    log.Info("fncInsertTagIntegration result " & int_ActID.ToString())
+                    log.Info("fncInsertTagIntegration result " & int_ActID)
 
 
                 Catch ex As Exception
@@ -188,7 +188,7 @@ Namespace Model
                                                                                            .USERID = str_TagIntegration(6), .QRCODE = str_TagIntegration(7), _
                                                                                            .IMGFILE = str_TagIntegration(8), .REMARKS = str_TagIntegration(9) _
                                                                                       }).DefaultIfEmpty(0).FirstOrDefault)
-                log.Info("fncInsertTagIntegrationUseTransaction result " & int_ActID.ToString())
+                log.Info("fncInsertTagIntegrationUseTransaction result " & int_ActID)
 
             Catch ex As Exception
                 log.Error("fncInsertTagIntegrationUseTransaction DB Error", ex)
@@ -618,7 +618,7 @@ Namespace Model
 
 
                 int_UpdRowCheck = obj_DBConnection.Execute(str_UpdateSql, New With {Key .ACTID = ACTID}, obj_DBTransaction)
-                log.Info("fncProdactTagIntegrationNewtag result " & int_UpdRowCheck.ToString())
+                log.Info("fncProdactTagIntegrationNewtag result int_UpdRowCheck : " & int_UpdRowCheck)
 
                 If int_UpdRowCheck > 0 Then
                     bool_Upd = True
@@ -752,7 +752,7 @@ Namespace Model
                     obj_DBTransaction = connection.BeginTransaction
                     Dim rowsAffected As Integer = connection.Execute( _
                      sqlString, New With {Key .ACTIDS = str_ActId, .BARCODETAG = str_Barcode}, obj_DBTransaction)
-                    log.Info("DeleteData result " & rowsAffected.ToString())
+                    log.Info("DeleteData result rowsAffected delete" & rowsAffected)
 
                     If rowsAffected > 0 Then
                         success = True
@@ -795,7 +795,7 @@ Namespace Model
                     obj_DBTransaction = connection.BeginTransaction
                     Dim rowsAffected As Integer = connection.Execute( _
                      sqlString, New With {Key .ACTIDS = str_ActId}, obj_DBTransaction)
-                    log.Info("DeleteDataStockCard result " & rowsAffected.ToString())
+                    log.Info("DeleteDataStockCard result rowsAffected delete" & rowsAffected)
 
                     If rowsAffected > 0 Then
                         success = True

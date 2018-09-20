@@ -46,7 +46,7 @@ Namespace Model
                 ret_TRIN = QueryRetValue.ValueFalse
             End If
 
-            log.Info("fncCheckTRIMPartNoMaster result " & ret_TRIN.ToString())
+            log.Info("fncCheckTRIMPartNoMaster result " & ret_TRIN)
             LogManager.Shutdown()
 
             Return ret_TRIN
