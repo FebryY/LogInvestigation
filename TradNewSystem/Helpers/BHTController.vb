@@ -38,31 +38,31 @@ Namespace Helpers
             ByVal codeType As ScannerCodeType, _
             ByVal mode As ScannerReadMode _
             )
-            'If myScanner Is Nothing Then
-            '    myScanner = New Scanner
+            If myScanner Is Nothing Then
+                myScanner = New Scanner
 
-            '    Select Case codeType
-            '        Case ScannerCodeType.Code39
-            '            myScanner.RdType = "M:1-30"
-            '        Case ScannerCodeType.QrCode
-            '            myScanner.RdType = "Q"
-            '    End Select
+                Select Case codeType
+                    Case ScannerCodeType.Code39
+                        myScanner.RdType = "M:1-30"
+                    Case ScannerCodeType.QrCode
+                        myScanner.RdType = "Q"
+                End Select
 
-            '    Select Case mode
-            '        Case ScannerReadMode.Momentary
-            '            myScanner.RdMode = "M"
-            '        Case ScannerReadMode.AutoOff
-            '            myScanner.RdMode = "F"
-            '        Case ScannerReadMode.Alternate
-            '            myScanner.RdMode = "A"
-            '        Case ScannerReadMode.Continous
-            '            myScanner.RdMode = "C"
-            '        Case ScannerReadMode.TriggerRelease
-            '            myScanner.RdMode = "R"
-            '    End Select
+                Select Case mode
+                    Case ScannerReadMode.Momentary
+                        myScanner.RdMode = "M"
+                    Case ScannerReadMode.AutoOff
+                        myScanner.RdMode = "F"
+                    Case ScannerReadMode.Alternate
+                        myScanner.RdMode = "A"
+                    Case ScannerReadMode.Continous
+                        myScanner.RdMode = "C"
+                    Case ScannerReadMode.TriggerRelease
+                        myScanner.RdMode = "R"
+                End Select
 
-            '    ScannerPortMgmt(myScanner, True)
-            'End If
+                ScannerPortMgmt(myScanner, True)
+            End If
         End Sub
 
         Public Sub ScannerReadCode39(ByRef myScanner As Scanner)
@@ -142,10 +142,10 @@ Namespace Helpers
             Optional ByVal color As DNWA.BHTCL.LED.EN_COLOR = Nothing _
             )
             If activate Then
-                'MyLED(LED.EN_DEVICE.BAR, color) = LED.EN_CTRL.ON
+                MyLED(LED.EN_DEVICE.BAR, color) = LED.EN_CTRL.ON
                 activeLEDColor = color
             Else
-                'MyLED(LED.EN_DEVICE.BAR, activeLEDColor) = LED.EN_CTRL.OFF
+                MyLED(LED.EN_DEVICE.BAR, activeLEDColor) = LED.EN_CTRL.OFF
             End If
         End Sub
 #End Region
@@ -169,7 +169,7 @@ Namespace Helpers
             )
             MyBeep.Frequency = frequency
             MyBeep.OnTime = onTime
-            'MyBeep.Item(Beep.Settings.EN_DEVICE.BUZZER) = Beep.EN_CTRL.ON
+            MyBeep.Item(Beep.Settings.EN_DEVICE.BUZZER) = Beep.EN_CTRL.ON
         End Sub
 #End Region
 
