@@ -36,6 +36,7 @@ Partial Public Class LoginMenu
         Me.ButtonLogin = New System.Windows.Forms.Button
         Me.ButtonPowerOff = New System.Windows.Forms.Button
         Me.LabelProgramVersion = New System.Windows.Forms.Label
+        Me.LblTanggal = New System.Windows.Forms.Label
         Me.PanelTitle.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -183,6 +184,13 @@ Partial Public Class LoginMenu
         Me.LabelProgramVersion.Text = "Ver. 0.9l"
         Me.LabelProgramVersion.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
+        'LblTanggal
+        '
+        Me.LblTanggal.Location = New System.Drawing.Point(135, 28)
+        Me.LblTanggal.Name = "LblTanggal"
+        Me.LblTanggal.Size = New System.Drawing.Size(180, 20)
+        Me.LblTanggal.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
         'LoginMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -190,6 +198,7 @@ Partial Public Class LoginMenu
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(320, 480)
         Me.ControlBox = False
+        Me.Controls.Add(Me.LblTanggal)
         Me.Controls.Add(Me.LabelProgramVersion)
         Me.Controls.Add(Me.ButtonPowerOff)
         Me.Controls.Add(Me.ButtonLogin)
@@ -229,5 +238,6 @@ Partial Public Class LoginMenu
     Friend WithEvents ButtonCloseWindow As System.Windows.Forms.Button
     Friend WithEvents ButtonFullScreen As System.Windows.Forms.Button
     Friend WithEvents LabelProgramVersion As System.Windows.Forms.Label
+    Friend WithEvents LblTanggal As System.Windows.Forms.Label
 
 End Class
