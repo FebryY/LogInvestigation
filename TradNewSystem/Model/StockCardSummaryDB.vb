@@ -100,16 +100,16 @@ Namespace Model
 
                     Dim sqlString As String = _
                     "Select CAST(Count(*) AS UNSIGNED INTEGER) TotalQty  from( " & _
-                        "(Select * from Productionact Where DELFLAG=1)a " & _
+                        "(Select * from Productionact Where DELFLAG=1 AND Barcodetag= '" & barcodeTag & "')a " & _
                             "inner Join " & _
                         "(SELECT  " & _
                         "TRINPARTNO, SUM(STOCK_IN - STOCK_OUT) AS CURRENTSTOCK, BARCODETAG as Barcodetag1 " & _
                         "FROM(STOCK_CARD)" & _
-                        "WHERE(DELFLAG = 0)" & _
+                        "WHERE(DELFLAG = 0 AND Barcodetag= '" & barcodeTag & "')" & _
                         "GROUP BY BARCODETAG " & _
                         "HAVING CURRENTSTOCK =0)b " & _
                 "on a.Barcodetag=b.Barcodetag1 " & _
-                ")Where Barcodetag= '" & barcodeTag & "' "
+                ")"
 
                     log.Info("CheckDeletedData SQL string: " & sqlString)
 

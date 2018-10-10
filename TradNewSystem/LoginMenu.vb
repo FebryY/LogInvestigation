@@ -41,7 +41,7 @@ Public Class LoginMenu
         'setRegValueMultiSz(strTcpIpSubKey, strEntry, strMultiSzValue)
         'End If
         'MsgBox(Dns.GetHostEntry(Dns.GetHostName()).AddressList(0).ToString())
-
+        LblTanggal.Text = "Tanggal: " & Date.Now.Date.ToString("dd'-'MMMM'-'yyyy")
         LogManager.Shutdown()
     End Sub
 
@@ -222,6 +222,14 @@ Public Class LoginMenu
 
                     DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                         "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
+
+                    If Date.Now.Year <= 2017 Then
+                        DisplayMessage.ErrorMsg( _
+                            "Mohon sesuaikan tanggal pada HT", _
+                            "Date Error" _
+                            )
+                    End If
+
                     Exit Sub
                 End If
             Catch ex As Exception
@@ -237,6 +245,13 @@ Public Class LoginMenu
 
                     DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                         "Tunggu beberapa detik dan ulangi lagi.", "Error")
+
+                    If Date.Now.Year <= 2017 Then
+                        DisplayMessage.ErrorMsg( _
+                            "Mohon sesuaikan tanggal pada HT", _
+                            "Date Error" _
+                            )
+                    End If
                     Dim MyRf As RF
                     MyRf = New RF()
                     MyRf.OpenMode = RF.EN_OPEN_MODE.CONTINUOUSLY
@@ -258,6 +273,15 @@ Public Class LoginMenu
             nowLoadingWindow.Show()
 
             EnableControl(False)
+
+            Dim isDateCorrect As Boolean = UserMasterDB.IsDBDateSamewithHT()
+
+            If isDateCorrect = False Then
+                DisplayMessage.ErrorMsg( _
+                    "Tanggal di server database dan di HT berbeda, Mohon disesuaikan", _
+                    "Date Error" _
+                    )
+            End If
 
             Dim userIsExist As QueryRetValue = UserMasterDB.IsUserExist( _
                 TextBoxUser.Text.Trim, _
