@@ -181,7 +181,7 @@ Partial Public Class LoginMenu
         Me.LabelProgramVersion.Location = New System.Drawing.Point(177, 419)
         Me.LabelProgramVersion.Name = "LabelProgramVersion"
         Me.LabelProgramVersion.Size = New System.Drawing.Size(120, 20)
-        Me.LabelProgramVersion.Text = "Ver. 0.9l"
+        Me.LabelProgramVersion.Text = "Ver. 0.9m"
         Me.LabelProgramVersion.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'LblTanggal

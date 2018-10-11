@@ -26,11 +26,11 @@ Partial Public Class NowLoading
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(134, 0)
+        Me.ClientSize = New System.Drawing.Size(218, 0)
         Me.ControlBox = False
-        Me.Location = New System.Drawing.Point(184, 32)
+        Me.Location = New System.Drawing.Point(110, 32)
         Me.Name = "NowLoading"
-        Me.Text = "  Now Loading ..."
+        Me.Text = "  Please Wait, Now Loading ..."
         Me.ResumeLayout(False)
 
     End Sub

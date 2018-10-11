@@ -225,7 +225,7 @@ Public Class LoginMenu
 
                     If Date.Now.Year <= 2017 Then
                         DisplayMessage.ErrorMsg( _
-                            "Mohon sesuaikan tanggal pada HT", _
+                            "Mohon sesuaikan tanggal pada HT dengan tanggal sekarang", _
                             "Date Error" _
                             )
                     End If
@@ -248,7 +248,7 @@ Public Class LoginMenu
 
                     If Date.Now.Year <= 2017 Then
                         DisplayMessage.ErrorMsg( _
-                            "Mohon sesuaikan tanggal pada HT", _
+                            "Mohon sesuaikan tanggal pada HT dengan tanggal sekarang", _
                             "Date Error" _
                             )
                     End If
@@ -274,13 +274,23 @@ Public Class LoginMenu
 
             EnableControl(False)
 
-            Dim isDateCorrect As Boolean = UserMasterDB.IsDBDateSamewithHT()
+            Dim isDateCorrect As QueryRetValue = UserMasterDB.IsDBDateSamewithHT()
 
-            If isDateCorrect = False Then
+            If isDateCorrect = QueryRetValue.ValueFalse Then
                 DisplayMessage.ErrorMsg( _
-                    "Tanggal di server database dan di HT berbeda, Mohon disesuaikan", _
-                    "Date Error" _
-                    )
+                "Tanggal di server database dan di HT berbeda, Mohon disesuaikan", _
+                "Date Error" _
+                )
+
+                nowLoadingWindow.Close()
+                nowLoadingWindow = Nothing
+                EnableControl(True)
+                Exit Sub
+            ElseIf isDateCorrect = QueryRetValue.ValueError Then
+                nowLoadingWindow.Close()
+                nowLoadingWindow = Nothing
+                EnableControl(True)
+                Exit Sub
             End If
 
             Dim userIsExist As QueryRetValue = UserMasterDB.IsUserExist( _

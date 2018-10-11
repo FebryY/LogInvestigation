@@ -71,12 +71,13 @@ Namespace Model
             Return retValue
         End Function
 
-        Public Function IsDBDateSamewithHT() As Boolean
+        Public Function IsDBDateSamewithHT() As QueryRetValue
 
             log4net.Config.XmlConfigurator.Configure()
             Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
-            Dim result As Boolean = False
+            Dim retValue As QueryRetValue = QueryRetValue.ValueFalse
+            Dim dbDate As Date?
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
@@ -92,15 +93,11 @@ Namespace Model
 
                     log.Info("IsDBDateSamewithHT SQL string: " & sqlString)
 
-                    Dim dbDate = CDate(connection.Query(Of Date) _
+                    dbDate = CDate(connection.Query(Of Date) _
                             (sqlString).FirstOrDefault)
 
-                    If Date.Now.Date = dbDate.Date Then
-                        result = True
-                    End If
-
                 Catch ex As Exception
-
+                    retValue = QueryRetValue.ValueError
                     log.Error("IsDBDateSamewithHT DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
@@ -108,12 +105,17 @@ Namespace Model
 
             End Using
 
-
-            log.Info("IsDBDateSamewithHT can get result " & result)
+            log.Info("IsDBDateSamewithHT can get result " & retValue)
 
             LogManager.Shutdown()
+            
+            If Not dbDate Is Nothing Then
+                If Date.Now.Date = dbDate.Value.Date Then
+                    retValue = QueryRetValue.ValueTrue
+                End If
+            End If
 
-            Return result
+            Return retValue
         End Function
     End Module
 End Namespace
