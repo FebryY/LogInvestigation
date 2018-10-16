@@ -41,6 +41,7 @@ Public Class LoginMenu
         'setRegValueMultiSz(strTcpIpSubKey, strEntry, strMultiSzValue)
         'End If
         'MsgBox(Dns.GetHostEntry(Dns.GetHostName()).AddressList(0).ToString())
+
         LblTanggal.Text = "Tanggal: " & Date.Now.Date.ToString("dd'-'MMMM'-'yyyy")
         LogManager.Shutdown()
     End Sub
@@ -274,7 +275,7 @@ Public Class LoginMenu
 
             EnableControl(False)
 
-            Dim isDateCorrect As QueryRetValue = UserMasterDB.IsDBDateSamewithHT()
+            Dim isDateCorrect As QueryRetValue = UserMasterDB.ChangeHTDateWithDBDate()
 
             If isDateCorrect = QueryRetValue.ValueFalse Then
                 DisplayMessage.ErrorMsg( _
@@ -292,6 +293,8 @@ Public Class LoginMenu
                 EnableControl(True)
                 Exit Sub
             End If
+
+            LblTanggal.Text = "Tanggal: " & Date.Now.Date.ToString("dd'-'MMMM'-'yyyy")
 
             Dim userIsExist As QueryRetValue = UserMasterDB.IsUserExist( _
                 TextBoxUser.Text.Trim, _
@@ -327,7 +330,6 @@ Public Class LoginMenu
 
         TextBoxPassword.Text = ""
     End Sub
-
     Private Sub EnableControl(ByVal enable As Boolean)
         ButtonCloseWindow.Enabled = enable
         ButtonLogin.Enabled = enable

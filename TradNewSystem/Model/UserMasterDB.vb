@@ -71,7 +71,7 @@ Namespace Model
             Return retValue
         End Function
 
-        Public Function IsDBDateSamewithHT() As QueryRetValue
+        Public Function ChangeHTDateWithDBDate() As QueryRetValue
 
             log4net.Config.XmlConfigurator.Configure()
             Dim log As ILog = LogManager.GetLogger("TRADLogger")
@@ -108,10 +108,22 @@ Namespace Model
             log.Info("IsDBDateSamewithHT can get result " & retValue)
 
             LogManager.Shutdown()
-            
+
             If Not dbDate Is Nothing Then
                 If Date.Now.Date = dbDate.Value.Date Then
                     retValue = QueryRetValue.ValueTrue
+                Else
+                    retValue = QueryRetValue.ValueTrue
+                    Dim d As DateTime
+                    d = CDate("" & dbDate.Value.Hour & ":" & dbDate.Value.Minute & ":" & dbDate.Value.Second & "")
+
+                    Try
+                        Microsoft.VisualBasic.TimeOfDay = d
+                        Microsoft.VisualBasic.DateString = dbDate.Value.Month & "/" & dbDate.Value.Day & "/" & dbDate.Value.Year
+                    Catch ex As Exception
+                        retValue = QueryRetValue.ValueError
+                        DisplayMessage.ErrorMsg(ex.Message, "Change Date Error")
+                    End Try
                 End If
             End If
 
