@@ -520,6 +520,17 @@ Public Class OfflineStocktake
         End Try
         LogManager.Shutdown()
 
+        If _tagCount = 25 Then
+            ResetScannerAndShowErrorMessage( _
+                String.Format( _
+                    "Mohon Simpan Terlebih Dahulu {0} QR Code Yang Telah Di Scan!", _
+                    _tagCount _
+                    ), _
+                "Limit Scan Information" _
+                )
+            Exit Sub
+        End If
+
         Dim scannedQRCode As String = String.Empty
 
         Try
