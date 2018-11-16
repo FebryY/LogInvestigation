@@ -61,9 +61,7 @@ Namespace Model
         End Function
 
         Public Function GetProdDateLineCodeUserID( _
-            ByVal productQrCode As String, _
-            ByVal checkDelFlg As Boolean _
-            ) As ProductionAct
+            ByVal productQrCode As String) As ProductionAct
             Dim productionAct As ProductionAct = Nothing
             log4net.Config.XmlConfigurator.Configure()
             Dim log As ILog = LogManager.GetLogger("TRADLogger")
@@ -79,13 +77,13 @@ Namespace Model
                     Dim sqlString As String = ( _
                         "SELECT PRODDATE, LINECODE , userid " & _
                         "FROM PRODUCTIONACT " & _
-                        "WHERE QRCODE=@QRCODE" _
+                        "WHERE QRCODE=@QRCODE AND DELFLAG=0" _
                         )
                     log.Info("GetProdDateLineCodeUserID SQL string: " & sqlString)
 
-                    If checkDelFlg Then
-                        sqlString &= " AND DELFLAG=0"
-                    End If
+                    'If checkDelFlg Then
+                    '    sqlString &= " AND DELFLAG=0"
+                    'End If
 
                     Dim parameter As Object = New With { _
                         Key .QRCODE = productQrCode _

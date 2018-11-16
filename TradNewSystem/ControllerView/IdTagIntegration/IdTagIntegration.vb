@@ -336,6 +336,9 @@ Public Class frm_IdTagIntegration
             End Try
             LogManager.Shutdown()
 
+            BHTController.SoundOK() ' Febry
+            Cursor.Current = Cursors.WaitCursor
+
             Dim scn_ScanCode = myScanner.Input(Scanner.ALL_BUFFER)
 
             Dim str_QrItems As String()
@@ -346,7 +349,8 @@ Public Class frm_IdTagIntegration
 
 
             'modify 9.i
-            Dim productionAct As ProductionAct = ProductionActDB.GetProdDateLineCodeUserID(scn_ScanCode, True)
+            'Dim productionAct As ProductionAct = ProductionActDB.GetProdDateLineCodeUserID(scn_ScanCode, True) Test Disable by Febry
+            Dim productionAct As ProductionAct = ProductionActDB.GetProdDateLineCodeUserID(scn_ScanCode)
 
             If Not productionAct Is Nothing Then
                 lstr_UserID = productionAct.userid
@@ -357,6 +361,9 @@ Public Class frm_IdTagIntegration
 
             If QrValid <> QueryRetValue.ValueTrue Then
                 BHTController.DisposeScanner(myScanner)
+
+                Cursor.Current = Cursors.Default
+
                 DisplayMessage.ErrorMsg("QR code tidak valid", "Error")
                 BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                 Exit Sub
@@ -375,6 +382,9 @@ Public Class frm_IdTagIntegration
             If balanceQty <= 0 Then
                 If exceptionMsg.Length > 0 Then
                     BHTController.DisposeScanner(myScanner)
+
+                    Cursor.Current = Cursors.Default
+
                     DisplayMessage.ErrorMsg(exceptionMsg, "DB Error")
                     BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                     Exit Sub
@@ -386,6 +396,9 @@ Public Class frm_IdTagIntegration
                         )
 
                     BHTController.DisposeScanner(myScanner)
+
+                    Cursor.Current = Cursors.Default
+
                     DisplayMessage.ErrorMsg(errorMsg, "Error")
                     BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                     Exit Sub
@@ -399,6 +412,9 @@ Public Class frm_IdTagIntegration
             Else
                 If scn_ScannedBarcodeList.Contains(scn_ScanCode) Then
                     BHTController.DisposeScanner(myScanner)
+
+                    Cursor.Current = Cursors.Default
+
                     DisplayMessage.ErrorMsg("Silahkan scan QR Code yang berbeda", "Error")
                     BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                     Exit Sub
@@ -414,10 +430,14 @@ Public Class frm_IdTagIntegration
             If Not String.IsNullOrEmpty(lstr_BarcodeLine) Then
                 If str_QrItems(QrCodeValues.TrinPartCode) <> lstr_TempTRINPartNo Then
                     BHTController.DisposeScanner(myScanner)
+
+                    Cursor.Current = Cursors.Default
+
                     DisplayMessage.ErrorMsg("TrinPartNo tidak sama", "Error")
                     BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                 Else
-                    BHTController.SoundOK()
+                    'BHTController.SoundOK()
+                    Cursor.Current = Cursors.Default 'febry
 
                     mint_SplitFlag = ProductionActIntegrationDB.fncGetSplitFlag(str_QrItems(QrCodeValues.BarcodeTag))
                     lint_SplitFlagList.Add(mint_SplitFlag)
@@ -442,9 +462,11 @@ Public Class frm_IdTagIntegration
                     mstr_MergeProdDateList.Add(productionAct.PRODDATE.ToString("yyyy-MM-dd HH:mm:ss"))
 
                     subQrCheck(scn_ScanCode)
+                    BHTController.SoundOK()
                 End If
             Else
-                BHTController.SoundOK()
+                'BHTController.SoundOK()
+                Cursor.Current = Cursors.Default
 
                 mint_SplitFlag = ProductionActIntegrationDB.fncGetSplitFlag(str_QrItems(QrCodeValues.BarcodeTag))
                 lint_SplitFlagList.Add(mint_SplitFlag)
@@ -468,11 +490,17 @@ Public Class frm_IdTagIntegration
                 mstr_BarcodeLineList.Add(lstr_BarcodeLine)
                 mstr_MergeProdDateList.Add(productionAct.PRODDATE.ToString("yyyy-MM-dd HH:mm:ss"))
 
-                subQrCheck(scn_ScanCode)
+
+
+                subQrCheck(scn_ScanCode) 'show data grid
+                BHTController.SoundOK()
             End If
 
         Catch ex As Exception
             BHTController.DisposeScanner(myScanner)
+
+            Cursor.Current = Cursors.Default
+
             DisplayMessage.ErrorMsg(ex.Message, "Error")
             BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
         End Try
@@ -537,7 +565,7 @@ Public Class frm_IdTagIntegration
                 BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
             Else
                 If DisplayMessage.ConfirmationDialog("Apakah ingin menggabungkan tag?", "Konfirmasi") = True Then
-                    subMergeHandler()
+                    subMergeHandler() ' send print service
                 End If
             End If
         End If

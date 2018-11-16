@@ -1,7 +1,4 @@
-﻿Option Strict On
-Option Explicit On
-
-Imports TradNewSystem.Helpers
+﻿Imports TradNewSystem.Helpers
 Imports TradNewSystem.Model
 Imports TradNewSystem.PocoClass
 
@@ -97,8 +94,8 @@ Public Class frm_IdTagClassification
     End Sub
 
     Private Sub frm_IdTagClassification_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        txt_ScanTag.Focus()
 
+        txt_ScanTag.Focus()
         subInitForm(False)
     End Sub
 
@@ -145,6 +142,9 @@ Public Class frm_IdTagClassification
             End Try
             LogManager.Shutdown()
 
+            BHTController.SoundOK() ' Febry
+            Cursor.Current = Cursors.WaitCursor ' Febry
+
             Dim scn_ScanCode = myScanner.Input(Scanner.ALL_BUFFER)
 
             Dim str_QrItems As String()
@@ -158,18 +158,41 @@ Public Class frm_IdTagClassification
 
             If QrValid <> QueryRetValue.ValueTrue Then
                 BHTController.DisposeScanner(myScanner)
+
+                Cursor.Current = Cursors.Default 'Febry
+
                 DisplayMessage.ErrorMsg("QR code tidak valid", "Error")
                 BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                 Exit Sub
             End If
 
-
-
             If String.IsNullOrEmpty(lstr_TempQRCode) Then
                 lstr_TempQRCode = scn_ScanCode
+
+                str_QrItems = lstr_TempQRCode.Split(New Char() {";"c})
+                If txt_ScanTag.Focus Then
+
+                    Cursor.Current = Cursors.Default 'Febry
+
+                    txt_ScanTag.Text = str_QrItems(QrCodeValues.BarcodeTag)
+                    lint_ActQty = Convert.ToInt32(str_QrItems(QrCodeValues.ActQty))
+                    lstr_TempTRINPartNo = str_QrItems(QrCodeValues.TrinPartCode)
+
+                    mint_StandardQty = ProductionActClassificationDB.fncGetStdQty(lstr_TempTRINPartNo)
+                    lbl_StandardQtyValue.Text = mint_StandardQty.ToString
+                    lstr_Barcode = txt_ScanTag.Text
+
+                    mstr_SplitProdDateList.Add(productionAct.PRODDATE.ToString("yyyy-MM-dd HH:mm:ss"))
+
+                    subQrCheck(scn_ScanCode)
+                End If
+
             Else
                 If lstr_TempQRCode <> scn_ScanCode Then
                     BHTController.DisposeScanner(myScanner)
+
+                    Cursor.Current = Cursors.Default 'Febry
+
                     DisplayMessage.ErrorMsg("Telah melakukan scan, mohon selesaikan proses atau silahkan kembali ke menu utama", "Error")
                     BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                     Exit Sub
@@ -188,6 +211,9 @@ Public Class frm_IdTagClassification
                 If balanceQty <= 0 Then
                     If exceptionMsg.Length > 0 Then
                         BHTController.DisposeScanner(myScanner)
+
+                        Cursor.Current = Cursors.Default 'Febry
+
                         DisplayMessage.ErrorMsg(exceptionMsg, "DB Error")
                         BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                         Exit Sub
@@ -199,33 +225,44 @@ Public Class frm_IdTagClassification
                             )
 
                         BHTController.DisposeScanner(myScanner)
+
+                        Cursor.Current = Cursors.Default 'Febry
+
                         DisplayMessage.ErrorMsg(errorMsg, "Error")
                         BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                         Exit Sub
                     End If
-
                 End If
 
+                'If txt_ScanTag.Focus Then
+                '    BHTController.SoundOK()
 
-                If txt_ScanTag.Focus Then
-                    BHTController.SoundOK()
+                '    txt_ScanTag.Text = str_QrItems(QrCodeValues.BarcodeTag)
+                '    lint_ActQty = Convert.ToInt32(str_QrItems(QrCodeValues.ActQty))
+                '    lstr_TempTRINPartNo = str_QrItems(QrCodeValues.TrinPartCode)
 
-                    txt_ScanTag.Text = str_QrItems(QrCodeValues.BarcodeTag)
-                    lint_ActQty = Convert.ToInt32(str_QrItems(QrCodeValues.ActQty))
-                    lstr_TempTRINPartNo = str_QrItems(QrCodeValues.TrinPartCode)
+                '    mint_StandardQty = ProductionActClassificationDB.fncGetStdQty(lstr_TempTRINPartNo)
+                '    lbl_StandardQtyValue.Text = mint_StandardQty.ToString
+                '    lstr_Barcode = txt_ScanTag.Text
 
-                    mint_StandardQty = ProductionActClassificationDB.fncGetStdQty(lstr_TempTRINPartNo)
-                    lbl_StandardQtyValue.Text = mint_StandardQty.ToString
-                    lstr_Barcode = txt_ScanTag.Text
+                '    mstr_SplitProdDateList.Add(productionAct.PRODDATE.ToString("yyyy-MM-dd HH:mm:ss"))
 
-                    mstr_SplitProdDateList.Add(productionAct.PRODDATE.ToString("yyyy-MM-dd HH:mm:ss"))
+                '    subQrCheck(scn_ScanCode)
+                'End If
 
-                    subQrCheck(scn_ScanCode)
+                BHTController.DisposeScanner(myScanner)
+
+                Cursor.Current = Cursors.Default 'Febry
+
+                DisplayMessage.ErrorMsg("Data telah di scan", "Error")
+                BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                 End If
-            End If
 
         Catch ex As Exception
             BHTController.DisposeScanner(myScanner)
+
+            Cursor.Current = Cursors.Default 'Febry
+
             DisplayMessage.ErrorMsg(ex.Message, "Error")
             BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
         End Try
