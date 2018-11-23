@@ -1155,6 +1155,7 @@ Public Class frm_IdTagClassification
             DisplayMessage.ErrorMsg("Masukkan Split Qty dan coba sekali lagi", "Error")
             BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
         Else
+            subShowNowLoading()
             tmr_DbLoad.Enabled = True
 
             If Not fncProcessSplit() Then

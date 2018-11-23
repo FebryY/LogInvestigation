@@ -1249,6 +1249,7 @@ Public Class frm_IdTagIntegration
     End Function
 
     Private Sub subMergeHandler()
+        subShowNowLoading()
         If String.IsNullOrEmpty(txt_ScanTag.Text) And marr_PackQtyList.Count = 0 Then
             BHTController.DisposeScanner(myScanner)
             DisplayMessage.ErrorMsg("Silahkan Scan QR code", "Error")
