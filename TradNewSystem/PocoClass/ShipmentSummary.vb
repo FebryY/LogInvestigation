@@ -14,6 +14,7 @@ Namespace PocoClass
         Private _sid As Integer
         Private _soNumber As String
         Private _divisionCode As String
+        Private _status As String
 
         Public Property SHIPMENTDATE() As DateTime
             Get
@@ -122,6 +123,18 @@ Namespace PocoClass
 
             Set(ByVal value As String)
                 _divisionCode = value
+            End Set
+        End Property
+
+        'add new Class property Febry
+
+        Public Property STATUS() As String
+            Get
+                Return _status
+            End Get
+
+            Set(ByVal value As String)
+                _status = value
             End Set
         End Property
     End Class
