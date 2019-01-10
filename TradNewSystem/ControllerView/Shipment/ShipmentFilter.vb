@@ -42,7 +42,7 @@ Public Class ShipmentFilter
         ByVal e As EventArgs _
         ) Handles MyBase.Load
         DateTimePicker1.Value = Today
-        If Not WifiConectionCheck() Then Exit Sub
+        'If Not WifiConectionCheck() Then Exit Sub (disable by Febry 5 December 2018)
         LoadCustomerDataToComboBox()
     End Sub
 
@@ -155,22 +155,59 @@ Public Class ShipmentFilter
 #End Region
 
     Private Sub QueryPendingShipment()
-        If Not WifiConectionCheck() Then Exit Sub
-        Dim selectedCustomerCode As String = DirectCast( _
-            ComboBoxCustomer.SelectedItem,  _
-            KeyValuePair(Of String, String) _
-            ).Key
+        'If Not WifiConectionCheck() Then Exit Sub (disable by Febry 5 December 2018)
+        Dim selectedCustomerCode As String = DirectCast(ComboBoxCustomer.SelectedItem, KeyValuePair(Of String, String)).Key
+        Dim checkedIncludePrevDate As Boolean = CheckBoxPreviousDate.Checked
+        Dim checkedIncludeCompleteShipment As Boolean = CbxCompletedData.Checked
+
+
         If selectedCustomerCode = String.Empty Then
-            DisplayMessage.ErrorMsg( _
-                "Pilih Customer Name dan Cobalah Sekali Lagi!", _
-                "Error" _
-                )
-        Else
+            DisplayMessage.ErrorMsg("Pilih Customer Name dan Cobalah Sekali Lagi!", "Error")
+            Exit Sub
+        End If
+
+        If checkedIncludePrevDate = True And checkedIncludeCompleteShipment = True Then
+            Dim MsgPrevCompleted As Boolean = DisplayMessage.ConfirmationDialog("Anda Yakin Memilih Previous Data dan Completed Status, load data akan sangat lambat?", "Konfirmasi")
+            If MsgPrevCompleted = True Then
+                nowLoadingWindow = New NowLoading
+                nowLoadingWindow.Show()
+
+                LoadShipmentListWindow(selectedCustomerCode)
+            Else
+                Exit Sub
+            End If
+        End If
+
+        If checkedIncludePrevDate = True And checkedIncludeCompleteShipment = False Then
+            Dim MsgIncludePrev As Boolean = DisplayMessage.ConfirmationDialog("Anda Yakin Memilih Previous Data,load data akan sangat lambat?", "Konfirmasi")
+            If MsgIncludePrev = True Then
+                nowLoadingWindow = New NowLoading
+                nowLoadingWindow.Show()
+                LoadShipmentListWindow(selectedCustomerCode)
+            Else
+                Exit Sub
+            End If
+        End If
+
+        If checkedIncludePrevDate = False And checkedIncludeCompleteShipment = True Then
+            Dim MsgCompleteShipment As Boolean = DisplayMessage.ConfirmationDialog("Anda Yakin Memilih Completed Status Shipment,load data akan sangat lambat?", "Konfirmasi")
+            If MsgCompleteShipment = True Then
+                nowLoadingWindow = New NowLoading
+                nowLoadingWindow.Show()
+                LoadShipmentListWindow(selectedCustomerCode)
+            Else
+                Exit Sub
+            End If
+        End If
+
+        If checkedIncludePrevDate = False And checkedIncludeCompleteShipment = False Then
             nowLoadingWindow = New NowLoading
             nowLoadingWindow.Show()
-
             LoadShipmentListWindow(selectedCustomerCode)
+        Else
+            Exit Sub
         End If
+        Exit Sub
     End Sub
 
     Private Sub LoadShipmentListWindow(ByVal selectedCustomerCode As String)
@@ -181,6 +218,9 @@ Public Class ShipmentFilter
         shipmentListWindow.SelectedShipmentDate = DateTimePicker1.Value
         shipmentListWindow.IncludePrevDateShipment = ( _
             CheckBoxPreviousDate.Checked _
+            )
+        shipmentListWindow.IncludeCompleteShipment = ( _
+            CbxCompletedData.Checked _
             )
         shipmentListWindow.SelectedCustomerCode = selectedCustomerCode
         shipmentListWindow.ShowDialog()

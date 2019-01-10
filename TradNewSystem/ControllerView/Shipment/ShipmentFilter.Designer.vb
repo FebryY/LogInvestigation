@@ -30,6 +30,7 @@ Partial Public Class ShipmentFilter
         Me.ComboBoxCustomer = New System.Windows.Forms.ComboBox
         Me.LabelCustomer = New System.Windows.Forms.Label
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
+        Me.CbxCompletedData = New System.Windows.Forms.CheckBox
         Me.PanelTitle.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -114,7 +115,7 @@ Partial Public Class ShipmentFilter
         'ComboBoxCustomer
         '
         Me.ComboBoxCustomer.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular)
-        Me.ComboBoxCustomer.Location = New System.Drawing.Point(21, 257)
+        Me.ComboBoxCustomer.Location = New System.Drawing.Point(21, 278)
         Me.ComboBoxCustomer.Name = "ComboBoxCustomer"
         Me.ComboBoxCustomer.Size = New System.Drawing.Size(276, 26)
         Me.ComboBoxCustomer.TabIndex = 2
@@ -123,7 +124,7 @@ Partial Public Class ShipmentFilter
         'LabelCustomer
         '
         Me.LabelCustomer.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular)
-        Me.LabelCustomer.Location = New System.Drawing.Point(21, 234)
+        Me.LabelCustomer.Location = New System.Drawing.Point(21, 255)
         Me.LabelCustomer.Name = "LabelCustomer"
         Me.LabelCustomer.Size = New System.Drawing.Size(276, 20)
         Me.LabelCustomer.Text = "Customer :"
@@ -137,6 +138,18 @@ Partial Public Class ShipmentFilter
         Me.DateTimePicker1.TabIndex = 2
         Me.DateTimePicker1.TabStop = False
         '
+        'CbxCompletedData
+        '
+        Me.CbxCompletedData.Checked = True
+        Me.CbxCompletedData.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CbxCompletedData.Font = New System.Drawing.Font("Tahoma", 11.0!, System.Drawing.FontStyle.Regular)
+        Me.CbxCompletedData.Location = New System.Drawing.Point(21, 207)
+        Me.CbxCompletedData.Name = "CbxCompletedData"
+        Me.CbxCompletedData.Size = New System.Drawing.Size(155, 20)
+        Me.CbxCompletedData.TabIndex = 1
+        Me.CbxCompletedData.TabStop = False
+        Me.CbxCompletedData.Text = "Include Completed"
+        '
         'ShipmentFilter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -144,6 +157,7 @@ Partial Public Class ShipmentFilter
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(320, 480)
         Me.ControlBox = False
+        Me.Controls.Add(Me.CbxCompletedData)
         Me.Controls.Add(Me.LabelCustomer)
         Me.Controls.Add(Me.ComboBoxCustomer)
         Me.Controls.Add(Me.ButtonBack)
@@ -174,5 +188,6 @@ Partial Public Class ShipmentFilter
     Friend WithEvents ComboBoxCustomer As System.Windows.Forms.ComboBox
     Friend WithEvents LabelCustomer As System.Windows.Forms.Label
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents CbxCompletedData As System.Windows.Forms.CheckBox
 
 End Class

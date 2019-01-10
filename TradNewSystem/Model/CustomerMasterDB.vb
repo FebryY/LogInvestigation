@@ -29,7 +29,7 @@ Namespace Model
                     log.Info("GetAllCustomers, Open connection success")
 
                     Dim sqlString As String = ( _
-                        "SELECT * FROM CUSTOMERMASTER ORDER BY SHORTNAME" _
+"SELECT CUSTOMERCODE,SHORTNAME FROM CUSTOMERMASTER ORDER BY SHORTNAME" _
                         )
 
                     log.Info("GetAllCustomers SQL string: " & sqlString)
@@ -41,9 +41,11 @@ Namespace Model
 
                     log.Info("GetAllCustomers result " & customers.Count())
 
+                    connection.Close() 'Febry 5 December 2018
                 Catch ex As Exception
                     log.Error("GetAllCustomers DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
+                    connection.Close()
                 End Try
             End Using
 

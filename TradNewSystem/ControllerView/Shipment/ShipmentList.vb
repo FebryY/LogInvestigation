@@ -2,13 +2,12 @@
 Option Explicit On
 
 Imports System.Data
-
+Imports System.Globalization
 Imports DataGridCustomColumns
 
 Imports TradNewSystem.Helpers
 Imports TradNewSystem.Model
 Imports TradNewSystem.PocoClass
-
 
 Public Class ShipmentList
     Friend Enum DataGridColumns
@@ -40,9 +39,11 @@ Public Class ShipmentList
     Private _selectedShipmentDate As Date
     Private _selectedCustomerCode As String
     Private _includePrevDateShipment As Boolean
+    Private _includeCompleteShipment As Boolean
 
     Private gridIsSelected As Boolean = True
     Private hasLoaded As Boolean = False
+    Protected Friend nowLoadingWindow As NowLoading
 
     Public WriteOnly Property SelectedShipmentDate() As Date
         Set(ByVal value As Date)
@@ -59,6 +60,12 @@ Public Class ShipmentList
     Public WriteOnly Property IncludePrevDateShipment() As Boolean
         Set(ByVal value As Boolean)
             _includePrevDateShipment = value
+        End Set
+    End Property
+
+    Public WriteOnly Property IncludeCompleteShipment() As Boolean
+        Set(ByVal value As Boolean)
+            _includeCompleteShipment = value
         End Set
     End Property
 
@@ -125,11 +132,10 @@ Public Class ShipmentList
         SetDataGridColumnSizes("Status", 2)
 
         ' Add Row Data
-        Dim shipments As List(Of ShipmentSummary) = ShipmentSummaryDB. _
-            GetShipmentSummaries( _
-                _selectedShipmentDate, _
+        Dim shipments As List(Of ShipmentSummary) = ShipmentSummaryDB.GetShipmentSummaries(_selectedShipmentDate, _
                 businessHour, _
                 _includePrevDateShipment, _
+                _includeCompleteShipment, _
                 _selectedCustomerCode _
                 )
 
@@ -137,13 +143,13 @@ Public Class ShipmentList
             Dim dataRow As DataRow = Nothing
 
             For Each shipment As ShipmentSummary In shipments
+                'Disable by Febry
                 If shipment.SHIPMENTDATE.Date < _selectedShipmentDate _
                     And shipment.SUMACTQTY >= shipment.PLANQTY Then
                     Continue For
                 End If
-
-                Dim shipmentStatus As String = CommonLib. _
-                    GetStockStatus(shipment.PLANQTY, CInt(shipment.SUMACTQTY))
+                'Dim shipmentStatus As String = CommonLib. _
+                '    GetStockStatus(shipment.PLANQTY, CInt(shipment.SUMACTQTY))
 
                 ' Inserting Data
                 dataRow = dataTable.NewRow
@@ -161,7 +167,7 @@ Public Class ShipmentList
                     )
                 dataRow(DataGridColumns.CustomerShortName) = shipment.SHORTNAME
                 dataRow(DataGridColumns.SONumber) = shipment.SONUMBER
-                dataRow(DataGridColumns.Status) = shipmentStatus
+                dataRow(DataGridColumns.Status) = shipment.STATUS
                 dataRow(DataGridColumns.PlantNo) = shipment.PLANTNO
                 dataRow(DataGridColumns.SID) = shipment.SID
                 dataRow(DataGridColumns.DivisionCode) = shipment.DIVISIONCODE
@@ -169,7 +175,7 @@ Public Class ShipmentList
 
                 SetDataGridColumnSizes(_selectedCustomerCode, 0)
                 SetDataGridColumnSizes(shipment.SONUMBER, 1)
-                SetDataGridColumnSizes(shipmentStatus, 2)
+                SetDataGridColumnSizes(shipment.STATUS, 2)
 
                 dataTable.Rows.Add(dataRow)
             Next
@@ -541,4 +547,5 @@ Public Class ShipmentList
 
         DataGrid1.SelectionForeColor = SystemColors.ControlText
     End Sub
+
 End Class
