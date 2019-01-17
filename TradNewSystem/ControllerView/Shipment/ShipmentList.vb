@@ -148,8 +148,8 @@ Public Class ShipmentList
                     And shipment.SUMACTQTY >= shipment.PLANQTY Then
                     Continue For
                 End If
-                'Dim shipmentStatus As String = CommonLib. _
-                '    GetStockStatus(shipment.PLANQTY, CInt(shipment.SUMACTQTY))
+                Dim shipmentStatus As String = CommonLib. _
+                    GetStockStatus(shipment.PLANQTY, CInt(shipment.SUMACTQTY))
 
                 ' Inserting Data
                 dataRow = dataTable.NewRow
@@ -167,7 +167,8 @@ Public Class ShipmentList
                     )
                 dataRow(DataGridColumns.CustomerShortName) = shipment.SHORTNAME
                 dataRow(DataGridColumns.SONumber) = shipment.SONUMBER
-                dataRow(DataGridColumns.Status) = shipment.STATUS
+                'dataRow(DataGridColumns.Status) = shipment.STATUS
+                dataRow(DataGridColumns.Status) = shipmentStatus
                 dataRow(DataGridColumns.PlantNo) = shipment.PLANTNO
                 dataRow(DataGridColumns.SID) = shipment.SID
                 dataRow(DataGridColumns.DivisionCode) = shipment.DIVISIONCODE

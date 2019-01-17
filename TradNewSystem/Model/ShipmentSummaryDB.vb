@@ -43,7 +43,7 @@ Namespace Model
                             "IFNULL(SUMACTQTY, 0) AS SUMACTQTY, " & _
                             "pt.DIVISIONCODE, " & _
                             "CASE " & _
-                                "WHEN SUMACTQTY = 0 THEN 'New' " & _
+                                "WHEN IFNULL(SUMACTQTY,0) = 0 THEN 'New'" & _
                                 "WHEN SUMACTQTY < spl.PLANQTY THEN 'Partial' " & _
                                 "WHEN SUMACTQTY = spl.PLANQTY THEN 'Completed' " & _
                       "ELSE " & _
@@ -73,7 +73,7 @@ Namespace Model
                         subString0 = String.Format("spl.SHIPMENTDATE < '{0}'", tomorrowDate & " " & String.Format("{0:HH:mm:ss}", businessHour))
 
                     ElseIf includePrevDateShipment = True And includeCompleteShipment = False Then
-                        subString0 = String.Format("spl.SHIPMENTDATE < '{0}'", tomorrowDate & " " & String.Format("{0:HH:mm:ss}", businessHour), "AND NOT SUMACTQTY = spl.PLANQTY")
+                        subString0 = String.Format("spl.SHIPMENTDATE < '{0}'", tomorrowDate & " " & String.Format("{0:HH:mm:ss}", businessHour), "AND IFNULL(SUMACTQTY,0) = spl.PLANQTY")
 
                     ElseIf includePrevDateShipment = False And includeCompleteShipment = True Then
                         Dim todayDate As String = (selectedShipmentDate.ToString("yyyy-MM-dd"))
@@ -82,7 +82,7 @@ Namespace Model
 
                     ElseIf includePrevDateShipment = False And includeCompleteShipment = False Then
                         Dim todayDate As String = (selectedShipmentDate.ToString("yyyy-MM-dd"))
-                        Dim subSql As String = ("spl.SHIPMENTDATE >= '{0}' AND " & "spl.SHIPMENTDATE <= '{1}'" & "AND NOT SUMACTQTY = spl.PLANQTY")
+                        Dim subSql As String = ("spl.SHIPMENTDATE >= '{0}' AND " & "spl.SHIPMENTDATE <= '{1}'" & "AND IFNULL(SUMACTQTY,0) <> spl.PLANQTY")
                         subString0 = String.Format(subSql, todayDate & " " & String.Format("{0:HH:mm:ss}", businessHour), tomorrowDate & " " & String.Format("{0:HH:mm:ss}", businessHour))
                     End If
 
