@@ -622,3 +622,40 @@ D:\Project\NSI\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.vbproj.Gen
 D:\Project\NSI\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.exe
 D:\Project\NSI\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.xml
 D:\Project\NSI\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.pdb
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\TradNewSystem.exe.config
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\TradNewSystem.exe
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\TradNewSystem.pdb
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\TradNewSystem.xml
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\DapperLite.NETCF35.dll
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\DataGridCustomColumns.dll
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\DNWA.BHT1400CL.dll
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\Log4NetCF.dll
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\MySql.Data.CF.dll
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\System.Data.SqlServerCe.dll
+D:\TRAD HT\LogInvestigation\TradNewSystem\bin\Debug\DataGridCustomColumns.pdb
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\ResolveAssemblyReference.cache
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagClassification.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.frm_IdTagIntegration.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxConfirmation.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxError.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.MessageBoxInfo.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktake.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.OfflineStocktakeDuplicateBarcodes.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.frm_ProductModScan.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.ShipmentDuplicateBarcodes.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.ShipmentFilter.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.ShipmentList.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.ShipmentScan.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.StocktakeDuplicateBarcodes.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.StocktakeFilter.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.StocktakeList.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.StocktakeScan.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.AppConfig.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.LoginMenu.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.Resources.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.MainMenu.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.NowLoading.resources
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.vbproj.GenerateResource.Cache
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.exe
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.xml
+D:\TRAD HT\LogInvestigation\TradNewSystem\obj\Debug\TradNewSystem.pdb

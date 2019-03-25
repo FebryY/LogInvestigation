@@ -19,8 +19,8 @@ Namespace Model
             ByRef exceptionMsg As String _
             ) As Integer
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Dim stockCardSummary As StockCardSummary = Nothing
 
@@ -28,11 +28,11 @@ Namespace Model
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("GetStockBalanceQty, Open Connection")
+                    'log.Info("GetStockBalanceQty, Open Connection")
 
                     connection.Open()
 
-                    log.Info("GetStockBalanceQty, Open Connection success")
+                    'log.Info("GetStockBalanceQty, Open Connection success")
 
 
                     Dim sqlString As String = _
@@ -44,7 +44,7 @@ Namespace Model
                             "AND DELFLAG = 0 " & _
                         "GROUP BY BARCODETAG"
 
-                    log.Info("GetStockBalanceQty SQL string: " & sqlString)
+                    'log.Info("GetStockBalanceQty SQL string: " & sqlString)
 
                     Dim parameter As Object = New With { _
                         Key .BARCODETAG = barcodeTag _
@@ -53,11 +53,11 @@ Namespace Model
                     stockCardSummary = connection.Query(Of StockCardSummary) _
                             (sqlString, parameter).FirstOrDefault
 
-                    log.Info("GetStockBalanceQty can get result ")
+                    'log.Info("GetStockBalanceQty can get result ")
 
                 Catch ex As Exception
 
-                    log.Error("GetStockBalanceQty DB Error ", ex)
+                    'log.Error("GetStockBalanceQty DB Error ", ex)
 
                     exceptionMsg = ex.Message
                     Return -99999
@@ -73,7 +73,7 @@ Namespace Model
                     )
             End If
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
         End Function
 
