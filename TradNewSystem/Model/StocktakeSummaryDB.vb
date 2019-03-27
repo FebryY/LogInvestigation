@@ -17,8 +17,8 @@ Namespace Model
             ByVal divisionCode As String _
             ) As List(Of StocktakeSummary)
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Dim stocktakeSummaries As List(Of StocktakeSummary) = Nothing
 
@@ -26,11 +26,11 @@ Namespace Model
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("GetStocktakeSummaries, Open Connection")
+                    'log.Info("GetStocktakeSummaries, Open Connection")
 
                     connection.Open()
 
-                    log.Info("GetStocktakeSummaries, Open Connection success")
+                    'log.Info("GetStocktakeSummaries, Open Connection success")
 
                     Dim sqlString As String = _
                         "SELECT MODEL, st.TRINPARTNO, " & _
@@ -56,7 +56,7 @@ Namespace Model
                             "DIVISIONCODE like '%'" _
                             )
 
-                        log.Info("GetStocktakeSummaries SQL string: " & sqlString)
+                        'log.Info("GetStocktakeSummaries SQL string: " & sqlString)
 
                         Dim parameters As Object = New With { _
                             Key .YEAR = stocktakePeriod.Year.ToString(), _
@@ -69,7 +69,7 @@ Namespace Model
                             List(Of StocktakeSummary) _
                             )
 
-                        log.Info("GetStocktakeSummaries can get result ")
+                        'log.Info("GetStocktakeSummaries can get result ")
 
                     Else
                         sqlString = String.Format( _
@@ -77,7 +77,7 @@ Namespace Model
                             "DIVISIONCODE = @DIVISIONCODE" _
                             )
 
-                        log.Info("GetStocktakeSummaries SQL string: " & sqlString)
+                        'log.Info("GetStocktakeSummaries SQL string: " & sqlString)
 
                         Dim parameters As Object = New With { _
                             Key .YEAR = stocktakePeriod.Year.ToString(), _
@@ -91,17 +91,17 @@ Namespace Model
                             List(Of StocktakeSummary) _
                             )
 
-                        log.Info("GetStocktakeSummaries can get result ")
+                        'log.Info("GetStocktakeSummaries can get result ")
 
                     End If
                 Catch ex As Exception
-                    log.Error("GetStocktakeSummaries DB Error ", ex)
+                    'log.Error("GetStocktakeSummaries DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return stocktakeSummaries
         End Function

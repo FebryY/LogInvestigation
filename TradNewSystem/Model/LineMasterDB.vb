@@ -14,33 +14,33 @@ Namespace Model
 
             Dim str_LineCode As String = String.Empty
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Try
                 Using connection As IDbConnection = New MySqlConnection(CommonLib.GenerateConnectionString)
 
-                    log.Info("fncGetLineCodes, Open connection")
+                    'log.Info("fncGetLineCodes, Open connection")
 
                     connection.Open()
 
-                    log.Info("fncGetLineCodes, Open connection success")
+                    'log.Info("fncGetLineCodes, Open connection success")
 
                     Dim sqlString As String = "SELECT LINECODE FROM LINEMASTER WHERE BARCODELINE = @BARCODELINE"
 
-                    log.Info("fncGetLineCodes SQL string: " & sqlString)
+                    'log.Info("fncGetLineCodes SQL string: " & sqlString)
 
                     lineMaster = CType(connection.Query(Of LineMaster)(sqlString, New With {Key .BARCODELINE = str_Code}), List(Of LineMaster))
 
-                    log.Info("fncGetLineCodes result " & lineMaster.Count())
+                    'log.Info("fncGetLineCodes result " & lineMaster.Count())
 
                 End Using
             Catch ex As Exception
-                log.Error("fncGetLineCodes DB Error", ex)
+                'log.Error("fncGetLineCodes DB Error", ex)
                 DisplayMessage.ErrorMsg(ex.Message, "DB Error")
             End Try
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             If Not lineMaster Is Nothing Then
                 For Each lineMasterItem As LineMaster In lineMaster

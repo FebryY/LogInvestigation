@@ -19,8 +19,8 @@ Namespace Model
             ByVal hashedPassword As String _
             ) As QueryRetValue
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Dim retValue As QueryRetValue = QueryRetValue.ValueFalse
             Dim user As UserMaster = Nothing
@@ -29,11 +29,11 @@ Namespace Model
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("IsUserExist, Open Connection")
+                    'log.Info("IsUserExist, Open Connection")
 
                     connection.Open()
 
-                    log.Info("IsUserExist, Open Connection success")
+                    'log.Info("IsUserExist, Open Connection success")
 
                     Dim sqlString As String = _
                         "SELECT * " & _
@@ -42,7 +42,7 @@ Namespace Model
                             "AND USERPASS = @USERPASS " & _
                             "AND USERACTIVE = 1"
 
-                    log.Info("IsUserExist SQL string: " & sqlString)
+                    'log.Info("IsUserExist SQL string: " & sqlString)
 
                     Dim parameter As Object = New With { _
                         Key .userid = userID, .userpass = hashedPassword _
@@ -53,7 +53,7 @@ Namespace Model
                    
                 Catch ex As Exception
                     retValue = QueryRetValue.ValueError
-                    log.Error("IsUserExist DB Error ", ex)
+                    'log.Error("IsUserExist DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
@@ -64,17 +64,17 @@ Namespace Model
                 retValue = QueryRetValue.ValueTrue
             End If
 
-            log.Info("IsUserExist can get result " & retValue)
+            'log.Info("IsUserExist can get result " & retValue)
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return retValue
         End Function
 
         Public Function ChangeHTDateWithDBDate() As QueryRetValue
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Dim retValue As QueryRetValue = QueryRetValue.ValueFalse
             Dim dbDate As Date?
@@ -83,31 +83,31 @@ Namespace Model
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("IsDBDateSamewithHT, Open Connection")
+                    'log.Info("IsDBDateSamewithHT, Open Connection")
 
                     connection.Open()
 
-                    log.Info("IsDBDateSamewithHT, Open Connection success")
+                    'log.Info("IsDBDateSamewithHT, Open Connection success")
 
                     Dim sqlString As String = "SELECT NOW()"
 
-                    log.Info("IsDBDateSamewithHT SQL string: " & sqlString)
+                    'log.Info("IsDBDateSamewithHT SQL string: " & sqlString)
 
                     dbDate = CDate(connection.Query(Of Date) _
                             (sqlString).FirstOrDefault)
 
                 Catch ex As Exception
                     retValue = QueryRetValue.ValueError
-                    log.Error("IsDBDateSamewithHT DB Error ", ex)
+                    'log.Error("IsDBDateSamewithHT DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
 
             End Using
 
-            log.Info("IsDBDateSamewithHT can get result " & retValue)
+            'log.Info("IsDBDateSamewithHT can get result " & retValue)
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             If Not dbDate Is Nothing Then
                 If Date.Now.Date = dbDate.Value.Date Then

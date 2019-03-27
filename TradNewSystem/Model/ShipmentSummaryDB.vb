@@ -21,19 +21,19 @@ Namespace Model
             ) As List(Of ShipmentSummary)
             Dim shipmentSummaries As List(Of ShipmentSummary) = Nothing
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("GetShipmentSummaries, Open Connection")
+                    'log.Info("GetShipmentSummaries, Open Connection")
 
                     connection.Open()
 
-                    log.Info("GetShipmentSummaries, Open Connection success")
+                    'log.Info("GetShipmentSummaries, Open Connection success")
 
                     Dim sqlString As String = _
                         "SELECT spl.SHIPMENTDATE, pt.MODEL, " & _
@@ -88,29 +88,29 @@ Namespace Model
 
                     If customerCode = "ALL" Then
                         sqlString = String.Format(sqlString, subString0, "spl.CUSTOMERCODE like '%'")
-                        log.Info("GetShipmentSummaries SQL string: " & sqlString)
+                        'log.Info("GetShipmentSummaries SQL string: " & sqlString)
 
                         shipmentSummaries = CType(connection.Query(Of ShipmentSummary)(sqlString), List(Of ShipmentSummary))
-                        log.Info("GetShipmentSummaries result " & shipmentSummaries.Count())
+                        'log.Info("GetShipmentSummaries result " & shipmentSummaries.Count())
 
                     Else
                         Dim parameter As Object = (New With {Key .CUSTOMERCODE = customerCode})
                         sqlString = String.Format(sqlString, subString0, "spl.CUSTOMERCODE = " & "'" & customerCode & "'")
-                        log.Info("GetShipmentSummaries SQL string: " & sqlString)
+                        'log.Info("GetShipmentSummaries SQL string: " & sqlString)
 
                         shipmentSummaries = CType(connection.Query(Of ShipmentSummary)(sqlString), List(Of ShipmentSummary))
-                        log.Info("GetShipmentSummaries result " & shipmentSummaries.Count())
+                        'log.Info("GetShipmentSummaries result " & shipmentSummaries.Count())
 
                     End If
                 Catch ex As Exception
 
-                    log.Error("GetShipmentSummaries DB Error ", ex)
+                    'log.Error("GetShipmentSummaries DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return shipmentSummaries
         End Function

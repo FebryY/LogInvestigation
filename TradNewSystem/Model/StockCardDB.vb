@@ -35,8 +35,8 @@ Namespace Model
             ByRef exceptionMsg As String _
             ) As Boolean
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
@@ -44,11 +44,11 @@ Namespace Model
                 Dim transaction As IDbTransaction = Nothing
 
                 Try
-                    log.Info("InsertData, Open Connection")
+                    'log.Info("InsertData, Open Connection")
 
                     connection.Open()
 
-                    log.Info("InsertData, Open Connection success")
+                    'log.Info("InsertData, Open Connection success")
 
                     transaction = connection.BeginTransaction()
 
@@ -65,7 +65,7 @@ Namespace Model
                         ")" _
                         )
 
-                    log.Info("InsertData SQL string: " & sqlString)
+                    'log.Info("InsertData SQL string: " & sqlString)
 
                     For Each stockCardData As String() In stockCardCollection
                         Dim parameters As Object = New With { _
@@ -97,11 +97,11 @@ Namespace Model
                         connection.Execute(sqlString, parameters, transaction)
                     Next
 
-                    log.Info("Operation End")
+                    'log.Info("Operation End")
 
                     transaction.Commit()
                 Catch ex As Exception
-                    log.Error("InsertData DB Error ", ex)
+                    'log.Error("InsertData DB Error ", ex)
                     If Not transaction Is Nothing Then
                         transaction.Rollback()
                     End If
@@ -127,16 +127,16 @@ Namespace Model
             '    CommonLib.GenerateConnectionString _
             '    )
             '    Dim transaction As IDbTransaction = Nothing
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Try
                 '        connection.Open()
-                log.Info("InsertDataForShipment, Open Connection")
+                'log.Info("InsertDataForShipment, Open Connection")
 
                 transaction = connection.BeginTransaction()
 
-                log.Info("InsertDataForShipment, Open Connection success")
+                'log.Info("InsertDataForShipment, Open Connection success")
 
 
                 Dim sqlString As String = ( _
@@ -153,7 +153,7 @@ Namespace Model
                     "Update shipmentact set DELFLAG=0, ACCPACSENDFLG=0 where ACTID=@ACTID" _
                     )
 
-                log.Info("InsertDataForShipment SQL string: " & sqlString)
+                'log.Info("InsertDataForShipment SQL string: " & sqlString)
 
                 For Each stockCardData As String() In stockCardCollection
                     Dim parameters As Object = New With { _
@@ -185,12 +185,12 @@ Namespace Model
                     connection.Execute(sqlString, parameters, transaction)
                 Next
 
-                log.Info("Operation End")
+                'log.Info("Operation End")
 
                 transaction.Commit()
             Catch ex As Exception
 
-                log.Error("InsertDataForShipment DB Error ", ex)
+                'log.Error("InsertDataForShipment DB Error ", ex)
 
                 If Not transaction Is Nothing Then
                     transaction.Rollback()
@@ -201,7 +201,7 @@ Namespace Model
             End Try
             'End Using
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return True
         End Function
@@ -211,8 +211,8 @@ Namespace Model
             ByRef exceptionMsg As String _
             ) As Boolean
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
@@ -220,13 +220,13 @@ Namespace Model
                 Dim transaction As IDbTransaction = Nothing
 
                 Try
-                    log.Info("UpdateData, Open Connection")
+                    'log.Info("UpdateData, Open Connection")
 
                     connection.Open()
 
                     transaction = connection.BeginTransaction()
 
-                    log.Info("UpdateData, Open Connection success")
+                    'log.Info("UpdateData, Open Connection success")
 
 
                     Dim sqlString As String = ( _
@@ -239,7 +239,7 @@ Namespace Model
                             "AND DELFLAG=1" _
                         )
 
-                    log.Info("UpdateData SQL string: " & sqlString)
+                    'log.Info("UpdateData SQL string: " & sqlString)
 
                     For Each stockCardData As String() In stockCardCollection
                         Dim parameters As Object = New With { _
@@ -265,11 +265,11 @@ Namespace Model
 
                         connection.Execute(sqlString, parameters, transaction)
                     Next
-                    log.Info("Operation End")
+                    'log.Info("Operation End")
                     transaction.Commit()
                 Catch ex As Exception
 
-                    log.Error("UpdateData DB Error ", ex)
+                    'log.Error("UpdateData DB Error ", ex)
 
                     If Not transaction Is Nothing Then
                         transaction.Rollback()
@@ -280,7 +280,7 @@ Namespace Model
                 End Try
             End Using
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return True
         End Function
@@ -296,17 +296,17 @@ Namespace Model
             '    )
             '    Dim transaction As IDbTransaction = Nothing
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Try
-                log.Info("UpdateDataForShipment, Open Connection")
+                'log.Info("UpdateDataForShipment, Open Connection")
 
                 connection.Open()
 
                 transaction = connection.BeginTransaction()
 
-                log.Info("UpdateDataForShipment, Open Connection success")
+                'log.Info("UpdateDataForShipment, Open Connection success")
 
                 Dim sqlString As String = ( _
                     "UPDATE STOCK_CARD " & _
@@ -318,7 +318,7 @@ Namespace Model
                         "AND DELFLAG=1" _
                     )
 
-                log.Info("UpdateDataForShipment SQL string: " & sqlString)
+                'log.Info("UpdateDataForShipment SQL string: " & sqlString)
 
                 For Each stockCardData As String() In stockCardCollection
                     Dim parameters As Object = New With { _
@@ -344,11 +344,11 @@ Namespace Model
 
                     connection.Execute(sqlString, parameters, transaction)
                 Next
-                log.Info("Operation End")
+                'log.Info("Operation End")
                 transaction.Commit()
             Catch ex As Exception
 
-                log.Error("UpdateDataForShipment DB Error ", ex)
+                'log.Error("UpdateDataForShipment DB Error ", ex)
 
                 If Not transaction Is Nothing Then
                     transaction.Rollback()
@@ -359,7 +359,7 @@ Namespace Model
             End Try
             'End Using
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return True
         End Function
@@ -368,8 +368,8 @@ Namespace Model
             ByVal trinPartNo As String _
             ) As TotalStock
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Dim stockCard As StockCard = Nothing
 
@@ -381,11 +381,11 @@ Namespace Model
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("GetTotalStockInOut, Open Connection")
+                    'log.Info("GetTotalStockInOut, Open Connection")
 
                     connection.Open()
 
-                    log.Info("GetTotalStockInOut, Open Connection success")
+                    'log.Info("GetTotalStockInOut, Open Connection success")
 
                     Dim sqlString As String = ( _
                         "SELECT SUM(STOCK_IN) AS SUM_STOCK_IN, " & _
@@ -395,7 +395,7 @@ Namespace Model
                             "AND DELFLAG = 0" _
                         )
 
-                    log.Info("GetTotalStockInOut SQL string: " & sqlString)
+                    'log.Info("GetTotalStockInOut SQL string: " & sqlString)
 
                     Dim parameter As Object = New With { _
                         Key .TRINPARTNO = trinPartNo _
@@ -407,7 +407,7 @@ Namespace Model
 
                 Catch ex As Exception
 
-                    log.Error("GetTotalStockInOut DB Error ", ex)
+                    'log.Error("GetTotalStockInOut DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
@@ -418,9 +418,9 @@ Namespace Model
                 totalStock.StockOut = CInt(stockCard.SUM_STOCK_OUT)
             End If
 
-            log.Info("GetTotalStockIn result " & totalStock.StockIn)
-            log.Info("GetTotalStockOut result " & totalStock.StockOut)
-            LogManager.Shutdown()
+            'log.Info("GetTotalStockIn result " & totalStock.StockIn)
+            'log.Info("GetTotalStockOut result " & totalStock.StockOut)
+            'LogManager.Shutdown()
 
             Return totalStock
         End Function
@@ -430,8 +430,8 @@ Namespace Model
             ByRef exceptionMsg As String _
             ) As Boolean
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Dim strActIds As String() = ( _
                 actIds.[Select](Function(x) x.ToString()).ToArray() _
@@ -443,12 +443,12 @@ Namespace Model
                 Dim transaction As IDbTransaction = Nothing
 
                 Try
-                    log.Info("DeleteData, Open Connection")
+                    'log.Info("DeleteData, Open Connection")
 
                     connection.Open()
                     transaction = connection.BeginTransaction
 
-                    log.Info("DeleteData, Open Connection success")
+                    'log.Info("DeleteData, Open Connection success")
                     
                     Dim sqlString As String = ( _
                         "DELETE FROM STOCK_CARD " & _
@@ -456,7 +456,7 @@ Namespace Model
                             "AND TYPE_ID=2" _
                         )
 
-                    log.Info("DeleteData SQL string: " & sqlString)
+                    'log.Info("DeleteData SQL string: " & sqlString)
 
                     Dim param As Object = New With { _
                         Key .ACTIDS = String.Join(",", strActIds) _
@@ -466,11 +466,11 @@ Namespace Model
                         sqlString, param, transaction _
                         )
 
-                    log.Info("Operation End")
+                    'log.Info("Operation End")
                     transaction.Commit()
                 Catch ex As Exception
 
-                    log.Error("DeleteData DB Error ", ex)
+                    'log.Error("DeleteData DB Error ", ex)
 
                     If Not transaction Is Nothing Then
                         transaction.Rollback()
@@ -481,7 +481,7 @@ Namespace Model
                 End Try
             End Using
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return True
         End Function
@@ -494,8 +494,8 @@ Namespace Model
             'Dim totalStock As TotalStock
             'totalStock.StockIn = 0
             'totalStock.StockOut = 0
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Dim RemainQty As Integer = 0
 
@@ -503,11 +503,11 @@ Namespace Model
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("GetRemainStockByTag, Open Connection")
+                    'log.Info("GetRemainStockByTag, Open Connection")
 
                     connection.Open()
 
-                    log.Info("GetRemainStockByTag, Open Connection success")
+                    'log.Info("GetRemainStockByTag, Open Connection success")
 
                     Dim sqlString As String = ( _
                         "SELECT CAST(SUM(STOCK_IN) AS UNSIGNED INTEGER)- " & _
@@ -517,7 +517,7 @@ Namespace Model
                             "" _
                         )
 
-                    log.Info("GetRemainStockByTag SQL string: " & sqlString)
+                    'log.Info("GetRemainStockByTag SQL string: " & sqlString)
 
                     'Dim parameter As Object = New With { _
                     '    Key .BARCODETAG = BarcodeTag _
@@ -530,11 +530,11 @@ Namespace Model
                     RemainQty = CInt( _
                        connection.Query(Of ULong)(sqlString).DefaultIfEmpty(0).FirstOrDefault)
 
-                    log.Info("GetRemainStockByTag can get result ")
+                    'log.Info("GetRemainStockByTag can get result ")
 
                 Catch ex As Exception
 
-                    log.Error("GetRemainStockByTag DB Error ", ex)
+                    'log.Error("GetRemainStockByTag DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
@@ -545,7 +545,7 @@ Namespace Model
             '    totalStock.StockOut = CInt(stockCard.SUM_STOCK_OUT)
             'End If
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return RemainQty
         End Function

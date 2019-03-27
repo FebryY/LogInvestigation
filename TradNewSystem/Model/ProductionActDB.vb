@@ -55,7 +55,7 @@ Namespace Model
                 actId = productionAct.ACTID
             End If
             'log.Info("ProductionActDB result" & actId)
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return actId
         End Function

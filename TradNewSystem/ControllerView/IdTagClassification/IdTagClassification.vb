@@ -104,15 +104,16 @@ Public Class frm_IdTagClassification
 #Region "Scanner Process"
     Private Sub myScanner_OnDone(ByVal sender As Object, ByVal e As System.EventArgs) Handles myScanner.OnDone
         Try
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'modify 0.9l
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
             Try
                 If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
                     BHTController.DisposeScanner(myScanner)
-                    log.Info("Start Info WifiConectionCheck Signal Distance Id Tag Classification : Scanner Process")
-                    log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
-                        "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
-                    log.Info("End Info WifiConectionCheck Signal Distance Id Tag Classification : Scanner Process")
+                    'log.Info("Start Info WifiConectionCheck Signal Distance Id Tag Classification : Scanner Process")
+                    'log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                    '    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                    'log.Info("End Info WifiConectionCheck Signal Distance Id Tag Classification : Scanner Process")
 
                     DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                         "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
@@ -120,13 +121,13 @@ Public Class frm_IdTagClassification
                     Exit Sub
                 End If
             Catch ex As Exception
-                log.Error("Start Error WifiConectionCheck Id Tag Classification : Scanner Process")
+                'log.Error("Start Error WifiConectionCheck Id Tag Classification : Scanner Process")
                 If Err.Number = 5 Then
                     BHTController.DisposeScanner(myScanner)
-                    log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
-                    "Tunggu beberapa detik dan ulangi lagi.")
-                    log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
-                    log.Error("End Error WifiConectionCheck Id Tag Classification : Scanner Process")
+                    'log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                    '"Tunggu beberapa detik dan ulangi lagi.")
+                    'log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                    'log.Error("End Error WifiConectionCheck Id Tag Classification : Scanner Process")
 
                     DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                         "Tunggu beberapa detik dan ulangi lagi.", "Error")
@@ -137,10 +138,10 @@ Public Class frm_IdTagClassification
                     BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                     Exit Sub
                 End If
-                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
-                log.Error("End Error WifiConectionCheck Id Tag Classification : Scanner Process")
+                'log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                'log.Error("End Error WifiConectionCheck Id Tag Classification : Scanner Process")
             End Try
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             BHTController.SoundOK() ' Febry
             Cursor.Current = Cursors.WaitCursor ' Febry
@@ -256,7 +257,7 @@ Public Class frm_IdTagClassification
 
                 DisplayMessage.ErrorMsg("Data telah di scan", "Error")
                 BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
-                End If
+            End If
 
         Catch ex As Exception
             BHTController.DisposeScanner(myScanner)
@@ -1113,15 +1114,16 @@ Public Class frm_IdTagClassification
     End Function
 
     Private Sub subSplitHandler()
-        log4net.Config.XmlConfigurator.Configure()
-        Dim log As ILog = LogManager.GetLogger("TRADLogger")
+        'modify 0.9l
+        'log4net.Config.XmlConfigurator.Configure()
+        'Dim log As ILog = LogManager.GetLogger("TRADLogger")
         Try
             If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
                 BHTController.DisposeScanner(myScanner)
-                log.Info("Start Info WifiConectionCheck Signal Distance Id Tag Classification : subSplitHandler")
-                log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
-                    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
-                log.Info("End Info WifiConectionCheck Signal Distance Id Tag Classification : subSplitHandler")
+                'log.Info("Start Info WifiConectionCheck Signal Distance Id Tag Classification : subSplitHandler")
+                'log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                '    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                'log.Info("End Info WifiConectionCheck Signal Distance Id Tag Classification : subSplitHandler")
 
                 DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                     "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
@@ -1129,13 +1131,13 @@ Public Class frm_IdTagClassification
                 Exit Sub
             End If
         Catch ex As Exception
-            log.Error("Start Error WifiConectionCheck Id Tag Classification : subSplitHandler")
+            'log.Error("Start Error WifiConectionCheck Id Tag Classification : subSplitHandler")
             If Err.Number = 5 Then
                 BHTController.DisposeScanner(myScanner)
-                log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
-                    "Tunggu beberapa detik dan ulangi lagi.")
-                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
-                log.Error("End Error WifiConectionCheck Id Tag Classification : subSplitHandler")
+                'log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                '    "Tunggu beberapa detik dan ulangi lagi.")
+                'log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                'log.Error("End Error WifiConectionCheck Id Tag Classification : subSplitHandler")
 
                 DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                     "Tunggu beberapa detik dan ulangi lagi.", "Error")
@@ -1146,10 +1148,10 @@ Public Class frm_IdTagClassification
                 BHTController.InitialiseScanner(myScanner, ScannerCodeType.QrCode, ScannerReadMode.Momentary)
                 Exit Sub
             End If
-            log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
-            log.Error("End Error WifiConectionCheck Id Tag Classification : subSplitHandler")
+            'log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+            'log.Error("End Error WifiConectionCheck Id Tag Classification : subSplitHandler")
         End Try
-        LogManager.Shutdown()
+        'LogManager.Shutdown()
         If mstr_PackQty.Count = 0 Then
             BHTController.DisposeScanner(myScanner)
             DisplayMessage.ErrorMsg("Masukkan Split Qty dan coba sekali lagi", "Error")

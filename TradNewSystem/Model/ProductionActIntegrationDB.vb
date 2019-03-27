@@ -14,23 +14,23 @@ Namespace Model
         Public Function fncGetBusinessDay() As Date
             Dim productionActIntegration As List(Of ProductionActIntegration) = Nothing
             Dim str_Date As Date
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection(CommonLib.GenerateConnectionString)
                 Try
-                    log.Info("ProductionActIntegrationDB, Open connection")
+                    'log.Info("ProductionActIntegrationDB, Open connection")
                     connection.Open()
-                    log.Info("ProductionActIntegrationDB, Open connection success")
+                    'log.Info("ProductionActIntegrationDB, Open connection success")
 
                     Dim sqlString As String = "SELECT BUSINESSDAY FROM BUSINESSDAY"
-                    log.Info("ProductionActIntegrationDB SQL string: " & sqlString)
+                    'log.Info("ProductionActIntegrationDB SQL string: " & sqlString)
 
                     productionActIntegration = CType(connection.Query(Of ProductionActIntegration)(sqlString), List(Of ProductionActIntegration))
-                    log.Info("ProductionActIntegrationDB result " & productionActIntegration.Count())
+                    'log.Info("ProductionActIntegrationDB result " & productionActIntegration.Count())
 
                 Catch ex As Exception
-                    log.Error("ProductionActIntegrationDB DB Error", ex)
+                    'log.Error("ProductionActIntegrationDB DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
@@ -40,8 +40,8 @@ Namespace Model
                     str_Date = prodActItems.BUSINESSDAY
                 Next
             End If
-            log.Info("ProductionActIntegrationDB result " & str_Date)
-            LogManager.Shutdown()
+            'log.Info("ProductionActIntegrationDB result " & str_Date)
+            'LogManager.Shutdown()
 
             Return str_Date
         End Function
@@ -154,7 +154,7 @@ Namespace Model
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return int_ActID
         End Function
@@ -895,24 +895,24 @@ Namespace Model
         Public Function fncGetUser(ByVal str_BarcodeVal As String) As String
             Dim prodActIntegration As ProductionActIntegration = Nothing
             Dim str_Line As String = String.Empty
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection(CommonLib.GenerateConnectionString)
                 Try
-                    log.Info("fncGetUser, Open connection")
+                    'log.Info("fncGetUser, Open connection")
                     connection.Open()
-                    log.Info("fncGetUser, Open connection success")
+                    'log.Info("fncGetUser, Open connection success")
 
                     Dim sqlString As String = "SELECT USERID FROM STOCK_CARD WHERE BARCODETAG = @BARCODETAG " & _
                                               "AND TYPE_ID IN (1,4,5)"
-                    log.Info("fncGetUser SQL string: " & sqlString)
+                    'log.Info("fncGetUser SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .BARCODETAG = str_BarcodeVal}).FirstOrDefault
-                    log.Info("fncGetUser not get result ")
+                    'log.Info("fncGetUser not get result ")
 
                 Catch ex As Exception
-                    log.Error("fncGetUser DB Error", ex)
+                    'log.Error("fncGetUser DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
@@ -920,8 +920,8 @@ Namespace Model
             If Not prodActIntegration Is Nothing Then
                 str_Line = prodActIntegration.USERID
             End If
-            log.Info("fncGetUser result " & str_Line)
-            LogManager.Shutdown()
+            'log.Info("fncGetUser result " & str_Line)
+            'LogManager.Shutdown()
 
             Return str_Line
         End Function
@@ -929,23 +929,23 @@ Namespace Model
         Public Function fncGetDateTime(ByVal str_BarcodeVal As String) As String
             Dim prodActIntegration As ProductionActIntegration = Nothing
             Dim str_Line As String = String.Empty
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection(CommonLib.GenerateConnectionString)
                 Try
-                    log.Info("fncGetDateTime, Open connection")
+                    'log.Info("fncGetDateTime, Open connection")
                     connection.Open()
-                    log.Info("fncGetDateTime, Open connection success")
+                    'log.Info("fncGetDateTime, Open connection success")
 
                     Dim sqlString As String = "SELECT DATE_TIME FROM STOCK_CARD WHERE BARCODETAG = @BARCODETAG " & _
                                               "AND TYPE_ID IN (1,4,5)"
-                    log.Info("fncGetDateTime SQL string: " & sqlString)
+                    'log.Info("fncGetDateTime SQL string: " & sqlString)
 
                     prodActIntegration = connection.Query(Of ProductionActIntegration)(sqlString, New With {Key .BARCODETAG = str_BarcodeVal}).FirstOrDefault
-                    log.Info("fncGetDateTime not get result ")
+                    'log.Info("fncGetDateTime not get result ")
                 Catch ex As Exception
-                    log.Error("fncGetDateTime DB Error", ex)
+                    'log.Error("fncGetDateTime DB Error", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
@@ -953,8 +953,8 @@ Namespace Model
             If Not prodActIntegration Is Nothing Then
                 str_Line = prodActIntegration.DATE_TIME.ToString("yyyy-MM-dd HH:mm:ss")
             End If
-            log.Info("fncGetDateTime result " & str_Line)
-            LogManager.Shutdown()
+            'log.Info("fncGetDateTime result " & str_Line)
+            'LogManager.Shutdown()
 
             Return str_Line
         End Function

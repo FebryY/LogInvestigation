@@ -14,27 +14,27 @@ Namespace Model
 
             Dim ret_TRIN As QueryRetValue = QueryRetValue.ValueFalse
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Try
                 Using connection As IDbConnection = New MySqlConnection(CommonLib.GenerateConnectionString)
-                    log.Info("fncCheckTRIMPartNoMaster, Open connection")
+                    'log.Info("fncCheckTRIMPartNoMaster, Open connection")
 
                     connection.Open()
 
-                    log.Info("fncCheckTRIMPartNoMaster, Open connection success")
+                    'log.Info("fncCheckTRIMPartNoMaster, Open connection success")
 
                     Dim sqlString As String = "SELECT TRINPARTNO FROM PARTMASTER WHERE TRINPARTNO=@TRINPARTNO"
 
-                    log.Info("fncCheckTRIMPartNoMaster SQL string: " & sqlString)
+                    'log.Info("fncCheckTRIMPartNoMaster SQL string: " & sqlString)
 
                     partMaster = connection.Query(Of PartMaster)(sqlString, New With {Key .TRINPARTNO = str_TRIN}).FirstOrDefault
 
                 End Using
             Catch ex As Exception
                 ret_TRIN = QueryRetValue.ValueError
-                log.Error("fncCheckTRIMPartNoMaster DB Error", ex)
+                'log.Error("fncCheckTRIMPartNoMaster DB Error", ex)
 
                 DisplayMessage.ErrorMsg(ex.Message, "DB Error")
             End Try
@@ -46,8 +46,8 @@ Namespace Model
                 ret_TRIN = QueryRetValue.ValueFalse
             End If
 
-            log.Info("fncCheckTRIMPartNoMaster result " & ret_TRIN)
-            LogManager.Shutdown()
+            'log.Info("fncCheckTRIMPartNoMaster result " & ret_TRIN)
+            'LogManager.Shutdown()
 
             Return ret_TRIN
         End Function

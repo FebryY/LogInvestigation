@@ -39,18 +39,18 @@ Namespace Model
             Dim actId As Integer = -1
 
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("GetActIdOfDeletedData, Open Connection")
+                    'log.Info("GetActIdOfDeletedData, Open Connection")
 
                     connection.Open()
 
-                    log.Info("GetActIdOfDeletedData, Open Connection success")
+                    'log.Info("GetActIdOfDeletedData, Open Connection success")
 
                     Dim sqlString As String = ( _
                         "SELECT ACTID " & _
@@ -59,7 +59,7 @@ Namespace Model
                             "AND DELFLAG=1" _
                         )
 
-                    log.Info("GetActIdOfDeletedData SQL string: " & sqlString)
+                    'log.Info("GetActIdOfDeletedData SQL string: " & sqlString)
 
                     Dim parameter As Object = New With { _
                         Key .BARCODETAG = barcodeTag _
@@ -70,7 +70,7 @@ Namespace Model
 
                 Catch ex As Exception
 
-                    log.Error("GetActIdOfDeletedData DB Error ", ex)
+                    'log.Error("GetActIdOfDeletedData DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
@@ -80,8 +80,8 @@ Namespace Model
                 actId = shipAct.ACTID
             End If
 
-            log.Info("GetActIdOfDeletedData can get result " & actId)
-            LogManager.Shutdown()
+            'log.Info("GetActIdOfDeletedData can get result " & actId)
+            'LogManager.Shutdown()
 
             Return actId
         End Function
@@ -91,18 +91,18 @@ Namespace Model
             ) As Boolean
             Dim shipAct As ShipmentAct = Nothing
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("IsBarcodeTagExist, Open Connection")
+                    'log.Info("IsBarcodeTagExist, Open Connection")
 
                     connection.Open()
 
-                    log.Info("IsBarcodeTagExist, Open Connection success")
+                    'log.Info("IsBarcodeTagExist, Open Connection success")
 
 
                     Dim sqlString As String = ( _
@@ -112,7 +112,7 @@ Namespace Model
                             "AND DELFLAG=0" _
                         )
 
-                    log.Info("IsBarcodeTagExist SQL string: " & sqlString)
+                    'log.Info("IsBarcodeTagExist SQL string: " & sqlString)
 
                     Dim parameter As Object = New With { _
                         Key .BARCODETAG = barcodeTag _
@@ -120,16 +120,16 @@ Namespace Model
                     shipAct = connection.Query(Of ShipmentAct) _
                         (sqlString, parameter).FirstOrDefault
 
-                    log.Info("IsBarcodeTagExist can get result ")
+                    'log.Info("IsBarcodeTagExist can get result ")
 
                 Catch ex As Exception
 
-                    log.Error("IsBarcodeTagExist DB Error ", ex)
+                    'log.Error("IsBarcodeTagExist DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
             Return Not shipAct Is Nothing
         End Function
 
@@ -138,19 +138,19 @@ Namespace Model
             ) As List(Of ShipmentAct)
             Dim shipActs As List(Of ShipmentAct) = Nothing
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
 
-                    log.Info("GetBarcodeTagsAndActQty, Open Connection")
+                    'log.Info("GetBarcodeTagsAndActQty, Open Connection")
 
                     connection.Open()
 
-                    log.Info("GetBarcodeTagsAndActQty, Open Connection success")
+                    'log.Info("GetBarcodeTagsAndActQty, Open Connection success")
 
 
 
@@ -161,7 +161,7 @@ Namespace Model
                             "AND DELFLAG=0" _
                         )
 
-                    log.Info("GetBarcodeTagsAndActQty SQL string: " & sqlString)
+                    'log.Info("GetBarcodeTagsAndActQty SQL string: " & sqlString)
 
                     Dim param As Object = New With { _
                         Key .BARCODETAGS = ( _
@@ -173,15 +173,15 @@ Namespace Model
                         List(Of ShipmentAct) _
                         )
 
-                    log.Info("GetBarcodeTagsAndActQty result " & shipActs.Count())
+                    'log.Info("GetBarcodeTagsAndActQty result " & shipActs.Count())
 
                 Catch ex As Exception
 
-                    log.Error("GetBarcodeTagsAndActQty DB Error ", ex)
+                    'log.Error("GetBarcodeTagsAndActQty DB Error ", ex)
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
             Return shipActs
         End Function
 
@@ -191,8 +191,8 @@ Namespace Model
             ) As Integer
             Dim QtyActy As Integer = 0
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
@@ -200,33 +200,33 @@ Namespace Model
 
 
                 Try
-                    log.Info("GetSummarySIDAndActQty, Open Connection")
+                    'log.Info("GetSummarySIDAndActQty, Open Connection")
 
                     connection.Open()
 
-                    log.Info("GetSummarySIDAndActQty, Open Connection success")
+                    'log.Info("GetSummarySIDAndActQty, Open Connection success")
                     'add by lutfi 9e ; update Query 9f
                     Dim sqlString As String = ( _
                                          "select CAST(Sum(ACTQTY) AS UNSIGNED INTEGER) TotalQty from shipmentact where SID='" & SID & "'  AND DELFLAG=0 group by SID")
                     'Dim sqlString As String = ( _
                     '                     "select CAST(Sum(ACTQTY) AS UNSIGNED INTEGER) TotalQty from shipmentact where SONumber='" & SID & "'  AND DELFLAG=0 group by SID")
 
-                    log.Info("GetSummarySIDAndActQty SQL string: " & sqlString)
+                    'log.Info("GetSummarySIDAndActQty SQL string: " & sqlString)
 
                     QtyActy = CInt( _
                         connection.Query(Of ULong)(sqlString).DefaultIfEmpty(0).FirstOrDefault)
 
-                    log.Info("GetSummarySIDAndActQty can get result ")
+                    'log.Info("GetSummarySIDAndActQty can get result ")
 
                 Catch ex As Exception
 
-                    log.Error("GetSummarySIDAndActQty DB Error ", ex)
+                    'log.Error("GetSummarySIDAndActQty DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return QtyActy
         End Function
@@ -244,8 +244,8 @@ Namespace Model
             '    CommonLib.GenerateConnectionString _
             '    )
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             
 
@@ -347,11 +347,11 @@ Namespace Model
             Try
                 myConnection = New MySqlConnection(CommonLib.GenerateConnectionString)
                 'you need to provide password for sql server
-                log.Info("InsertData shipmentAct, Open Connection")
+                'log.Info("InsertData shipmentAct, Open Connection")
 
                 myConnection.Open()
 
-                log.Info("InsertData shipmentAct, Open Connection success")
+                'log.Info("InsertData shipmentAct, Open Connection success")
 
                 Dim myCommand As MySqlCommand = New MySqlCommand(sqlStringGet, myConnection)
 
@@ -361,14 +361,14 @@ Namespace Model
                     newActIds.Add(CInt(dr(0)))
                 End While
 
-                log.Info("Operation End")
+                'log.Info("Operation End")
 
             Catch
             End Try
             dr.Close()
             myConnection.Close()
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return newActIds
 
@@ -386,16 +386,16 @@ Namespace Model
             '    )
             '    Dim transaction As IDbTransaction = Nothing
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
            
             Try
-                log.Info("UpdateData shipmentAct, Open Connection")
+                'log.Info("UpdateData shipmentAct, Open Connection")
 
                 connection.Open()
 
-                log.Info("UpdateData shipmentAct, Open Connection success")
+                'log.Info("UpdateData shipmentAct, Open Connection success")
                 transaction = connection.BeginTransaction
 
                 Dim sqlString As String = ( _
@@ -410,7 +410,7 @@ Namespace Model
                     "WHERE ACTID=@ACTID" _
                     )
 
-                log.Info("UpdateData SQL string: " & sqlString)
+                'log.Info("UpdateData SQL string: " & sqlString)
 
                 For Each shipActData As String() In shipActDataCollection
                     Dim params As Object = New With { _
@@ -443,11 +443,11 @@ Namespace Model
                     connection.Execute(sqlString, params, transaction)
 
                 Next
-                log.Info("Operation End")
+                'log.Info("Operation End")
                 transaction.Commit()
             Catch ex As Exception
 
-                log.Error("UpdateData shipmentAct DB Error ", ex)
+                'log.Error("UpdateData shipmentAct DB Error ", ex)
 
                 If Not transaction Is Nothing Then
                     transaction.Rollback()
@@ -457,7 +457,7 @@ Namespace Model
                 Return False
             End Try
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return True
         End Function
@@ -470,8 +470,8 @@ Namespace Model
                 actIds.[Select](Function(x) x.ToString()).ToArray() _
                 )
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
@@ -479,11 +479,11 @@ Namespace Model
                 Dim transaction As IDbTransaction = Nothing
 
                 Try
-                    log.Info("DeleteData shipmentAct, Open Connection")
+                    'log.Info("DeleteData shipmentAct, Open Connection")
 
                     connection.Open()
 
-                    log.Info("DeleteData shipmentAct, Open Connection success")
+                    'log.Info("DeleteData shipmentAct, Open Connection success")
                     transaction = connection.BeginTransaction
 
                     Dim sqlString As String = ( _
@@ -493,18 +493,18 @@ Namespace Model
                     Dim param As Object = New With { _
                         Key .ACTIDS = String.Join(",", strActIds) _
                         }
-                    log.Info("DeleteData SQL string: " & sqlString)
+                    'log.Info("DeleteData SQL string: " & sqlString)
 
                     connection.Execute( _
                         sqlString, param, transaction _
                         )
 
-                    log.Info("Operation End")
+                    'log.Info("Operation End")
 
                     transaction.Commit()
                 Catch ex As Exception
 
-                    log.Error("DeleteData shipmentAct DB Error ", ex)
+                    'log.Error("DeleteData shipmentAct DB Error ", ex)
 
                     If Not transaction Is Nothing Then
                         transaction.Rollback()
@@ -515,7 +515,7 @@ Namespace Model
                 End Try
             End Using
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return True
         End Function
@@ -524,19 +524,19 @@ Namespace Model
             Dim shipAct As ShipmentAct = Nothing
             Dim bool_Res As Boolean = False
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("fncCheckSID, Open Connection")
+                    'log.Info("fncCheckSID, Open Connection")
 
                     connection.Open()
 
-                    log.Info("fncCheckSID, Open Connection success")
+                    'log.Info("fncCheckSID, Open Connection success")
 
                     Dim sqlString As String = ( _
                         "SELECT SID " & _
@@ -545,15 +545,15 @@ Namespace Model
                             "AND DELFLAG=0" _
                         )
 
-                    log.Info("fncCheckSID SQL string: " & sqlString)
+                    'log.Info("fncCheckSID SQL string: " & sqlString)
 
                     shipAct = connection.Query(Of ShipmentAct)(sqlString, New With {Key .SID = str_SID}).FirstOrDefault
 
-                    log.Info("fncCheckSID can get result ")
+                    'log.Info("fncCheckSID can get result ")
 
                 Catch ex As Exception
 
-                    log.Error("fncCheckSID DB Error ", ex)
+                    'log.Error("fncCheckSID DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
@@ -563,7 +563,7 @@ Namespace Model
                 bool_Res = True
             End If
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return bool_Res
         End Function
@@ -573,8 +573,8 @@ Namespace Model
             ByRef exceptionMsg As String _
             ) As Boolean
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
@@ -582,11 +582,11 @@ Namespace Model
                 Dim transaction As IDbTransaction = Nothing
 
                 Try
-                    log.Info("fncCheckSID, Open Connection")
+                    'log.Info("fncCheckSID, Open Connection")
 
                     connection.Open()
 
-                    log.Info("fncCheckSID, Open Connection success")
+                    'log.Info("fncCheckSID, Open Connection success")
 
                     transaction = connection.BeginTransaction()
 
@@ -599,7 +599,7 @@ Namespace Model
                         ")" _
                         )
 
-                    log.Info("fncInsertStockTakeTemp SQL string: " & sqlString)
+                    'log.Info("fncInsertStockTakeTemp SQL string: " & sqlString)
 
                     For Each shipActData As String() In shipActDataCollection
 
@@ -617,7 +617,7 @@ Namespace Model
                         connection.Execute(sqlString, parameters, transaction)
                     Next
 
-                    log.Info("Operation End")
+                    'log.Info("Operation End")
 
                     transaction.Commit()
                 Catch ex As Exception
@@ -630,7 +630,7 @@ Namespace Model
                 End Try
             End Using
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return True
         End Function

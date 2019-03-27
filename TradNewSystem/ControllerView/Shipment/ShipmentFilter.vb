@@ -236,14 +236,15 @@ Public Class ShipmentFilter
     End Sub
 
     Private Function WifiConectionCheck() As Boolean
-        log4net.Config.XmlConfigurator.Configure()
-        Dim log As ILog = LogManager.GetLogger("TRADLogger")
+        'modify 0.9l
+        'log4net.Config.XmlConfigurator.Configure()
+        'Dim log As ILog = LogManager.GetLogger("TRADLogger")
         Try
             If RF.SYNCHRONIZE(RF.SYNC_CHECK) <> 0 Then
-                log.Info("Start Info WifiConectionCheck Signal Distance Shipment Filter")
-                log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
-                    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
-                log.Info("End Info WifiConectionCheck Signal Distance Shipment Filter")
+                'log.Info("Start Info WifiConectionCheck Signal Distance Shipment Filter")
+                'log.Info("Additional Message: Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
+                '    "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.")
+                'log.Info("End Info WifiConectionCheck Signal Distance Shipment Filter")
 
                 DisplayMessage.ErrorMsg("Posisi anda tidak terjangkau sinyal Wi-fi." & vbCrLf & _
                     "Tolong Pindah ke tempat yg terjangkau sinyal Wi-fi dan coba lagi.", "Error")
@@ -251,12 +252,12 @@ Public Class ShipmentFilter
                 Exit Function
             End If
         Catch ex As Exception
-            log.Error("Start Error WifiConectionCheck Shipment Filter")
+            'log.Error("Start Error WifiConectionCheck Shipment Filter")
             If Err.Number = 5 Then
-                log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
-                    "Tunggu beberapa detik dan ulangi lagi.")
-                log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
-                log.Error("End Error WifiConectionCheck Shipment Filter")
+                'log.Error("Additional Message: Koneksi Wifi di HT tertutup." & vbCrLf & _
+                '    "Tunggu beberapa detik dan ulangi lagi.")
+                'log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+                'log.Error("End Error WifiConectionCheck Shipment Filter")
 
                 DisplayMessage.ErrorMsg("Koneksi Wifi di HT tertutup." & vbCrLf & _
                     "Tunggu beberapa detik dan ulangi lagi.", "Error")
@@ -267,10 +268,10 @@ Public Class ShipmentFilter
                 Return False
                 Exit Function
             End If
-            log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
-            log.Error("End Error WifiConectionCheck Shipment Filter")
+            'log.Error("Error Number: " & Err.Number & vbCrLf & "Error Description: " & Err.Description & vbCrLf, ex)
+            'log.Error("End Error WifiConectionCheck Shipment Filter")
         End Try
-        LogManager.Shutdown()
+        'LogManager.Shutdown()
         Return True
     End Function
 End Class

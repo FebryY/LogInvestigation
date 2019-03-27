@@ -17,41 +17,41 @@ Namespace Model
         Public Function GetShipmentPlans() As List(Of ShipmentPlan)
             Dim shipments As List(Of ShipmentPlan) = Nothing
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("GetShipmentPlans, Open Connection")
+                    'log.Info("GetShipmentPlans, Open Connection")
 
                     connection.Open()
 
-                    log.Info("GetShipmentPlans, Open Connection success")
+                    'log.Info("GetShipmentPlans, Open Connection success")
 
                     Dim sqlString As String = ( _
                         "SELECT * FROM SHIPMENTPLAN WHERE DELFLAG=0" _
                         )
 
-                    log.Info("GetShipmentPlans SQL string: " & sqlString)
+                    'log.Info("GetShipmentPlans SQL string: " & sqlString)
 
                     shipments = CType( _
                         connection.Query(Of ShipmentPlan)(sqlString),  _
                         List(Of ShipmentPlan) _
                         )
 
-                    log.Info("GetShipmentPlans result " & shipments.Count())
+                    'log.Info("GetShipmentPlans result " & shipments.Count())
 
                 Catch ex As Exception
 
-                    log.Error("GetShipmentPlans DB Error ", ex)
+                    'log.Error("GetShipmentPlans DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
             End Using
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return shipments
         End Function
@@ -60,18 +60,18 @@ Namespace Model
             Dim shipPlan As ShipmentPlan = Nothing
             Dim int_Flag As Int32 = 0
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Using connection As IDbConnection = New MySqlConnection( _
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("fncCheckStockTakeFlag, Open Connection")
+                    'log.Info("fncCheckStockTakeFlag, Open Connection")
 
                     connection.Open()
 
-                    log.Info("fncCheckStockTakeFlag, Open Connection success")
+                    'log.Info("fncCheckStockTakeFlag, Open Connection success")
 
                     Dim sqlString As String = ( _
                         "SELECT STOCKTAKEFLAG " & _
@@ -81,13 +81,13 @@ Namespace Model
                             "AND STOCKTAKEFLAG=1" _
                         )
 
-                    log.Info("fncCheckStockTakeFlag SQL string: " & sqlString)
+                    'log.Info("fncCheckStockTakeFlag SQL string: " & sqlString)
 
                     shipPlan = connection.Query(Of ShipmentPlan)(sqlString, New With {Key .SID = str_SID}).FirstOrDefault
 
                 Catch ex As Exception
 
-                    log.Error("fncCheckStockTakeFlag DB Error ", ex)
+                    'log.Error("fncCheckStockTakeFlag DB Error ", ex)
 
                     DisplayMessage.ErrorMsg(ex.Message, "DB Error")
                 End Try
@@ -97,9 +97,9 @@ Namespace Model
                 int_Flag = shipPlan.STOCKTAKEFLAG
             End If
 
-            log.Info("fncCheckStockTakeFlag result " & int_Flag)
+            'log.Info("fncCheckStockTakeFlag result " & int_Flag)
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
             Return int_Flag
         End Function

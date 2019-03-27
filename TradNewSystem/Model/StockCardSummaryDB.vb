@@ -83,8 +83,8 @@ Namespace Model
             ) As Integer
             'Dim stockCardSummary As StockCardSummary = Nothing
 
-            log4net.Config.XmlConfigurator.Configure()
-            Dim log As ILog = LogManager.GetLogger("TRADLogger")
+            'log4net.Config.XmlConfigurator.Configure()
+            'Dim log As ILog = LogManager.GetLogger("TRADLogger")
 
             Dim CountOfData As Integer = 0
 
@@ -92,11 +92,11 @@ Namespace Model
                 CommonLib.GenerateConnectionString _
                 )
                 Try
-                    log.Info("CheckDeletedData, Open Connection")
+                    'log.Info("CheckDeletedData, Open Connection")
 
                     connection.Open()
 
-                    log.Info("CheckDeletedData, Open Connection success")
+                    'log.Info("CheckDeletedData, Open Connection success")
 
                     Dim sqlString As String = _
                     "Select CAST(Count(*) AS UNSIGNED INTEGER) TotalQty  from( " & _
@@ -111,7 +111,7 @@ Namespace Model
                 "on a.Barcodetag=b.Barcodetag1 " & _
                 ")"
 
-                    log.Info("CheckDeletedData SQL string: " & sqlString)
+                    'log.Info("CheckDeletedData SQL string: " & sqlString)
 
                     'Dim parameter As Object = New With { _
                     '    Key .BARCODETAG = barcodeTag _
@@ -120,11 +120,11 @@ Namespace Model
                     CountOfData = CInt(connection.Query(Of ULong) _
                             (sqlString).FirstOrDefault)
 
-                    log.Info("CheckDeletedData result " & CountOfData.ToString())
+                    'log.Info("CheckDeletedData result " & CountOfData.ToString())
 
                 Catch ex As Exception
 
-                    log.Error("CheckDeletedData DB Error ", ex)
+                    'log.Error("CheckDeletedData DB Error ", ex)
 
                     exceptionMsg = ex.Message
                     Return -1
@@ -132,7 +132,7 @@ Namespace Model
             End Using
 
 
-            LogManager.Shutdown()
+            'LogManager.Shutdown()
 
 
             'If CountOfData = 0 Then
